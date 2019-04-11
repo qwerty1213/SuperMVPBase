@@ -103,12 +103,12 @@ public class MainActivity extends BaseActivitys implements TestAdapter.OnItemCli
 
     @Override
     public void hideLoading() {
-//        dismissDialogLoading();
+        dismissDialogLoading();
     }
 
     @Override
     public void showError(String errMsg) {
-//        dismissDialogLoading();
+        dismissDialogLoading();
     }
 
     @Override
