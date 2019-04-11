@@ -10,6 +10,7 @@ android {
         versionCode config.versionCode
         versionName config.versionName
         testInstrumentationRunner config.androidJUnitRunner
+        multiDexEnabled true
         ndk {
             //选择要添加的对应cpu类型的.so库。
 //            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86',
@@ -40,10 +41,10 @@ android {
             res.srcDirs =
                     [
                             'src/main/res',//main
+                            'src/main/restoolbar',//toolbar
                     ]
         }
     }
-
 
     //多渠道打包
     flavorDimensions "default"
@@ -74,9 +75,34 @@ def releaseTime() {
 
 dependencies {
     api depend.fileInculdeJL
+    api depend.design
     api depend.appcompatV7
     api depend.constraintLayout
     testImplementation depend.junit
     androidTestImplementation depend.textRunner
     androidTestImplementation depend.espressoCore
+    //注解
+    api depend.butterknife
+    annotationProcessor depend.butterknifeCompiler
+    api depend.autolayout
+    //网络请求
+    api depend.okgo
+    api depend.okrx2
+    api depend.okserver
+    //MultiDex分包
+    api depend.multidex
+    //解析
+    api depend.gson
+    //图片展示
+    api depend.glide
+    annotationProcessor depend.glideCompiler
+    api depend.glideTransformations
+    //列表展示
+    api depend.recyclerview
+    //adapter刷新加载
+    api depend.baseRecyclerViewAdapterHelper
+    api depend.chuckLibrary
+
+    api project(path: ':utilslibrary')
+
 }
