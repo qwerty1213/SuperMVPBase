@@ -7,6 +7,8 @@ import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 import android.util.DisplayMetrics;
 
+import com.android.tool.util.toast.ToastUtils;
+import com.android.tool.util.toast.style.ToastBlackStyle;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
@@ -66,6 +68,8 @@ public class BaseApplication extends MultiDexApplication {
         mContext = getApplicationContext();
         mInstance = this;
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        // 初始化吐司工具类
+        ToastUtils.init(this, new ToastBlackStyle());
         initDisplayMetrics();
         initOkGo();
 

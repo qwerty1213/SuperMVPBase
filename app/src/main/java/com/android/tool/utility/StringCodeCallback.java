@@ -20,6 +20,7 @@ import android.os.Looper;
 import android.os.Message;
 
 import com.android.tool.ui.base.BaseHandler;
+import com.android.tool.util.T;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.convert.StringConvert;
 import com.lzy.okgo.model.Response;
@@ -97,7 +98,7 @@ public abstract class StringCodeCallback extends StringCallback {
                 public void handleMessage(Message msg) {
                     switch (msg.what) {
                         case HttpPublicParametersUtil.TOAST_MESSAGE:
-//                            T.customToastShort(activity, String.valueOf(msg.obj));
+                            T.showToast(activity, String.valueOf(msg.obj));
                             break;
                         case HttpPublicParametersUtil.IS_LOGIN:
 //                            PUtil.clearPreferences();

@@ -1,7 +1,7 @@
 package com.android.tool.widget;
 
 
-import com.android.utilslibrary.R;
+import com.android.tool.R;
 import com.chad.library.adapter.base.loadmore.LoadMoreView;
 
 public final class CustomLoadMoreView extends LoadMoreView {

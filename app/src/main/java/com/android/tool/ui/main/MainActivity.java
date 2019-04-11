@@ -20,7 +20,7 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class MainActivity extends BaseActivitys implements TestBaseView, SwipeRefreshLayout.OnRefreshListener, BaseQuickAdapter.RequestLoadMoreListener {
+public class MainActivity extends BaseActivitys implements TestAdapter.OnItemClickListener, TestBaseView, SwipeRefreshLayout.OnRefreshListener, BaseQuickAdapter.RequestLoadMoreListener {
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
     @BindView(R.id.swipeRefreshLayout)
@@ -52,6 +52,7 @@ public class MainActivity extends BaseActivitys implements TestBaseView, SwipeRe
 
     @Override
     public void initListener() {
+        mAdapter.setOnItemClickListener(this);
         mSwipeRefreshLayout.setOnRefreshListener(this);
         mAdapter.setOnLoadMoreListener(this, mRecyclerView);
     }
@@ -97,16 +98,21 @@ public class MainActivity extends BaseActivitys implements TestBaseView, SwipeRe
 
     @Override
     public void showLoading() {
-
+        showDialogLoading();
     }
 
     @Override
     public void hideLoading() {
-
+//        dismissDialogLoading();
     }
 
     @Override
     public void showError(String errMsg) {
+//        dismissDialogLoading();
+    }
 
+    @Override
+    public void onItemClick(TestModel.RowsBean bean, int position) {
+        showToast("ceshi");
     }
 }

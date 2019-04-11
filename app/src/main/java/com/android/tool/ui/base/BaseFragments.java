@@ -2,6 +2,7 @@ package com.android.tool.ui.base;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
@@ -12,6 +13,9 @@ import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.android.tool.util.LoadingDialogUtil;
+import com.android.tool.util.T;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -24,7 +28,7 @@ import butterknife.Unbinder;
 @SuppressLint("ObsoleteSdkInt")
 public abstract class BaseFragments extends Fragment {
     protected Activity mActivity;
-//    protected Dialog mDialogLoading;
+    protected Dialog mDialogLoading;
     protected Unbinder unbinder;
 
     @Nullable
@@ -117,7 +121,7 @@ public abstract class BaseFragments extends Fragment {
      * @param msg
      */
     protected void showToast(String msg) {
-//        T.customToastShort(mActivity, msg);
+        T.showToast(mActivity, msg);
     }
 
     /**
@@ -126,37 +130,37 @@ public abstract class BaseFragments extends Fragment {
      * @param msg
      */
     protected void showToast(int msg) {
-//        T.customToastShort(mActivity, msg);
+        T.showToast(mActivity, msg);
     }
 
-//    /**
-//     * [dialog弹窗]
-//     */
-//    protected Dialog getDialogLoading(String msg) {
-//        if (mDialogLoading == null) {
-//            mDialogLoading = LoadingDialogUtil.createLoadingDialog(mActivity, msg);
-//        }
-//        return mDialogLoading;
-//    }
-//
-//    /**
-//     * [dialog弹窗]
-//     */
-//    protected Dialog getDialogLoading() {
-//        if (mDialogLoading == null) {
-//            mDialogLoading = LoadingDialogUtil.createLoadingDialog(mActivity, "加载中...");
-//        }
-//        return mDialogLoading;
-//    }
-//
-//    /**
-//     * [关闭dialog]
-//     */
-//    protected void dismissDialogLoading() {
-//        if (mDialogLoading != null && mDialogLoading.isShowing()) {
-//            mDialogLoading.dismiss();
-//        }
-//    }
+    /**
+     * [dialog弹窗]
+     */
+    protected Dialog showDialogLoading(String msg) {
+        if (mDialogLoading == null) {
+            mDialogLoading = LoadingDialogUtil.createLoadingDialog(mActivity, msg);
+        }
+        return mDialogLoading;
+    }
+
+    /**
+     * [dialog弹窗]
+     */
+    protected Dialog showDialogLoading() {
+        if (mDialogLoading == null) {
+            mDialogLoading = LoadingDialogUtil.createLoadingDialog(mActivity, "加载中...");
+        }
+        return mDialogLoading;
+    }
+
+    /**
+     * [关闭dialog]
+     */
+    protected void dismissDialogLoading() {
+        if (mDialogLoading != null && mDialogLoading.isShowing()) {
+            mDialogLoading.dismiss();
+        }
+    }
 
     @ColorInt
     protected int color(@ColorRes int colorRes) {

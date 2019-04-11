@@ -1,6 +1,7 @@
 package com.android.tool.ui.base;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import android.view.WindowManager;
 
 import com.android.tool.R;
 import com.android.tool.model.ToolBarModel;
+import com.android.tool.util.LoadingDialogUtil;
+import com.android.tool.util.T;
 import com.android.tool.utility.ActivityManagement;
 
 import butterknife.ButterKnife;
@@ -24,7 +27,7 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseActivitys extends AppCompatActivity {
     protected boolean supportSlideBack = true, isAddActivity = true;//是否支持滑动返回/是否沉浸状态栏
-    //    protected Dialog mDialogLoading;
+        protected Dialog mDialogLoading;
     protected Activity mActivity = this;
     private ToolBarModel toolBarModel;
     private Toolbar toolbar;
@@ -103,7 +106,7 @@ public abstract class BaseActivitys extends AppCompatActivity {
      * @param msg
      */
     protected void showToast(String msg) {
-//        T.customToastShort(mActivity, msg);
+        T.showToast(mActivity, msg);
     }
 
     /**
@@ -112,33 +115,33 @@ public abstract class BaseActivitys extends AppCompatActivity {
      * @param msg
      */
     protected void showToast(int msg) {
-//        T.customToastShort(mActivity, msg);
+        T.showToast(mActivity, msg);
     }
 
-//    /**
-//     * [dialog弹窗]
-//     */
-//    protected Dialog getDialogLoading() {
-//        mDialogLoading = LoadingDialogUtil.createLoadingDialog(this, "加载中...");
-//        return mDialogLoading;
-//    }
-//
-//    /**
-//     * [dialog弹窗]
-//     */
-//    protected Dialog getDialogLoading(String msg) {
-//        mDialogLoading = LoadingDialogUtil.createLoadingDialog(this, msg);
-//        return mDialogLoading;
-//    }
+    /**
+     * [dialog弹窗]
+     */
+    protected Dialog showDialogLoading() {
+        mDialogLoading = LoadingDialogUtil.createLoadingDialog(this, "加载中...");
+        return mDialogLoading;
+    }
 
-//    /**
-//     * [关闭dialog]
-//     */
-//    protected void dismissDialogLoading() {
-//        if (mDialogLoading != null && mDialogLoading.isShowing()) {
-//            mDialogLoading.dismiss();
-//        }
-//    }
+    /**
+     * [dialog弹窗]
+     */
+    protected Dialog showDialogLoading(String msg) {
+        mDialogLoading = LoadingDialogUtil.createLoadingDialog(this, msg);
+        return mDialogLoading;
+    }
+
+    /**
+     * [关闭dialog]
+     */
+    protected void dismissDialogLoading() {
+        if (mDialogLoading != null && mDialogLoading.isShowing()) {
+            mDialogLoading.dismiss();
+        }
+    }
 
     @ColorInt
     public static int getColor(@NonNull Context context, @ColorRes int id) {

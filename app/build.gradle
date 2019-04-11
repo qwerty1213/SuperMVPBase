@@ -102,6 +102,7 @@ dependencies {
     //adapter刷新加载
     api depend.baseRecyclerViewAdapterHelper
     api depend.chuckLibrary
+    api depend.spinKit
 
     api project(path: ':utilslibrary')
 

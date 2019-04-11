@@ -46,6 +46,8 @@ ext {
             eventbus                     : "org.greenrobot:eventbus:3.0.0",
             // ------------- webView -------------
             agentweb                     : "com.just.agentweb:agentweb:3.1.0",
+            // ------------- loading加载动画 -------------
+            spinKit                     : "com.github.ybq:Android-SpinKit:1.2.0",
 
             //            mpermission           : "com.zhy:mpermission-api:1.0.0",
 //            gridlayout            : "com.android.support:gridlayout-v7:${dependVersion.support}",
