@@ -101,6 +101,7 @@ public class MainActivity extends BaseActivitys implements TestAdapter.OnItemCli
         showDialogLoading();
     }
 
+
     @Override
     public void hideLoading() {
         dismissDialogLoading();

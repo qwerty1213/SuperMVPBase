@@ -25,14 +25,14 @@ android {
         }
     }
 
-//    signingConfigs {
-//        debug {
-//            keyAlias "shanxianglaoshi"
-//            storeFile file('shanxiangKeystore.jks')
-//            storePassword "shanxiang"
-//            keyPassword "shanxianglaoshi"
-//        }
-//    }
+    signingConfigs {
+        debug {
+            keyAlias "mvp"
+            storeFile file('mvpkeystore.jks')
+            storePassword "123456"
+            keyPassword "123456"
+        }
+    }
 
     sourceSets {
         main {
