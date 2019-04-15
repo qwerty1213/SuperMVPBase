@@ -14,7 +14,7 @@ import android.view.WindowManager;
 
 import com.android.tool.R;
 import com.android.tool.model.ToolBarModel;
-import com.android.tool.util.LoadingDialogUtil;
+import com.android.tool.util.LoadingUtil;
 import com.android.tool.util.T;
 import com.android.tool.utility.ActivityManagement;
 
@@ -122,7 +122,7 @@ public abstract class BaseActivitys extends AppCompatActivity {
      * [dialog弹窗]
      */
     protected Dialog showDialogLoading() {
-        mDialogLoading = LoadingDialogUtil.createLoadingDialog(this, "加载中...");
+        mDialogLoading = LoadingUtil.createLoadingDialog(this, "加载中...");
         return mDialogLoading;
     }
 
@@ -130,7 +130,7 @@ public abstract class BaseActivitys extends AppCompatActivity {
      * [dialog弹窗]
      */
     protected Dialog showDialogLoading(String msg) {
-        mDialogLoading = LoadingDialogUtil.createLoadingDialog(this, msg);
+        mDialogLoading = LoadingUtil.createLoadingDialog(this, msg);
         return mDialogLoading;
     }
 

@@ -21,7 +21,7 @@ ext {
             junit                        : "junit:junit:4.12",
             textRunner                   : "com.android.support.test:runner:1.0.1",
             espressoCore                 : "com.android.support.test.espresso:espresso-core:3.0.1",
-            // ------------- 卡片 -------------
+            // ------------- 圆角卡片 -------------
             cardview                     : "com.android.support:cardview-v7:${dependVersion.support}",
             multidex                     : "com.android.support:multidex:1.0.0",
             // ------------- ButterKnife -------------
@@ -46,56 +46,5 @@ ext {
             eventbus                     : "org.greenrobot:eventbus:3.0.0",
             // ------------- webView -------------
             agentweb                     : "com.just.agentweb:agentweb:3.1.0",
-            // ------------- loading加载动画 -------------
-            spinKit                     : "com.github.ybq:Android-SpinKit:1.2.0",
-
-            //            mpermission           : "com.zhy:mpermission-api:1.0.0",
-//            gridlayout            : "com.android.support:gridlayout-v7:${dependVersion.support}",
-////            BaseRecyclerViewAdapterHelper: "com.github.CymChad:BaseRecyclerViewAdapterHelper:+",
-//
-//            // ------------- 加载Gif -------------
-//            GifView               : "com.github.Cutta:GifView:1.1",
-//            // ------------- 轮播图 -------------
-//            banner                : "com.youth.banner:banner:+",
-
-//            nineoldandroidsLibrary: "com.nineoldandroids:library:2.4.0",
-
-//            tkrefreshlayout       : "com.lcodecorex:tkrefreshlayout:1.0.7",
-
-//            // ------------- 圆头像 -------------
-//            roundedimageview      : "com.makeramen:roundedimageview:2.2.1",
-
-            // ------------- tab -------------
-//            flycoTabLayoutLib     : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",
-            //------------- imagePickerLib依赖 -------------
-//            photoviewLib          : "com.github.chrisbanes.photoview:library:1.2.4",
-//            BlurDialog            : "com.github.lany192:BlurDialog:1.0.1",
-//            AndroidPickerView     : "com.contrarywind:Android-PickerView:4.1.3",
-//
-//            jiguangSdkJpush       : "cn.jiguang.sdk:jpush:3.1.1",
-//            jiguangSdkJcore       : "cn.jiguang.sdk:jcore:1.1.9",
-//            UMSdkJanalytics       : "com.umeng.analytics:analytics:latest.integration",
-//            labelsView            : "com.github.donkingliang:LabelsView:1.4.1",
-//            rxjava                : "io.reactivex.rxjava2:rxjava:2.0.7",
-//            rxandroid             : "io.reactivex.rxjava2:rxandroid:2.0.1",
-//            autolayout            : "com.zhy:autolayout:1.4.3",
-//            // ------------- 带边圆头像 -------------
-//            circularImageview     : "com.mikhaellopez:circularimageview:3.0.2",
-//            skeleton              : "com.ethanhua:skeleton:1.1.1",
-//            shimmerlayout         : "io.supercharge:shimmerlayout:2.1.0",
-//            //点赞+1效果
-//            goodview              : "com.wx.goodview:goodview:1.0.0",
-//            zxing                 : "com.google.zxing:core:3.3.3",
-            //mp4播放器
-//            dkplayerjava          : "com.github.dueeeke.dkplayer:dkplayer-java:2.5.5",
-//            dkplayerui            : "ccom.github.dueeeke.dkplayer:dkplayer-ui:2.5.5",
-//            dkplayerArmv7a        : "com.github.dueeeke.dkplayer:dkplayer-armv7a:2.5.5",
-//            dkplayerArmv5         : "com.github.dueeeke.dkplayer:dkplayer-armv5:2.5.5",
-//            dkplayerArm64         : "com.github.dueeeke.dkplayer:dkplayer-arm64:2.5.5",
-//            dkplayerx86           : "com.github.dueeeke.dkplayer:dkplayer-x86:2.5.5",
-//            dkplayerx86_64        : "com.github.dueeeke.dkplayer:dkplayer-x86_64:2.5.5",
-            //社区图片浏览ImageView工具类
-//            sketchB1              : "me.panpf:sketch:2.6.2-b1",
-//            sketchGifB1           : "me.panpf:sketch-gif:2.6.2-b1",
     ]
 }

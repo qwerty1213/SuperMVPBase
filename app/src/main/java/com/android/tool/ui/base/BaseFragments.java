@@ -14,7 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.tool.util.LoadingDialogUtil;
+import com.android.tool.util.LoadingUtil;
 import com.android.tool.util.T;
 
 import butterknife.ButterKnife;
@@ -138,7 +138,7 @@ public abstract class BaseFragments extends Fragment {
      */
     protected Dialog showDialogLoading(String msg) {
         if (mDialogLoading == null) {
-            mDialogLoading = LoadingDialogUtil.createLoadingDialog(mActivity, msg);
+            mDialogLoading = LoadingUtil.createLoadingDialog(mActivity, msg);
         }
         return mDialogLoading;
     }
@@ -148,7 +148,7 @@ public abstract class BaseFragments extends Fragment {
      */
     protected Dialog showDialogLoading() {
         if (mDialogLoading == null) {
-            mDialogLoading = LoadingDialogUtil.createLoadingDialog(mActivity, "加载中...");
+            mDialogLoading = LoadingUtil.createLoadingDialog(mActivity, "加载中...");
         }
         return mDialogLoading;
     }

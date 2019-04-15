@@ -47,7 +47,7 @@ public class MainActivity extends BaseActivitys implements TestAdapter.OnItemCli
         mAdapter.setLoadMoreView(new CustomLoadMoreView());
         mAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
         mRecyclerView.setAdapter(mAdapter);
-        showToolbar().setBack().setTitle("UTools");
+        showToolbar().setBack().setTitle("mvp");
     }
 
     @Override

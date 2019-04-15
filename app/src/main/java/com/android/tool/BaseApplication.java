@@ -7,8 +7,6 @@ import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 import android.util.DisplayMetrics;
 
-import com.android.tool.util.toast.ToastUtils;
-import com.android.tool.util.toast.style.ToastBlackStyle;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
@@ -68,8 +66,6 @@ public class BaseApplication extends MultiDexApplication {
         mContext = getApplicationContext();
         mInstance = this;
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        // 初始化吐司工具类
-        ToastUtils.init(this, new ToastBlackStyle());
         initDisplayMetrics();
         initOkGo();
 
@@ -152,7 +148,6 @@ public class BaseApplication extends MultiDexApplication {
 
     /**
      * 这里只是我谁便写的认证规则，具体每个业务是否需要验证，以及验证规则是什么，请与服务端或者leader确定
-     * 重要的事情说三遍，以下代码不要直接使用
      */
     private class SafeTrustManager implements X509TrustManager {
         @Override
@@ -178,9 +173,6 @@ public class BaseApplication extends MultiDexApplication {
 
     /**
      * 这里只是我谁便写的认证规则，具体每个业务是否需要验证，以及验证规则是什么，请与服务端或者leader确定
-     * 这里只是我谁便写的认证规则，具体每个业务是否需要验证，以及验证规则是什么，请与服务端或者leader确定
-     * 这里只是我谁便写的认证规则，具体每个业务是否需要验证，以及验证规则是什么，请与服务端或者leader确定
-     * 重要的事情说三遍，以下代码不要直接使用
      */
     private class SafeHostnameVerifier implements HostnameVerifier {
         @Override

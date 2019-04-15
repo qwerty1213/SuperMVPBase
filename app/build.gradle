@@ -89,6 +89,7 @@ dependencies {
     api depend.okgo
     api depend.okrx2
     api depend.okserver
+    api depend.chuckLibrary
     //MultiDex分包
     api depend.multidex
     //解析
@@ -101,8 +102,7 @@ dependencies {
     api depend.recyclerview
     //adapter刷新加载
     api depend.baseRecyclerViewAdapterHelper
-    api depend.chuckLibrary
-    api depend.spinKit
+
 
     api project(path: ':utilslibrary')
 
