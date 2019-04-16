@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.WindowManager;
@@ -75,10 +76,10 @@ public abstract class BaseActivitys extends AppCompatActivity {
     protected void steepSetStatusBarTranslucent() {
         XStatusBar.newColorBuilder()
                 .statusBarTextColor(true)
-                .statusColor(color(mActivity, R.color.text_black))  // 状态栏颜色
+                .statusColor(color(R.color.text_black))  // 状态栏颜色
                 .statusDepth(0)                          // 状态栏颜色深度
                 .applyNav(false)                           // 是否应用到导航栏
-                .navColor(color(mActivity, R.color.text_black))       // 导航栏颜色
+                .navColor(color(R.color.text_black))       // 导航栏颜色
                 .navDepth(50)                             // 导航栏颜色深度
                 .build(this)
                 .apply();
@@ -171,9 +172,10 @@ public abstract class BaseActivitys extends AppCompatActivity {
         }
     }
 
+
     @ColorInt
-    public static int color(@NonNull Context context, @ColorRes int id) {
-        return Build.VERSION.SDK_INT >= 23 ? context.getColor(id) : context.getResources().getColor(id);
+    protected int color(@ColorRes int colorRes) {
+        return ContextCompat.getColor(mActivity, colorRes);
     }
 
 }
