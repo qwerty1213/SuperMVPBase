@@ -24,7 +24,7 @@ public class MainActivity extends BaseActivitys implements TabView.OnTabChildCli
 
     @Override
     public void initParms(Bundle mBundle) {
-
+        steepSetStatusBarTranslucent();
     }
 
     @Override

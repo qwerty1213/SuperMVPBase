@@ -3,7 +3,7 @@
     android:id="@+id/ly_main_actionbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="@color/toolbar_color">
+    android:background="@color/text_black">
 
     <ImageView
         android:id="@+id/iv_back"

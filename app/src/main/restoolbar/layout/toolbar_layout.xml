@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar"
     style="@style/MatchWrap"
-    android:background="@color/toolbar_color"
+    android:background="@color/text_black"
     android:minHeight="?attr/actionBarSize"
     app:contentInsetStart="0dp"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"

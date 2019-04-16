@@ -8,6 +8,7 @@
     <color name="black">#000000</color>
 
     <color name="text_black">#1A1A1A</color>
+    <color name="text_white">#FFFFFF</color>
     <color name="text_gray">#999999</color>
     <color name="text_hint">#acacac</color>
     <color name="empty_view_background">#F2F2F2</color>

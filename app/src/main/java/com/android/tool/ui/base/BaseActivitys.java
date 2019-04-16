@@ -16,6 +16,7 @@ import com.android.tool.R;
 import com.android.tool.model.ToolBarModel;
 import com.android.tool.util.LoadingUtil;
 import com.android.tool.util.T;
+import com.android.tool.util.statusbar.XStatusBar;
 import com.android.tool.utility.ActivityManagement;
 
 import butterknife.ButterKnife;
@@ -27,7 +28,7 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseActivitys extends AppCompatActivity {
     protected boolean supportSlideBack = true, isAddActivity = true;//是否支持滑动返回/是否沉浸状态栏
-        protected Dialog mDialogLoading;
+    protected Dialog mDialogLoading;
     protected Activity mActivity = this;
     private ToolBarModel toolBarModel;
     private Toolbar toolbar;
@@ -54,6 +55,33 @@ public abstract class BaseActivitys extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
+    }
+
+    /**
+     * 透明状态栏
+     */
+    protected void setStatusBarTransparent(boolean isSetStatusBarTransparent) {
+        if (isSetStatusBarTransparent) {
+            XStatusBar.newImmersionBuilder()
+                    .applyNav(false)
+                    .build(this)
+                    .apply();
+        }
+    }
+
+    /**
+     * 透明状态栏  字体颜色   跳转动画
+     */
+    protected void steepSetStatusBarTranslucent() {
+        XStatusBar.newColorBuilder()
+                .statusBarTextColor(true)
+                .statusColor(color(mActivity, R.color.text_black))  // 状态栏颜色
+                .statusDepth(0)                          // 状态栏颜色深度
+                .applyNav(false)                           // 是否应用到导航栏
+                .navColor(color(mActivity, R.color.text_black))       // 导航栏颜色
+                .navDepth(50)                             // 导航栏颜色深度
+                .build(this)
+                .apply();
     }
 
 
@@ -144,7 +172,7 @@ public abstract class BaseActivitys extends AppCompatActivity {
     }
 
     @ColorInt
-    public static int getColor(@NonNull Context context, @ColorRes int id) {
+    public static int color(@NonNull Context context, @ColorRes int id) {
         return Build.VERSION.SDK_INT >= 23 ? context.getColor(id) : context.getResources().getColor(id);
     }
 
