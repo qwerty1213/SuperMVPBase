@@ -6,14 +6,14 @@
     <com.ycl.tabview.library.TabView
         android:id="@+id/tabView"
         style="@style/MatchMatch"
-        app:imageViewTextViewMargin="2dip"
-        app:tab_imageViewHeight="15dp"
-        app:tab_imageViewWidth="15dp"
+        app:imageViewTextViewMargin="3dip"
+        app:tab_imageViewHeight="20dp"
+        app:tab_imageViewWidth="20dp"
         app:tab_tabViewDefaultPosition="0"
         app:tab_tabViewGravity="bottom"
-        app:tab_tabViewHeight="40dp"
-        app:tab_textViewSelColor="#ff4800"
+        app:tab_tabViewHeight="45dp"
+        app:tab_textViewSelColor="@color/text_black"
         app:tab_textViewSize="10sp"
-        app:tab_textViewUnSelColor="@android:color/darker_gray" />
+        app:tab_textViewUnSelColor="@color/text_gray" />
 
 </com.zhy.autolayout.AutoLinearLayout>

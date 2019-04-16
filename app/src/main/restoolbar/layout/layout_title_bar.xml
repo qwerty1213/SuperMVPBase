@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ly_main_actionbar"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
+    android:layout_height="@dimen/title_height"
     android:background="@color/text_black">
 
     <ImageView
         android:id="@+id/iv_back"
-        android:layout_width="?attr/actionBarSize"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_width="@dimen/title_height"
+        android:layout_height="@dimen/title_height"
         android:background="?actionBarItemBackground"
         android:padding="18dp"
         android:src="@mipmap/white_back_icon" />
@@ -29,8 +29,8 @@
 
     <ImageView
         android:id="@+id/iv_right"
-        android:layout_width="?attr/actionBarSize"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_width="@dimen/title_height"
+        android:layout_height="@dimen/title_height"
         android:layout_alignParentEnd="true"
         android:background="?actionBarItemBackground"
         android:padding="18dp" />

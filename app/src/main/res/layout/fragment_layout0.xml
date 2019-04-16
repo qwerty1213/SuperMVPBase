@@ -2,7 +2,14 @@
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/MatchMatch.Vertical">
 
-    <include layout="@layout/toolbar_layout" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/text_black"
+        android:gravity="center"
+        android:text="MVP"
+        android:textColor="@color/text_white"
+        android:textSize="16sp" />
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipeRefreshLayout"

@@ -1,9 +1,11 @@
 package com.android.tool.ui.main.fragment;
 
+
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.android.tool.R;
 import com.android.tool.model.TestModel;
@@ -13,12 +15,17 @@ import com.android.tool.ui.base.BaseFragments;
 import com.android.tool.ui.main.adapter.TestAdapter;
 import com.android.tool.ui.view.TestBaseView;
 import com.android.tool.widget.CustomLoadMoreView;
+import com.android.tool.widget.dialog.ActionSheetDialog;
+import com.android.tool.widget.dialog.AlertDialogUtil;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+
+import static com.android.tool.widget.dialog.ActionSheetDialog.SheetItemColor.Black;
+
 
 /**
  * @author York(wuchunyuan)
@@ -144,6 +151,35 @@ public class Fragment0 extends BaseFragments implements TestAdapter.OnItemClickL
 
     @Override
     public void onItemClick(TestModel.RowsBean bean, int position) {
-        showToast("ceshi");
+        if (position == 0) {
+            new ActionSheetDialog(mActivity).builder()
+                    .addSheetItem("Item0", Black, new ActionSheetDialog.OnSheetItemClickListener() {
+                        @Override
+                        public void onClick(int which) {
+
+                        }
+                    }).addSheetItem("Item1", Black, new ActionSheetDialog.OnSheetItemClickListener() {
+                @Override
+                public void onClick(int which) {
+
+                }
+            }).addSheetItem("Item2", Black, new ActionSheetDialog.OnSheetItemClickListener() {
+                @Override
+                public void onClick(int which) {
+
+                }
+            }).show();
+        } else {
+            new AlertDialogUtil(mActivity).builder().setTitle("提示").setMsg("是否确定？")
+                    .setPositiveButton("是", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                        }
+                    }).setNegativeButton("否", new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                }
+            }).show();
+        }
     }
 }

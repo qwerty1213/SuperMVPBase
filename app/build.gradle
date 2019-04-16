@@ -41,6 +41,7 @@ android {
             res.srcDirs =
                     [
                             'src/main/res',//main
+                            'src/main/resdialog',//dialog
                             'src/main/restoolbar',//toolbar
                     ]
         }
