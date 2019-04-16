@@ -12,6 +12,6 @@ import com.android.tool.ui.base.BaseView;
 public interface TestBaseView extends BaseView {
     void testResponse(TestModel bean, int page);
 
-    void LoadMoreResponse(TestModel bean, int page);
+    void loadMoreResponse(TestModel bean, int page);
 
 }

@@ -19,6 +19,19 @@ android {
         }
     }
 
+//    sourceSets {
+//        main {
+//            jni.srcDirs = []
+//            jniLibs.srcDirs = ['libs']
+//            res.srcDirs =
+//                    [
+//                            'src/main/res',//main
+//                            'src/main/restabview',//tabview
+//                    ]
+//        }
+//    }
+
+
 }
 
 dependencies {
@@ -27,7 +40,6 @@ dependencies {
     testImplementation depend.junit
     androidTestImplementation depend.textRunner
     androidTestImplementation depend.espressoCore
-
 
 
 }

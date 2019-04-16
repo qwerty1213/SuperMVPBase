@@ -50,7 +50,7 @@ public class TestImpl  implements TestPresenter {
                         if (isFirstPage(page)) {
                             view.testResponse(bean, Integer.parseInt(nextPageIndex));
                         } else {
-                            view.LoadMoreResponse(bean, Integer.parseInt(nextPageIndex));
+                            view.loadMoreResponse(bean, Integer.parseInt(nextPageIndex));
                         }
                     }
 

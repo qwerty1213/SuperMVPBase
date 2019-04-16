@@ -102,6 +102,8 @@ dependencies {
     api depend.recyclerview
     //adapter刷新加载
     api depend.baseRecyclerViewAdapterHelper
+    //tabview
+    api depend.bottomTabView
 
 
     api project(path: ':utilslibrary')

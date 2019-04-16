@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="200dp"
+    android:layout_marginTop="15dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@color/text_gray" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:text="TextView" />
-</android.support.constraint.ConstraintLayout>
+        style="@style/text_white12_ww"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:lineSpacingMultiplier="1.2"
+        android:text="所有人都以为霍阑厌恶她，连她自己也这么认为，却没人知道霍阑想了她三年，念了她三年，终于失控了……" />
+</com.zhy.autolayout.AutoRelativeLayout>

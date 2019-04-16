@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/MatchMatch.Vertical">
 
-    <include layout="@layout/toolbar_layout" />
-
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefreshLayout"
-        style="@style/MatchMatch">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            style="@style/RecyclerViewStyleMatchMatch" />
-
-    </android.support.v4.widget.SwipeRefreshLayout>
+    <com.ycl.tabview.library.TabView
+        android:id="@+id/tabView"
+        style="@style/MatchMatch"
+        app:imageViewTextViewMargin="2dip"
+        app:tab_imageViewHeight="15dp"
+        app:tab_imageViewWidth="15dp"
+        app:tab_tabViewDefaultPosition="0"
+        app:tab_tabViewGravity="bottom"
+        app:tab_tabViewHeight="40dp"
+        app:tab_textViewSelColor="#ff4800"
+        app:tab_textViewSize="10sp"
+        app:tab_textViewUnSelColor="@android:color/darker_gray" />
 
 </com.zhy.autolayout.AutoLinearLayout>

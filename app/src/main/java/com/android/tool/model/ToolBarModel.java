@@ -1,5 +1,6 @@
 package com.android.tool.model;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -15,14 +16,14 @@ import com.android.tool.R;
 public class ToolBarModel {
     private TextView txtTitle, txtRight;
     private ImageView ivToolbarBack, ivRight;
-    private AppCompatActivity context;
+    private Activity activity;
     private Toolbar toolbar;
 
-    public ToolBarModel(AppCompatActivity context, Toolbar toolbar) {
-        this.context = context;
+    public ToolBarModel(Activity activity, Toolbar toolbar) {
+        this.activity = activity;
         this.toolbar = toolbar;
-        context.setSupportActionBar(toolbar);
-        context.getSupportActionBar().setDisplayShowTitleEnabled(false);
+        ((AppCompatActivity) activity).setSupportActionBar(toolbar);
+        ((AppCompatActivity) activity).getSupportActionBar().setDisplayShowTitleEnabled(false);
         ivToolbarBack = (ImageView) toolbar.findViewById(R.id.iv_back);
         ivRight = (ImageView) toolbar.findViewById(R.id.iv_right);
         txtTitle = (TextView) toolbar.findViewById(R.id.txt_title);
@@ -37,7 +38,7 @@ public class ToolBarModel {
         ivToolbarBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.finish();
+                activity.finish();
             }
         });
         return this;

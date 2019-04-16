@@ -1,33 +1,26 @@
 package com.android.tool.ui.main;
 
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.android.tool.R;
-import com.android.tool.model.TestModel;
-import com.android.tool.presenter.TestPresenter;
-import com.android.tool.presenter.impl.TestImpl;
 import com.android.tool.ui.base.BaseActivitys;
-import com.android.tool.ui.main.adapter.TestAdapter;
-import com.android.tool.ui.view.TestBaseView;
-import com.android.tool.widget.CustomLoadMoreView;
-import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.android.tool.ui.main.fragment.Fragment0;
+import com.android.tool.ui.main.fragment.Fragment1;
+import com.android.tool.ui.main.fragment.Fragment2;
+import com.android.tool.ui.main.fragment.Fragment3;
+import com.ycl.tabview.library.TabView;
+import com.ycl.tabview.library.TabViewChild;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 
-public class MainActivity extends BaseActivitys implements TestAdapter.OnItemClickListener, TestBaseView, SwipeRefreshLayout.OnRefreshListener, BaseQuickAdapter.RequestLoadMoreListener {
-    @BindView(R.id.recyclerView)
-    RecyclerView mRecyclerView;
-    @BindView(R.id.swipeRefreshLayout)
-    SwipeRefreshLayout mSwipeRefreshLayout;
-    private List<TestModel.RowsBean> mList = new ArrayList<>();
-    private TestAdapter mAdapter;
-    private TestPresenter testPresenter;
+public class MainActivity extends BaseActivitys implements TabView.OnTabChildClickListener {
+    @BindView(R.id.tabView)
+    TabView tabView;
 
     @Override
     public void initParms(Bundle mBundle) {
@@ -41,79 +34,39 @@ public class MainActivity extends BaseActivitys implements TestAdapter.OnItemCli
 
     @Override
     public void initView() {
-        testPresenter = new TestImpl(this);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
-        mAdapter = new TestAdapter(mActivity, R.layout.test_item, mList);
-        mAdapter.setLoadMoreView(new CustomLoadMoreView());
-        mAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
-        mRecyclerView.setAdapter(mAdapter);
-        showToolbar().setBack().setTitle("mvp");
+        //start add data
+        List<TabViewChild> tabViewChildList = new ArrayList<>();
+        TabViewChild tabViewChild00 = new TabViewChild(R.mipmap.tab01_sel, R.mipmap.tab01_unsel, "首页", Fragment0.newInstance("首页"));
+        TabViewChild tabViewChild01 = new TabViewChild(R.mipmap.tab02_sel, R.mipmap.tab02_unsel, "分类", Fragment1.newInstance("分类"));
+        TabViewChild tabViewChild02 = new TabViewChild(R.mipmap.tab03_sel, R.mipmap.tab03_unsel, "资讯", Fragment2.newInstance("资讯"));
+        TabViewChild tabViewChild03 = new TabViewChild(R.mipmap.tab05_sel, R.mipmap.tab05_unsel, "我的", Fragment3.newInstance("我的"));
+        tabViewChildList.add(tabViewChild00);
+        tabViewChildList.add(tabViewChild01);
+        tabViewChildList.add(tabViewChild02);
+        tabViewChildList.add(tabViewChild03);
+        //end add data
+        tabView.setTabViewDefaultPosition(0);
+        tabView.setTabViewChild(tabViewChildList, getSupportFragmentManager());
     }
 
     @Override
     public void initListener() {
-        mAdapter.setOnItemClickListener(this);
-        mSwipeRefreshLayout.setOnRefreshListener(this);
-        mAdapter.setOnLoadMoreListener(this, mRecyclerView);
+        tabView.setOnTabChildClickListener(this);
     }
 
     @Override
     public void doBusiness() {
-        onRefresh();
+
     }
 
+    /**
+     * tab切换监听
+     * @param position
+     * @param imageView
+     * @param textView
+     */
     @Override
-    public void onRefresh() {
-        testPresenter.getRequested(mActivity, 1);
-    }
+    public void onTabChildClick(int position, ImageView imageView, TextView textView) {
 
-    @Override
-    public void onLoadMoreRequested() {
-        testPresenter.getRequested(mActivity, testPresenter.getPage());
-    }
-
-    @Override
-    public void testResponse(TestModel bean, int page) {
-        mList.clear();
-        mAdapter.addData(bean.getRows());
-        mAdapter.notifyDataSetChanged();
-        mAdapter.setEnableLoadMore(true);
-        mSwipeRefreshLayout.setRefreshing(false);
-        if (page == -1) {
-            mAdapter.loadMoreEnd();
-        } else {
-            mAdapter.loadMoreComplete();
-        }
-    }
-
-    @Override
-    public void LoadMoreResponse(TestModel bean, int page) {
-        mAdapter.addData(bean.getRows());
-        if (page == -1) {
-            mAdapter.loadMoreEnd();
-        } else {
-            mAdapter.loadMoreComplete();
-        }
-    }
-
-    @Override
-    public void showLoading() {
-        showDialogLoading();
-    }
-
-
-    @Override
-    public void hideLoading() {
-        dismissDialogLoading();
-    }
-
-    @Override
-    public void showError(String errMsg) {
-        dismissDialogLoading();
-    }
-
-    @Override
-    public void onItemClick(TestModel.RowsBean bean, int position) {
-        showToast("ceshi");
     }
 }
