@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchMatch.Vertical">
+
+    <include layout="@layout/title_text_text_login_layout" />
+
+    <com.flyco.tablayout.SlidingTabLayout
+        android:id="@+id/slidingTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        tl:tl_indicator_color="@color/c_zhuti"
+        tl:tl_indicator_corner_radius="0dp"
+        tl:tl_indicator_height="5dp"
+        tl:tl_indicator_width="20dp"
+        tl:tl_indicator_width_equal_title="true"
+        tl:tl_tab_space_equal="true"
+        tl:tl_textBold="BOTH"
+        tl:tl_textSelectColor="@color/c_33"
+        tl:tl_textUnselectColor="@color/c_66"
+        tl:tl_textsize="18sp"
+        tl:tl_underline_color="@color/transparent"
+        tl:tl_underline_height="0.5dp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        style="@style/MatchMatch"
+        android:overScrollMode="never" />
+</LinearLayout>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_my_list"
+    style="@style/MatchMatch.Vertical"
+    android:layout_below="@+id/view_menu_line"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/ll_course_history"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            style="@style/text_black15_wrap"
+            android:layout_marginStart="11dp"
+            android:layout_weight="1"
+            android:text="@string/text_course_history" />
+
+        <include layout="@layout/next_layout" />
+    </LinearLayout>
+
+    <include layout="@layout/include_lines_f7f7" />
+
+    <LinearLayout
+        android:id="@+id/ll_teach_currency"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            style="@style/text_black15_wrap"
+            android:layout_marginStart="11dp"
+            android:layout_weight="1"
+            android:text="学习金兑换" />
+
+        <include layout="@layout/next_layout" />
+    </LinearLayout>
+
+    <include layout="@layout/include_lines_f7f7" />
+
+    <LinearLayout
+        android:id="@+id/ll_commodity_exchange"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            style="@style/text_black15_wrap"
+            android:layout_marginStart="11dp"
+            android:layout_weight="1"
+            android:text="@string/text_commodity_exchange" />
+
+        <include layout="@layout/next_layout" />
+    </LinearLayout>
+
+    <include layout="@layout/include_lines_f7f7" />
+
+    <LinearLayout
+        android:id="@+id/ll_address_management"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            style="@style/text_black15_wrap"
+            android:layout_marginStart="11dp"
+            android:layout_weight="1"
+            android:text="@string/text_address_management" />
+
+        <include layout="@layout/next_layout" />
+    </LinearLayout>
+
+    <include layout="@layout/include_lines_f7f7" />
+
+    <LinearLayout
+        android:id="@+id/ll_appointment"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            style="@style/text_black15_wrap"
+            android:layout_marginStart="11dp"
+            android:layout_weight="1"
+            android:text="@string/text_appointment_center" />
+
+        <include layout="@layout/next_layout" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/ll_appointment_bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/c_f7" />
+
+    <LinearLayout
+        android:id="@+id/ll_feekback"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            style="@style/text_black15_wrap"
+            android:layout_marginStart="11dp"
+            android:layout_weight="1"
+            android:text="@string/feekback" />
+
+        <include layout="@layout/next_layout" />
+    </LinearLayout>
+
+    <include layout="@layout/include_lines_f7f7" />
+
+    <LinearLayout
+        android:id="@+id/ll_recommend_our"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            style="@style/text_black15_wrap"
+            android:layout_marginStart="11dp"
+            android:layout_weight="1"
+            android:text="@string/text_recommend_our" />
+
+        <include layout="@layout/next_layout" />
+    </LinearLayout>
+
+    <include layout="@layout/include_lines_f7f7" />
+
+    <LinearLayout
+        android:id="@+id/ll_use_helper"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            style="@style/text_black15_wrap"
+            android:layout_marginStart="11dp"
+            android:layout_weight="1"
+            android:text="@string/text_use_helper" />
+
+        <include layout="@layout/next_layout" />
+    </LinearLayout>
+
+    <include layout="@layout/include_lines_f7f7" />
+</LinearLayout>
+

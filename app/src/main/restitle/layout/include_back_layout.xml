@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/img_back"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:background="?android:actionBarItemBackground"
+    android:paddingBottom="17dp"
+    android:paddingLeft="17dp"
+    android:paddingRight="17dp"
+    android:paddingTop="17dp"
+    android:src="@mipmap/go_back_icon" />

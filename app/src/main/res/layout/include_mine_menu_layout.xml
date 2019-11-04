@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_menu_layout"
+    style="@style/MatchWrap.Horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="205dp"
+    android:layout_marginEnd="10dp"
+    android:background="@mipmap/go_back_icon">
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/ll_my_order"
+        style="@style/WrapMatch.Vertical"
+        android:layout_marginTop="15dp"
+        android:layout_weight="1"
+        android:background="?android:actionBarItemBackground"
+        android:gravity="center"
+        android:paddingStart="5dp">
+
+        <ImageView
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            style="@style/text_c7a7a_12_wrap"
+            android:layout_marginTop="10dp"
+            android:text="@string/text_my_order" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/ll_my_course"
+        style="@style/WrapMatch.Vertical"
+        android:layout_marginTop="15dp"
+        android:layout_weight="1"
+        android:background="?android:actionBarItemBackground"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            style="@style/text_c7a7a_12_wrap"
+            android:layout_marginTop="10dp"
+            android:text="@string/text_my_course" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/ll_my_collection"
+        style="@style/WrapMatch.Vertical"
+        android:layout_marginTop="15dp"
+        android:layout_weight="1"
+        android:background="?android:actionBarItemBackground"
+        android:gravity="center">
+
+
+        <ImageView
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            style="@style/text_c7a7a_12_wrap"
+            android:layout_marginTop="10dp"
+            android:text="@string/text_my_collection" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/ll_cache_record"
+        style="@style/WrapMatch.Vertical"
+        android:layout_marginTop="15dp"
+        android:layout_weight="1"
+        android:background="?android:actionBarItemBackground"
+        android:gravity="center"
+        android:paddingEnd="5dp">
+
+        <ImageView
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            style="@style/text_c7a7a_12_wrap"
+            android:layout_marginTop="10dp"
+            android:text="@string/text_cache_record" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>

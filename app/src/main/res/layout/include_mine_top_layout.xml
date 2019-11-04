@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="235dp"
+    android:background="@mipmap/ic_launcher">
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/ll_login"
+        style="@style/WrapWrap.Horizontal"
+        android:layout_below="@+id/iv_setting"
+        android:layout_marginStart="26dp"
+        android:background="?android:actionBarItemBackground">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_rounded"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/go_back_icon"
+            app:riv_border_width="0dp"
+            app:riv_corner_radius="180dp" />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            style="@style/WrapWrap.Vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp">
+
+            <TextView
+                android:id="@+id/txt_nick_name"
+                style="@style/text_white17_wrap"
+                android:text="登录/注册"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_signature"
+                style="@style/text_e7e7_12_wrap"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:text="修改个人资料" />
+        </com.zhy.autolayout.AutoLinearLayout>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="10dp"
+        android:background="?android:actionBarItemBackground"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        style="@style/MatchWrap"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp">
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/ll_teach_currency_top"
+            style="@style/WrapWrap.Vertical"
+            android:layout_marginEnd="57dp"
+            android:layout_toStartOf="@+id/view"
+            android:background="?android:actionBarItemBackground"
+            android:gravity="center">
+
+            <com.zhy.autolayout.AutoLinearLayout style="@style/WrapWrap.Horizontal">
+
+                <TextView
+                    android:id="@+id/txt_teach_currency_num"
+                    style="@style/text_white22_wrap"
+                    android:text="0" />
+
+                <TextView
+                    style="@style/text_white12_wrap"
+                    android:layout_marginStart="6dp"
+                    android:text="个" />
+
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <TextView
+                style="@style/text_e7e7_15_wrap"
+                android:layout_marginTop="1dp"
+                android:text="学习金" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="1dp"
+            android:layout_height="12dp"
+            android:layout_centerInParent="true"
+            android:background="@color/white" />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/ll_coupons_top"
+            style="@style/WrapWrap.Vertical"
+            android:layout_marginStart="57dp"
+            android:layout_toEndOf="@+id/view"
+            android:background="?android:actionBarItemBackground"
+            android:gravity="center">
+
+            <com.zhy.autolayout.AutoLinearLayout style="@style/WrapWrap.Horizontal">
+
+                <TextView
+                    android:id="@+id/txt_coupons_num"
+                    style="@style/text_white22_wrap"
+                    android:text="0" />
+
+                <TextView
+                    style="@style/text_white12_wrap"
+                    android:layout_marginStart="6dp"
+                    android:text="张" />
+
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <TextView
+                style="@style/text_e7e7_15_wrap"
+                android:layout_marginTop="1dp"
+                android:text="优惠券" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+</com.zhy.autolayout.AutoRelativeLayout>

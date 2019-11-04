@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="dialog_radius_size">5dp</dimen>
+    <dimen name="dialog_bottom_dialog_radius_size">0dp</dimen>
+    <dimen name="dialog_radius_size_bottom">10dp</dimen>
+</resources>

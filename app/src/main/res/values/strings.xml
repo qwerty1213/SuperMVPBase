@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">tool</string>
+    <string name="app_name">SuperMVPBase</string>
 
     <string name="network_error">网络异常</string>
     <string name="network_timeout">网络超时</string>
@@ -9,4 +9,25 @@
     <string name="brvah_loading">正在加载中...</string>
     <string name="brvah_load_failed">加载失败，请点我重试</string>
     <string name="brvah_load_end">没有更多数据</string>
+    //个人中心
+    <string name="text_my_order" translatable="false">我的订单</string>
+    <string name="text_my_collection" translatable="false">我的收藏</string>
+    <string name="text_commodity_exchange" translatable="false">课程兑换</string>
+    <string name="text_my_course" translatable="false">我的课程</string>
+    <string name="text_course_history" translatable="false">课程历史</string>
+    <string name="text_my_balance" translatable="false">余额(0)</string>
+    <string name="text_cache_record" translatable="false">我的缓存</string>
+    <string name="text_use_helper" translatable="false">使用帮助</string>
+    <string name="text_address_management" translatable="false">地址管理</string>
+    <string name="text_appointment_center" translatable="false">预约中心</string>
+    <string name="text_online_customer_service" translatable="false">客服</string>
+    <string name="text_recommend_our" translatable="false">推荐我们</string>
+    <string name="feekback" translatable="false">意见反馈</string>
+    <string name="text_my_settings" translatable="false">设置</string>
+    <string name="text_clear_cache" translatable="false">清理缓存</string>
+    <string name="text_setting_password" translatable="false">设置密码</string>
+    <string name="text_change_password" translatable="false">修改密码</string>
+    <string name="text_update_app" translatable="false">更新</string>
+    <string name="text_logout" translatable="false">退出账号</string>
+    <string name="please_enter_your_password_again" translatable="false">请再次输入密码</string>
 </resources>

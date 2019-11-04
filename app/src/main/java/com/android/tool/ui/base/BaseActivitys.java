@@ -73,17 +73,21 @@ public abstract class BaseActivitys extends AppCompatActivity {
     /**
      * 透明状态栏  字体颜色   跳转动画
      */
-    protected void steepSetStatusBarTranslucent() {
+    protected void steepSetStatusBarTranslucent(boolean isSetStatusBar, boolean isIntentAnim) {
+//        if (isIntentAnim) {//跳转动画
+//            AnimUtil.enterTransition(mActivity, 300);
+//        }
         XStatusBar.newColorBuilder()
                 .statusBarTextColor(true)
-                .statusColor(color(R.color.text_black))  // 状态栏颜色
+                .statusColor(color(R.color.white))  // 状态栏颜色
                 .statusDepth(0)                          // 状态栏颜色深度
                 .applyNav(false)                           // 是否应用到导航栏
-                .navColor(color(R.color.text_black))       // 导航栏颜色
+                .navColor(color(R.color.black))       // 导航栏颜色
                 .navDepth(50)                             // 导航栏颜色深度
                 .build(this)
                 .apply();
     }
+
 
 
     protected ToolBarModel showToolbar() {
