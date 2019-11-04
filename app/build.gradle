@@ -4,12 +4,12 @@ def depend = rootProject.ext.dependencies
 android {
     compileSdkVersion config.compileSdkVersion
     defaultConfig {
-        applicationId applicationId
+        applicationId "com.android.tool"
         minSdkVersion config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
         versionCode config.versionCode
         versionName config.versionName
-        testInstrumentationRunner config.androidJUnitRunner
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         ndk {
             //选择要添加的对应cpu类型的.so库。
@@ -21,6 +21,12 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.debug
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -43,6 +49,7 @@ android {
                             'src/main/res',//main
                             'src/main/resdialog',//dialog
                             'src/main/restoolbar',//toolbar
+                            'src/main/restitle',//标题
                     ]
         }
     }
@@ -65,7 +72,7 @@ android {
     android.applicationVariants.all { variant ->
         variant.outputs.all {
             // SXLS_时间_渠道名_版本名.apk  还可以拼接其他app内容：variant.versionCode  variant.buildType.name
-            outputFileName = "Tool_${releaseTime()}_${variant.versionName}_${variant.name}.apk"
+            outputFileName = "YYKT_${releaseTime()}_${variant.versionName}_${variant.name}.apk"
         }
     }
 }
@@ -82,6 +89,7 @@ dependencies {
     testImplementation depend.junit
     androidTestImplementation depend.textRunner
     androidTestImplementation depend.espressoCore
+    api depend.flycoTabLayoutLib
     //注解
     api depend.butterknife
     annotationProcessor depend.butterknifeCompiler
@@ -105,8 +113,7 @@ dependencies {
     api depend.baseRecyclerViewAdapterHelper
     //tabview
     api depend.bottomTabView
-
+    api depend.roundedimageview
 
     api project(path: ':utilslibrary')
-
 }
