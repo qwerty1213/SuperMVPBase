@@ -52,6 +52,9 @@ ext {
             roundedimageview      : "com.makeramen:roundedimageview:2.2.1",
             // ------------- tab -------------
             flycoTabLayoutLib     : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",
-
+            // ------------- 带边圆头像 -------------
+            circularImageview     : "com.mikhaellopez:circularimageview:3.0.2",
+            skeleton              : "com.ethanhua:skeleton:1.1.1",
+            shimmerlayout         : "io.supercharge:shimmerlayout:2.1.0",
     ]
 }

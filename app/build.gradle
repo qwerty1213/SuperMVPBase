@@ -114,6 +114,9 @@ dependencies {
     //tabview
     api depend.bottomTabView
     api depend.roundedimageview
-
+    api depend.circularImageview
+    api depend.skeleton
+    api depend.shimmerlayout
     api project(path: ':utilslibrary')
+
 }

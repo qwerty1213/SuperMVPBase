@@ -1,5 +1,7 @@
 package com.android.tool;
 
+import android.app.Activity;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -7,6 +9,8 @@ import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 import android.util.DisplayMetrics;
 
+import com.android.tool.widget.swipeback.ActivityLifecycleHelper;
+import com.bumptech.glide.request.target.ViewTarget;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
@@ -15,19 +19,20 @@ import com.lzy.okgo.cookie.store.DBCookieStore;
 import com.lzy.okgo.https.HttpsUtils;
 import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.lzy.okgo.model.HttpParams;
-
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
-
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.X509TrustManager;
-
 import okhttp3.OkHttpClient;
 
 public class BaseApplication extends MultiDexApplication {
+    private ActivityLifecycleHelper mActivityLifecycleHelper;
+    private List<Activity> mActivityList;
     /**
      * 获取全局的上下文
      */
@@ -36,10 +41,16 @@ public class BaseApplication extends MultiDexApplication {
     public static SharedPreferences preferences;
     public static int screenWidth, screenHeight;
     public static DisplayMetrics displayMetrics;
+    final String avPlayDownloadFileName = "account_sp";
+
+    private NotificationManager mNotificationManager;
+    private SharedPreferences accountSp;
+    private String TAG = "BaseApplication";
+
     // 友盟AppKey
     public static final String UM_APPID = "5864e5fea32511679e001545";
     // 友盟Channel
-    public static final String UM_CHANNEL = "teacher1211";
+    public static final String UM_CHANNEL = "sx1211";
     // 微信AppID
     public static final String WX_APPID = "wxbb6f053a1ca76cfb";
     // 微信AppSecret
@@ -53,6 +64,11 @@ public class BaseApplication extends MultiDexApplication {
     // QQAppSecret
     public static final String QQ_APP_SECRET = "V8mA9mAntkF3HvCG";
 
+
+
+    public ActivityLifecycleHelper getActivityLifecycleHelper() {
+        return mActivityLifecycleHelper;
+    }
     public synchronized static BaseApplication getInstance() {
         if (null == mInstance) {
             mInstance = new BaseApplication();
@@ -62,20 +78,46 @@ public class BaseApplication extends MultiDexApplication {
 
     @Override
     public void onCreate() {
+
         super.onCreate();
+        ViewTarget.setTagId(R.id.tag_glide);
         mContext = getApplicationContext();
         mInstance = this;
+        mActivityList = new LinkedList<>();
+
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        //侧滑返回
+        registerActivityLifecycleCallbacks(mActivityLifecycleHelper = new ActivityLifecycleHelper());
         initDisplayMetrics();
+        //优先调用进行组件加载，有条件的情况下可以放到application启动时候的恰当时机调用
+        UnceHandlerInit();
         initOkGo();
 
     }
+
+
+
+
+
 
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         MultiDex.install(this);
     }
+
+
+    /**
+     * 程序奔溃重启操作
+     */
+    private void UnceHandlerInit() {
+        //设置该CrashHandler为程序的默认处理器（程序奔溃重启操作）
+//        UnCeHandler catchExcep = new UnCeHandler(this);
+//        Thread.setDefaultUncaughtExceptionHandler(catchExcep);
+    }
+
+
 
     /**
      * 获取屏幕宽高
@@ -86,10 +128,11 @@ public class BaseApplication extends MultiDexApplication {
         screenHeight = displayMetrics.heightPixels;
     }
 
-    @Override
-    public void onTerminate() {
-        super.onTerminate();
-    }
+
+
+
+
+
 
     /**
      * okGo网络请求初始化设置
@@ -100,7 +143,6 @@ public class BaseApplication extends MultiDexApplication {
 //        headers.put("commonHeaderKey1", "commonHeaderValue1");    //header不支持中文，不允许有特殊字符
         //param支持中文,直接传,不要自己编码
         HttpParams params = new HttpParams();
-//        params.put(TOKEN, PUtil.getPreferences(PUtil.TOKEN_KEY, ""));
         //----------------------------------------------------------------------------------------//
 
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
@@ -142,7 +184,7 @@ public class BaseApplication extends MultiDexApplication {
                 .setCacheMode(CacheMode.NO_CACHE)               //全局统一缓存模式，默认不使用缓存，可以不传
                 .setCacheTime(CacheEntity.CACHE_NEVER_EXPIRE)   //全局统一缓存时间，默认永不过期，可以不传
                 .setRetryCount(3)                               //全局统一超时重连次数，默认为三次，那么最差的情况会请求4次(一次原始请求，三次重连请求)，不需要可以设置为0
-//                .addCommonHeaders(headers)                      //全局公共头
+//                .addCommonHeaders(headers)                    //全局公共头
                 .addCommonParams(params);                       //全局公共参数
     }
 
@@ -182,4 +224,73 @@ public class BaseApplication extends MultiDexApplication {
             return true;
         }
     }
+
+    public void addActivity(Activity activity) {
+        // 判断当前集合中不存在该Activity
+        if (!mActivityList.contains(activity)) {
+            mActivityList.add(activity);//把当前Activity添加到集合中
+        }
+    }
+
+    /**
+     * 销毁单个Activity
+     */
+    public void removeActivity(Activity activity) {
+        if (mActivityList.contains(activity)) {//判断当前集合中存在该Activity
+            mActivityList.remove(activity);//从集合中移除
+            activity.finish();//销毁当前Activity
+        }
+    }
+
+    public void exit() {
+        try {
+            for (Activity activity : mActivityList) {
+                if (activity != null)
+                    activity.finish();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            System.exit(0);
+        }
+    }
+
+    /**
+     * 获取activity是否存在
+     */
+    public boolean currentActivity(Class<?> cls) {
+        for (Activity activity : mActivityList) {
+            if (activity.getClass().equals(cls)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void exitkillProcess() {
+        for (Activity activity : mActivityList) {
+            if (activity != null)
+                activity.finish();
+        }
+        //杀死该应用进程
+        android.os.Process.killProcess(android.os.Process.myPid());
+    }
+
+
+
+
+
+
+    private int drmServerPort;
+
+    public int getDrmServerPort() {
+        return drmServerPort;
+    }
+
+    public void setDrmServerPort(int drmServerPort) {
+        this.drmServerPort = drmServerPort;
+    }
+
+
+
 }

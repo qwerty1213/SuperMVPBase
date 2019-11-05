@@ -6,21 +6,24 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:actionBarStyle">@style/actionbar_def_style</item>
-        <item name="android:textColorPrimary">@android:color/white</item>
-        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowBackground">@color/white</item>
         <item name="android:windowAnimationStyle">@style/activityAnimation</item>
     </style>
 
-    <style name="actionbar_def_style" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- 在样式里面直接替换掉actionbar的背景，避免在有的窗口进入慢时导致进入时显示系统默认的actionbar -->
-        <item name="android:background">@drawable/actionbar_bottom_bg</item>
-        <!-- 在样式里面去掉acionbar的应用图标和标题 -->
-        <item name="android:displayOptions">useLogo</item>
-        <item name="android:fitsSystemWindows">true</item>
-
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="ThemeSplash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@mipmap/splash_bottom</item>
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <!-- animation 样式 -->
     <style name="activityAnimation" parent="@android:style/Animation">
         <item name="android:activityOpenEnterAnimation">@anim/slide_right_in</item>
@@ -29,7 +32,17 @@
         <item name="android:activityCloseExitAnimation">@anim/slide_right_out</item>
     </style>
 
-    <style name="loadingStyle">
+
+    <style name="xs_title_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <!-- my loading dialog -->
+    <style name="MyDialogStyle">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowFrame">@null</item>
         <item name="android:windowNoTitle">true</item>
@@ -40,28 +53,165 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
+    <style name="EmptyTextStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="CustomProgressStyle_31dip" parent="@android:style/Widget.ProgressBar.Large">
+        <item name="android:minWidth">31dip</item>
+        <item name="android:maxWidth">31dip</item>
+        <item name="android:minHeight">31dip</item>
+        <item name="android:maxHeight">31dip</item>
+    </style>
+
+    <style name="loading_dialog_style" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+    </style>
+
     <style name="circleProgressBarStyle">
         <item name="android:indeterminateDrawable">@drawable/rotate_loading_icon</item>
         <item name="android:indeterminateDuration">1500</item>
     </style>
 
-    <style name="text_white17_wrap" parent="WrapWrap">
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">17sp</item>
+    <style name="text_gray8_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="text_gray10_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="text_c7777_10_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_7777</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="text_c7777_12_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_7777</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_c7777_13_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_7777</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_c666_9_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_666</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="text_c666_11_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_666</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="text_c666_12_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_666</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_c666_11_mwrap" parent="MatchWrap">
+        <item name="android:textColor">@color/c_666</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="text_c666_13_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_666</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_c666_14_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_666</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_c666_16_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_666</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_gray12_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_gray13_ww" parent="WrapWrap">
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_gray14_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_c9a9a_13_mwrap" parent="MatchWrap">
+        <item name="android:textColor">@color/c_9a9a</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_cb3b3_13_ww" parent="WrapWrap">
+        <item name="android:textColor">@color/c_b3b3</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_6666_13_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_6666</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_8a_13_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_gray16_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_gray18_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="text_c99_11_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_99</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="text_c99_12_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_99</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_c99_13_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_99</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_c99_14_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_99</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_c99_14_mwrap" parent="MatchWrap">
+        <item name="android:textColor">@color/c_99</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
     <style name="text_e7e7_12_wrap" parent="WrapWrap">
         <item name="android:textColor">@color/c_E7E7</item>
-        <item name="android:textSize">12sp</item>
-    </style>
-
-    <style name="text_white22_wrap" parent="WrapWrap">
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">22sp</item>
-    </style>
-
-    <style name="text_white12_wrap" parent="WrapWrap">
-        <item name="android:textColor">@color/white</item>
         <item name="android:textSize">12sp</item>
     </style>
 
@@ -70,40 +220,154 @@
         <item name="android:textSize">15sp</item>
     </style>
 
-    <style name="text_black14_ww" parent="WrapWrap">
-        <item name="android:textColor">@color/text_black</item>
+    <style name="text_cacac_13_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_acac</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_cff26_11_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_ff26</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="text_cff26_12_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_ff26</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_cff26_14_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_ff26</item>
         <item name="android:textSize">14sp</item>
     </style>
 
-    <style name="text_black18_ww" parent="WrapWrap">
+    <style name="text_cff26_14_mwrap" parent="MatchWrap">
+        <item name="android:textColor">@color/c_ff26</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_cff26_15_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_ff26</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="text_cff26_16_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_ff26</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_cff26_20_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_ff26</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="text_cffda_11_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_ffda</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="text_black10_wrap" parent="WrapWrap">
         <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="text_c33_10_mwrap" parent="MatchWrap">
+        <item name="android:textColor">@color/c_33</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_c33_14_ww" parent="WrapWrap">
+        <item name="android:textColor">@color/c_33</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_c33_12_ww" parent="WrapWrap">
+        <item name="android:textColor">@color/c_33</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_c33_15_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_33</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="text_c44_16_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_44</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_c33_11_ww" parent="WrapWrap">
+        <item name="android:textColor">@color/c_33</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="text_c33_11_mwrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_33</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="text_c33_13_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_33</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_c1f5b_11_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_1f5b</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="text_c1c1_17_wrap" parent="WrapWrap">
+        <item name="android:textColorHint">@color/c_c1c1</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="text_green_14_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_67d1</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_green_16_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_67d1</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_black9_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="text_black12_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_black13_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_c3232_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_3232</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_c3232_18_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_3232</item>
         <item name="android:textSize">18sp</item>
     </style>
 
-    <!-- white  -->
-    <style name="text_white12_ww" parent="WrapWrap">
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">12sp</item>
+    <style name="text_c3232_20_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_3232</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="text_white14_ww" parent="WrapWrap">
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">14sp</item>
-    </style>
-    <!-- white  -->
-    <style name="text_gray12_ww" parent="WrapWrap">
-        <item name="android:textColor">@color/text_gray</item>
-        <item name="android:textSize">12sp</item>
+    <style name="text_c3232_22_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_3232</item>
+        <item name="android:textSize">22sp</item>
     </style>
 
-    <style name="text_gray14_mw" parent="MatchWrap">
-        <item name="android:textColor">@color/text_gray</item>
-        <item name="android:textSize">14sp</item>
-    </style>
-
-    <style name="text_gray14_ww" parent="WrapWrap">
-        <item name="android:textColor">@color/text_gray</item>
-        <item name="android:textSize">14sp</item>
+    <style name="text_c7a7a_11_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_7a7a</item>
+        <item name="android:textSize">11sp</item>
     </style>
 
     <style name="text_c7a7a_12_wrap" parent="WrapWrap">
@@ -111,18 +375,339 @@
         <item name="android:textSize">12sp</item>
     </style>
 
+    <style name="text_black14_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_caaaa_14_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_aaaa</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_c7786_13_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_7786</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_c7786_14_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_7786</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_c8888_12_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_8888</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_c8888_14_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_8888</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
     <style name="text_black15_wrap" parent="WrapWrap">
         <item name="android:textColor">@color/text_black</item>
         <item name="android:textSize">15sp</item>
     </style>
 
-    <style name="title_black16dp_wrap" parent="WrapWrap">
-        <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">@dimen/title_text_size</item>
+    <style name="text_black15_mwrap" parent="MatchWrap">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">15sp</item>
     </style>
 
-    <style name="text_black14_wrap" parent="WrapWrap">
+    <style name="text_black15_mm" parent="MatchMatch">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="text_black13_mwrap" parent="MatchWrap">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_black14_mwrap" parent="MatchWrap">
         <item name="android:textColor">@color/text_black</item>
         <item name="android:textSize">14sp</item>
     </style>
+
+    <style name="text_black14_wrapm" parent="WrapMatch">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_black14_mm" parent="MatchMatch">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_black16_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_black16_wrapm" parent="WrapMatch">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_black16_mm" parent="MatchMatch">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_black16_mwrap" parent="MatchWrap">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_black18_mwrap" parent="MatchWrap">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="text_black22_ww" parent="WrapWrap">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="text_c_33_16_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_33</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_c33_22_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_33</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="text_c_33black16_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_33</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_c_33black16_mwrap" parent="MatchWrap">
+        <item name="android:textColor">@color/c_33</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_black18_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="text_black17_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="text_black20_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="text_white10_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="text_white11_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="text_white12_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_white13_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_white14_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_white14_mwrap" parent="MatchWrap">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_white14_wrapm" parent="WrapMatch">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_white15_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="text_white16_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_white17_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="text_white22_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="text_white30_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="text_white16_mm" parent="MatchMatch">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_red9_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_ff26</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="text_red12_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_ff26</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_red13_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_ff26</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_red14_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_ff26</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_red15_mwrap" parent="MatchWrap">
+        <item name="android:textColor">@color/c_ff26</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="text_red15_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_ff26</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="text_red14_mwrap" parent="MatchWrap">
+        <item name="android:textColor">@color/c_ff26</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_red18_ww" parent="WrapWrap">
+        <item name="android:textColor">@color/c_ff26</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="text_red20_mw" parent="MatchWrap">
+        <item name="android:textColor">@color/c_ff26</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="text_white15_110wrap">
+        <item name="android:layout_width">110dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="text_c3078_13_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_3078</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="text_acac_8_ww" parent="WrapWrap">
+        <item name="android:textColor">@color/c_acac</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="text_acac_10_ww" parent="WrapWrap">
+        <item name="android:textColor">@color/c_acac</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="text_acac_11_ww" parent="WrapWrap">
+        <item name="android:textColor">@color/c_acac</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="text_acac_12_ww" parent="WrapWrap">
+        <item name="android:textColor">@color/c_acac</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_c_4444_11_ww" parent="WrapWrap">
+        <item name="android:textColor">@color/c_4444</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+
+    <style name="RecyclerView_Style_mw" parent="MatchWrap">
+        <item name="android:overScrollMode">never</item>
+    </style>
+
+    <style name="RecyclerView_Style_MatchMatch" parent="MatchMatch">
+        <item name="android:overScrollMode">never</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="RecyclerView_Style_mw_c_ebeb" parent="MatchWrap">
+        <item name="android:overScrollMode">never</item>
+        <item name="android:background">@color/c_ebebeb</item>
+    </style>
+
+    <style name="RecyclerView_Style_MatchMatch_c_f2f4" parent="MatchMatch">
+        <item name="android:overScrollMode">never</item>
+        <item name="android:background">@color/c_f2f4</item>
+    </style>
+
+    <style name="RecyclerView_Style_MatchMatch_c_f1f1" parent="MatchMatch">
+        <item name="android:overScrollMode">never</item>
+        <item name="android:background">@color/c_f1f1</item>
+    </style>
+
+    <style name="RecyclerView_Style_MatchW_c_f2f4" parent="MatchWrap">
+        <item name="android:overScrollMode">never</item>
+        <item name="android:background">@color/c_f2f4</item>
+    </style>
+
+    <style name="RecyclerView_Style_MatchW_cf9f9" parent="MatchWrap">
+        <item name="android:overScrollMode">never</item>
+        <item name="android:background">@color/c_f9f9</item>
+    </style>
+
+    <style name="RecyclerView_Style_MatchWrap" parent="MatchWrap">
+        <item name="android:overScrollMode">never</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="RecyclerView_Style_Match_transparent" parent="MatchMatch">
+        <item name="android:overScrollMode">never</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="RadingStyle" parent="@android:style/Widget.RatingBar">
+        <!-- 定义星星图片 -->
+        <item name="android:progressDrawable">@drawable/layer_live_rating_bar</item>
+        <!-- 根据自定义星星图片的大小,设置相应的值,否则可能显示不全 -->
+        <item name="android:numColumns">5</item>
+    </style>
+
+    <style name="GrantorNoDisplay" parent="Theme.AppCompat.Light.NoActionBar">>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
 </resources>

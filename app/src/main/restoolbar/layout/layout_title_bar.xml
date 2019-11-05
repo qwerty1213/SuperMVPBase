@@ -21,7 +21,7 @@
 
     <TextView
         android:id="@+id/txt_right"
-        style="@style/text_white14_ww"
+        style="@style/text_white14_wrap"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:background="?actionBarItemBackground"

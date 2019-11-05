@@ -7,16 +7,15 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.widget.TextView;
 
-
 import com.android.tool.R;
 import com.android.tool.ui.base.BaseActivitys;
+import com.android.tool.ui.login.fragment.PasswordLoginFragment;
+import com.android.tool.ui.login.fragment.VerificationCodeFragment;
 import com.android.tool.util.ActivityManagementUtil;
 import com.android.tool.util.ResultUtil;
 import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
-
 import java.util.ArrayList;
-
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -50,8 +49,8 @@ public class LoginFragmentActivity extends BaseActivitys implements OnTabSelectL
     @Override
     public void initView() {
 //        txtTitle.setText(R.string.login);
-//        mFragments.add(new PasswordLoginFragment());
-//        mFragments.add(new VerificationCodeFragment());
+        mFragments.add(new PasswordLoginFragment());
+        mFragments.add(new VerificationCodeFragment());
         mAdapter = new MyPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mAdapter);
         mSlidingTabLayout.setViewPager(mViewPager);

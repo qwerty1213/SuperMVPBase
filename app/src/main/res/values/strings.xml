@@ -9,6 +9,63 @@
     <string name="brvah_loading">正在加载中...</string>
     <string name="brvah_load_failed">加载失败，请点我重试</string>
     <string name="brvah_load_end">没有更多数据</string>
+    <string name="press_the_exit_procedure_again" translatable="false">再按一次退出程序</string>
+    //Tab
+    <string name="text_home_page" translatable="false">首页</string>
+    <string name="text_player" translatable="false">点播</string>
+    <string name="text_course" translatable="false">课程</string>
+    <string name="text_test" translatable="false">题库</string>
+    <string name="text_my" translatable="false">我的</string>
+    //登录、注册、发送短信
+    <string name="login" translatable="false">登录</string>
+    <string name="register" translatable="false">注册</string>
+    <string name="moblie_register" translatable="false">手机注册</string>
+    <string name="forget_password" translatable="false">忘记密码?</string>
+    <string name="come_back_password" translatable="false">找回密码</string>
+    <string name="next" translatable="false">下一步</string>
+    <string name="customer_service" translatable="false">注册登录相关问题,请联系客服4006003363</string>
+    <string name="text_third_party" translatable="false">第三方账号登录</string>
+    <string name="china" translatable="false">中国</string>
+    <string name="the_teacher_is_using_artifact" translatable="false">Copyright ©2017-2018 1211</string>
+    <string name="please_enter_your_mobile_number" translatable="false">请输入手机号码</string>
+    <string name="please_enter_your_account_number" translatable="false">请输入账号、手机号码</string>
+    <string name="mobile_password_login" translatable="false">手机密码登录</string>
+    <string name="please_enter_your_password" translatable="false">请输入密码</string>
+    <string name="please_enter_your_nickname" translatable="false">请输入昵称</string>
+    <string name="text_setting_6_20_password" translatable="false">设置6-20位密码</string>
+    <string name="please_enter_your_10_nickname" translatable="false">请填写10个字以内昵称</string>
+    <string name="select_type" translatable="false">选择类型</string>
+    <string name="please_select_type" translatable="false">请选择类型</string>
+    <string name="please_enter_your_verification_code" translatable="false">请输入验证码</string>
+    <string name="verification_code" translatable="false">验证码</string>
+    <string name="img_verification_code" translatable="false">图形验证码</string>
+    <string name="img_verification_code_null" translatable="false">图形验证码不能为空</string>
+    <string name="six_verification_codes_have_been_sent" translatable="false">已发送6位验证码至</string>
+    <string name="please_fill_in_the_graphical_verification_code" translatable="false">请填写图形验证码</string>
+    <string name="get_verification_code" translatable="false">获取验证码</string>
+    <string name="to_resend" translatable="false">重新发送</string>
+    <string name="password_login" translatable="false">密码登陆</string>
+    <string name="this_user_not_null" translatable="false">帐号不能为空</string>
+    <string name="the_phone_number_format_is_not_correct" translatable="false">手机号格式不正确</string>
+    <string name="the_phone_number_is_null" translatable="false">手机号不能为空</string>
+    <string name="verify_that_the_code_cannot_be_empty" translatable="false">验证码不能为空</string>
+    <string name="phone_digits" translatable="false">0123456789</string>
+    <string name="password_digits" translatable="false">0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>
+    <string name="find_password_digits" translatable="false">0123456789abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ`¬!"£$%^*()~=#{}[];':,./?/*-_+</string>
+    <string name="share_success" translatable="false">分享成功</string>
+    <string name="share_fail" translatable="false">分享失败</string>
+    <string name="cancel_share" translatable="false">取消分享</string>
+    <string name="text_cancel" translatable="false">取消</string>
+    <string name="ok" translatable="false">确定</string>
+    <string name="success" translatable="false">成功</string>
+    <string name="error" translatable="false">错误</string>
+    <string name="warning" translatable="false">警告</string>
+    <string name="info" translatable="false">提示</string>
+
+    <string name="loading_network_error" translatable="false">哇哦！网络出现问题了o！</string>
+    <string name="loading_nothing_error" translatable="false">哇哦！没有任何数据o！</string>
+    <string name="loading_error" translatable="false">哇哦！数据遇到异常o！</string>
     //个人中心
     <string name="text_my_order" translatable="false">我的订单</string>
     <string name="text_my_collection" translatable="false">我的收藏</string>

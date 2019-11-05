@@ -40,6 +40,13 @@ public class MyFragment extends BaseFragments  implements ButtonView.OnTabClickL
     @BindView(R.id.ll_appointment_bottom_line)
     View llAppointmentBottomLine;
 //    private CurrencyBalanceBean balanceBean;
+public static MyFragment newInstance(String text) {
+    MyFragment fragmentCommon = new MyFragment();
+    Bundle bundle = new Bundle();
+    bundle.putString("text", text);
+    fragmentCommon.setArguments(bundle);
+    return fragmentCommon;
+}
 
     @Override
     public void initParms(Bundle mBundle) {

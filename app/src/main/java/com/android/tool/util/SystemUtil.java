@@ -1,5 +1,6 @@
 package com.android.tool.util;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
@@ -8,6 +9,10 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Vibrator;
+import android.support.annotation.NonNull;
+
+import com.android.tool.util.permissions.PermissionListener;
+import com.android.tool.util.permissions.PermissionsUtil;
 
 /**
  * 系统工具类
@@ -95,6 +100,27 @@ public class SystemUtil {
     public static void sendSmsWithNumber(Activity activity, String url) {
         Intent sendIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse(url));
         activity.startActivity(sendIntent);
+    }
+    /**
+     * 拨打电话（跳转到拨号界面，用户手动点击拨打）
+     *
+     * @param phoneNum 电话号码
+     */
+    public static void callPhone(final Activity activity, final String phoneNum) {
+        PermissionsUtil.requestPermission(activity, new PermissionListener() {
+            @Override
+            public void permissionGranted(@NonNull String[] permissions) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                Uri data = Uri.parse("tel:" + phoneNum);
+                intent.setData(data);
+                activity.startActivity(intent);
+            }
+
+            @Override
+            public void permissionDenied(@NonNull String[] permissions) {
+                T.customToastCenterShort(activity, Integer.parseInt("用户拒绝了拨打电话权限"));
+            }
+        }, Manifest.permission.READ_PHONE_STATE);
     }
 
     /**
