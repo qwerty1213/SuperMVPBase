@@ -19,6 +19,8 @@ import com.lzy.okgo.cookie.store.DBCookieStore;
 import com.lzy.okgo.https.HttpsUtils;
 import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.lzy.okgo.model.HttpParams;
+import com.readystatesoftware.chuck.ChuckInterceptor;
+
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.LinkedList;
@@ -152,7 +154,7 @@ public class BaseApplication extends MultiDexApplication {
         loggingInterceptor.setColorLevel(Level.INFO);                               //log颜色级别，决定了log在控制台显示的颜色
         builder.addInterceptor(loggingInterceptor);                                 //添加OkGo默认debug日志
         //第三方的开源库，使用通知显示当前请求的log，不过在做文件下载的时候，这个库好像有问题，对文件判断不准确
-        //builder.addInterceptor(new ChuckInterceptor(this));
+        builder.addInterceptor(new ChuckInterceptor(this));
 
         //超时时间设置，默认60秒
         builder.readTimeout(OkGo.DEFAULT_MILLISECONDS, TimeUnit.MILLISECONDS);      //全局的读取超时时间

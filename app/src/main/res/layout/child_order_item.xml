@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_course"
+        android:layout_width="130dp"
+        android:layout_height="70dp"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/zhanwei"
+        app:riv_corner_radius="5dp" />
+
+    <TextView
+        android:id="@+id/txt_course_name"
+        style="@style/text_black14_wrap"
+        android:layout_alignTop="@+id/iv_course"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@+id/iv_course"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="课程名称" />
+
+    <TextView
+        android:id="@+id/txt_course_price"
+        style="@style/text_cff26_12_wrap"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="5dp"
+        android:textStyle=""
+        android:layout_marginStart="10dp"
+        android:layout_alignBottom="@+id/iv_course"
+        android:layout_toEndOf="@+id/iv_course"
+        android:text="价格" />
+
+</com.zhy.autolayout.AutoRelativeLayout>

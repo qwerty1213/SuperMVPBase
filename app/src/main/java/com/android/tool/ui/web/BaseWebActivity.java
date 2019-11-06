@@ -1,4 +1,4 @@
-package com.android.tool.ui.web;//package com.shanxiang.gteacher.ui.com.android.tool.ui.web;
+//package com.android.tool.ui.web;
 //
 //import android.content.Intent;
 //import android.graphics.Bitmap;
@@ -17,21 +17,14 @@ package com.android.tool.ui.web;//package com.shanxiang.gteacher.ui.com.android.
 //import android.widget.LinearLayout;
 //import android.widget.TextView;
 //
+//import com.android.tool.R;
+//import com.android.tool.ui.base.BaseActivitys;
+//import com.android.tool.util.PathUtil;
+//import com.android.tool.util.ResultUtil;
+//import com.android.tool.utility.AppConfig;
 //import com.just.agentweb.AgentWeb;
 //import com.just.agentweb.ChromeClientCallbackManager;
 //import com.lzy.okgo.OkGo;
-//import com.lzy.okgo.model.Response;
-//import com.shanxiang.gteacher.R;
-//import BaseActivitys;
-//import CollectionBean;
-//import ObjectCallback;
-//import ObjectResponse;
-//import AppConfig;
-//import HomePageBean;
-//import CollectionListBean;
-//import PathUtil;
-//import ResultUtil;
-//
 //import butterknife.BindView;
 //import butterknife.OnClick;
 //

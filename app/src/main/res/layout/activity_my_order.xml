@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchMatch.Vertical"
+    android:background="@color/white">
+
+    <include layout="@layout/layout_notification_bar" />
+
+    <LinearLayout
+        style="@style/MatchWrap.Horizontal"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+
+        <include layout="@layout/include_back_layout" />
+
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/slidingTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            tl:tl_indicator_color="@color/c_zhuti"
+            tl:tl_indicator_corner_radius="1.5dp"
+            tl:tl_indicator_height="4dp"
+            tl:tl_indicator_width="15dp"
+            tl:tl_textBold="BOTH"
+            tl:tl_textSelectColor="@color/black"
+            tl:tl_textUnselectColor="@color/c_7b7b"
+            tl:tl_textsize="12sp"
+            tl:tl_underline_color="@color/transparent"
+            tl:tl_underline_height="0.5dp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/c_f2" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        style="@style/MatchMatch"
+        android:overScrollMode="never" />
+</LinearLayout>

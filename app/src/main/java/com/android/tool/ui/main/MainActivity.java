@@ -17,10 +17,10 @@ import android.widget.TextView;
 import com.android.tool.BaseApplication;
 import com.android.tool.R;
 import com.android.tool.ui.base.BaseActivitys;
-import com.android.tool.ui.main.fragment.Fragment0;
-import com.android.tool.ui.main.fragment.Fragment1;
-import com.android.tool.ui.main.fragment.Fragment2;
-import com.android.tool.ui.main.fragment.MyFragment;
+import com.android.tool.ui.fragment.Fragment0;
+import com.android.tool.ui.fragment.Fragment1;
+import com.android.tool.ui.fragment.Fragment2;
+import com.android.tool.ui.fragment.MyFragment;
 
 import com.android.tool.util.NumUtils;
 

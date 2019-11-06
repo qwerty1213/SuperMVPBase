@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_loading"
+    style="@style/MatchMatch"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/lin_loading"
+        style="@style/WrapWrap.Vertical"
+        android:layout_centerInParent="true"
+        android:visibility="visible">
+
+        <com.cunoraz.gifview.library.GifView
+            android:id="@+id/gifview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/text_gray" />
+
+        <TextView
+            android:id="@+id/tv_loading"
+            style="@style/text_black14_wrap"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
+    <include layout="@layout/include_load_status_layout" />
+
+    <com.android.tool.widget.ButtonState
+        android:id="@+id/btn_load"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="0dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="0dp"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:visibility="gone"
+        app:normalBackgroundColor="@color/c_zhuti"
+        app:pressedBackgroundColor="@color/c_ff6"
+        app:radius="5dp"
+        app:unableBackgroundColor="@android:color/holo_red_light"  />
+</RelativeLayout>

@@ -67,4 +67,27 @@ public class PathUtil {
     public static String getSmsRegister() {
         return url + "/account/smsRegister";
     }
+    /**
+     * 找回密码
+     *
+     * @return
+     */
+    public static String getRevisePwd() {
+        return url + "/account/revisePwd";
+    }
+    /**
+     * 个人信息
+     *
+     * @return
+     */
+    public static String getMyInfo() {
+        return url + "/user/getMyInfo";
+    }    /**
+     * 订单
+     *
+     * @return
+     */
+    public static String getMyBookOrderList() {
+        return url + "/user/getMyBookOrderList";
+    }
 }

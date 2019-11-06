@@ -1,21 +1,113 @@
 <resources>
-    <string name="app_name">SuperMVPBase</string>
+    <string name="app_name" translatable="false">山香老师</string>
+    <string name="action_settings" translatable="false">Settings</string>
 
-    <string name="network_error">网络异常</string>
-    <string name="network_timeout">网络超时</string>
-    <string name="json_syntax_error">JSON异常</string>
-    <string name="unknown_error">未知异常</string>
+    <string name="network_errors" translatable="false">网络异常</string>
+    <string name="network_timeout" translatable="false">网络超时</string>
+    <string name="json_syntax_error" translatable="false">JSON异常</string>
+    <string name="unknown_error" translatable="false">未知异常</string>
 
-    <string name="brvah_loading">正在加载中...</string>
-    <string name="brvah_load_failed">加载失败，请点我重试</string>
-    <string name="brvah_load_end">没有更多数据</string>
-    <string name="press_the_exit_procedure_again" translatable="false">再按一次退出程序</string>
+    <string name="another_press_return_key_to_exit" translatable="false">再按一次返回键退出</string>
+    <string name="emptyLoadFail" translatable="false">加载失败,点击重试</string>
+    <string name="loading" translatable="false">加载中,请稍后...</string>
+    <string name="load_failed" translatable="false">加载失败</string>
+    <string name="nothing_error" translatable="false">暂无数据</string>
+    <string name="add_address" translatable="false">添加一个地址吧</string>
+    <string name="nothing_cache" translatable="false">暂无缓存数据哦</string>
+    <string name="reload_the" translatable="false">重新加载</string>
+    <string name="nothing_couser_error" translatable="false">暂无课程哦</string>
+    <string name="nothing_couser_vod_error" translatable="false">暂无课程视频哦</string>
+    <string name="nothing_content_error" translatable="false">沒有相关内容哦</string>
+    <string name="nothing_couser_play_back_error" translatable="false">还没有回放视频哦</string>
+    <string name="nothing_couser_time_table_error" translatable="false">还没有课程表哦</string>
+    <string name="nothing_bigpackage_error" translatable="false">暂无大礼包哦</string>
+    <string name="nothing_want_to_couser_error" translatable="false">没有您想要的课程哦</string>
+    <string name="txt_search" translatable="false">搜一搜</string>
+    <string name="nothing_want_to_collection_error" translatable="false">您还没有任何收藏哦</string>
+    <string name="nothing_live_today_error" translatable="false">今日暂无直播哦</string>
+    <string name="decide_to_delete_the_course" translatable="false">确定删除该课程?</string>
+    <string name="network_error" translatable="false">请速速检查网络</string>
+    <string name="looking_forward" translatable="false">敬请期待!</string>
+    <string name="ok" translatable="false">确定</string>
+    <string name="data_error" translatable="false">数据错误</string>
+    <string name="send_code_failed" translatable="false">发送验证码失败</string>
+    <string name="loading_sms" translatable="false">正在发送...</string>
+    <string name="loading_login" translatable="false">正在登录...</string>
+    <string name="loading_rigister" translatable="false">正在注册...</string>
+    <string name="loading_now" translatable="false">正在加载...</string>
+    <string name="complete" translatable="false">完成</string>
+    <string name="change_success" translatable="false">修改成功</string>
+    <string name="invalid_link" translatable="false">无效链接</string>
+
+    <string name="nothing_all_order" translatable="false">您还没有订单哦</string>
+    <string name="nothing_message" translatable="false">暂无任何消息</string>
+    <string name="nothing_unfinish_order" translatable="false">您还没有未完成的订单哦</string>
+    <string name="nothing_completed_order" translatable="false">您还没有已完成的订单哦</string>
+    <string name="nothing_expired_order" translatable="false">您还没有已过期的订单哦</string>
+    <string name="text_prompt" translatable="false">温馨提示</string>
+    <string name="prompt" translatable="false">提示</string>
+    <string name="please_fill_in_the_graphical_verification_code" translatable="false">请填写图形验证码</string>
+    <string name="un_available_coupons" translatable="false">暂无优惠券哦！</string>
     //Tab
     <string name="text_home_page" translatable="false">首页</string>
     <string name="text_player" translatable="false">点播</string>
     <string name="text_course" translatable="false">课程</string>
     <string name="text_test" translatable="false">题库</string>
     <string name="text_my" translatable="false">我的</string>
+    <string name="text_commonly_used" translatable="false">常用</string>
+    <string name="text_other" translatable="false">其他</string>
+    <string name="live_today" translatable="false">今日直播</string>
+    <string name="text_hot_recommended" translatable="false">热门推荐</string>
+    <string name="every_day_study" translatable="false">每日学习</string>
+    <string name="public_office_is_inviting_teachers_to_interview" translatable="false">公办招教教师面试</string>
+    <string name="public_office_is_qualificon_teachers" translatable="false">公办教师资格证</string>
+    <string name="txt_written_test" translatable="false">笔试</string>
+    <string name="txt_interview_test" translatable="false">面试</string>
+    <string name="press_the_exit_procedure_again" translatable="false">再按一次退出程序</string>
+    //首页
+    <string name="text_message" translatable="false">消息</string>
+    <string name="text_system_message" translatable="false">系统消息</string>
+
+    <string name="text_gift_bag" translatable="false">礼包</string>
+    <string name="text_book" translatable="false">图书</string>
+    <string name="text_live" translatable="false">直播</string>
+    <string name="text_on_demand" translatable="false">点播</string>
+
+    <string name="text_exam_type" translatable="false">考试类型</string>
+    <string name="text_learning_period" translatable="false">学段</string>
+    <string name="text_subject_type" translatable="false">学科</string>
+    <string name="text_test_area" translatable="false">考试地区</string>
+
+    <string name="text_area" translatable="false">地区</string>
+    <string name="text_examineway" translatable="false">笔试面试</string>
+    <string name="text_examineway_j" translatable="false">笔试/面试</string>
+    <string name="text_subjects" translatable="false">科目</string>
+
+    <string name="title_change_examination_type" translatable="false">更改考试类型</string>
+    <string name="text_save" translatable="false">保存</string>
+
+    <string name="text_blockbuster" translatable="false">重磅</string>
+    <string name="listening_test" translatable="false">试听</string>
+    <string name="select_province" translatable="false">选择省份</string>
+    <string name="location_recent_access" translatable="false">定位/最近访问</string>
+    <string name="hot_city" translatable="false">热门地区</string>
+
+
+    //今日直播
+    <string name="title_live_today" translatable="false">今日直播</string>
+    <string name="live_in_the" translatable="false">直播中</string>
+    <string name="see_the_replay" translatable="false">看回放</string>
+    <string name="not_at_the" translatable="false">未开始</string>
+
+    //详情
+    <string name="study_list" translatable="false">学习列表</string>
+    <string name="have_to_buy" translatable="false">已购买</string>
+    <string name="not_to_buy" translatable="false">未购买</string>
+    <string name="buy_now" translatable="false">立即购买</string>
+    <string name="free" translatable="false">#免费</string>
+    <string name="have_to_collection" translatable="false">已收藏</string>
+    <string name="collection" translatable="false">收藏</string>
+
     //登录、注册、发送短信
     <string name="login" translatable="false">登录</string>
     <string name="register" translatable="false">注册</string>
@@ -41,7 +133,6 @@
     <string name="img_verification_code" translatable="false">图形验证码</string>
     <string name="img_verification_code_null" translatable="false">图形验证码不能为空</string>
     <string name="six_verification_codes_have_been_sent" translatable="false">已发送6位验证码至</string>
-    <string name="please_fill_in_the_graphical_verification_code" translatable="false">请填写图形验证码</string>
     <string name="get_verification_code" translatable="false">获取验证码</string>
     <string name="to_resend" translatable="false">重新发送</string>
     <string name="password_login" translatable="false">密码登陆</string>
@@ -53,19 +144,13 @@
     <string name="password_digits" translatable="false">0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>
     <string name="find_password_digits" translatable="false">0123456789abcdefghijklmnopqrstuvwxyz
 ABCDEFGHIJKLMNOPQRSTUVWXYZ`¬!"£$%^*()~=#{}[];':,./?/*-_+</string>
-    <string name="share_success" translatable="false">分享成功</string>
-    <string name="share_fail" translatable="false">分享失败</string>
-    <string name="cancel_share" translatable="false">取消分享</string>
-    <string name="text_cancel" translatable="false">取消</string>
-    <string name="ok" translatable="false">确定</string>
-    <string name="success" translatable="false">成功</string>
-    <string name="error" translatable="false">错误</string>
-    <string name="warning" translatable="false">警告</string>
-    <string name="info" translatable="false">提示</string>
+    //分享
+    <string name="weichat" translatable="false">微信</string>
+    <string name="qq" translatable="false">QQ</string>
+    <string name="weichat_friends" translatable="false">朋友圈</string>
+    <string name="weibo" translatable="false">微博</string>
+    <string name="bt_defulte" translatable="false">设置默认</string>
 
-    <string name="loading_network_error" translatable="false">哇哦！网络出现问题了o！</string>
-    <string name="loading_nothing_error" translatable="false">哇哦！没有任何数据o！</string>
-    <string name="loading_error" translatable="false">哇哦！数据遇到异常o！</string>
     //个人中心
     <string name="text_my_order" translatable="false">我的订单</string>
     <string name="text_my_collection" translatable="false">我的收藏</string>
@@ -87,4 +172,203 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ`¬!"£$%^*()~=#{}[];':,./?/*-_+</string>
     <string name="text_update_app" translatable="false">更新</string>
     <string name="text_logout" translatable="false">退出账号</string>
     <string name="please_enter_your_password_again" translatable="false">请再次输入密码</string>
+    //设置个人信息
+    <string name="text_head_portrait" translatable="false">头像</string>
+    <string name="text_nick_name" translatable="false">昵称</string>
+    <string name="text_mobile" translatable="false">手机</string>
+    <string name="text_birthday" translatable="false">生日</string>
+    <string name="text_sex" translatable="false">性别</string>
+    <string name="text_name" translatable="false">姓名</string>
+    <string name="text_real_name" translatable="false">真实姓名</string>
+    <string name="text_setting_birthday" translatable="false">设置生日</string>
+    <string name="text_test_address" translatable="false">考试地区</string>
+    <string name="text_test_grade" translatable="false">报考学段</string>
+    <string name="text_test_type" translatable="false">考试类型</string>
+    <string name="please_selector" translatable="false">请选择</string>
+    <string name="please_write_nick" translatable="false">设置昵称</string>
+    <string name="modify_the_data" translatable="false">修改个人资料</string>
+    <string name="text_boy" translatable="false">男</string>
+    <string name="text_girl" translatable="false">女</string>
+    <string name="text_for_teaching_user_info" translatable="false">招教</string>
+    <string name="text_qualification_user_info" translatable="false">教资</string>
+    <string name="text_login" translatable="false">登录</string>
+    <string name="editor_address" translatable="false">编辑地址</string>
+    <string name="editor" translatable="false">编辑</string>
+    <string name="add_addresss" translatable="false">添加地址</string>
+    <string name="text_consignee" translatable="false">收货人</string>
+    <string name="contact_phone_number" translatable="false">联系电话</string>
+    <string name="in_the_area" translatable="false">所在地区</string>
+    <string name="please_enter_the_consignee_name" translatable="false">请输入收货人姓名</string>
+    <string name="please_enter_the_contact_phone_number" translatable="false">请输入联系电话</string>
+    <string name="please_enter_the_area" translatable="false">请输入所在地区</string>
+    <string name="please_enter_the_detailed_address" translatable="false">请输入详细地址</string>
+
+    <string name="please_upload_your_avatar" translatable="false">请上传头像</string>
+    <string name="the_nick_name_is_null" translatable="false">请输入昵称</string>
+    <string name="please_select_the_test_type" translatable="false">请选择考试类型</string>
+    <string name="please_select_the_test_grade" translatable="false">请选择报考学段</string>
+    <string name="the_address_is_null" translatable="false">请选择省市区</string>
+    <string name="the_couser_type_is_null" translatable="false">类型不能为空</string>
+
+    //缓存
+    <string name="text_select_cache" translatable="false">选择缓存</string>
+    <string name="text_future_generations" translatable="false">全选</string>
+    <string name="text_cancel" translatable="false">取消</string>
+    <string name="text_ok" translatable="false">确定</string>
+    <string name="text_has_chosen" translatable="false">已选择</string>
+    <string name="text_is_expected_to_take_up" translatable="false">,预计占用</string>
+
+    //订单支付
+    <string name="title_order_pay" translatable="false">订单支付</string>
+    <string name="wechat_current_version_does_not_support_payment_functions" translatable="false">微信当前版本不支持支付功能</string>
+    <string name="pay_result_callback_msg" formatted="false" translatable="false">微信支付结果：%s</string>
+    <string name="pay_result_success" translatable="false">支付成功</string>
+    <string name="pay_result_fails" translatable="false">支付失败</string>
+    <string name="pay_result_error" translatable="false">哇哦,支付错误</string>
+    <string name="pay_result_fail" translatable="false">您已取消支付!</string>
+    <string name="pay_for_results" translatable="false">支付结果</string>
+    <string name="order_information" translatable="false">订单信息</string>
+    <string name="method_payment" translatable="false">支付方式</string>
+    <string name="go_payment" translatable="false">去支付</string>
+    <string name="cancel_order" translatable="false">取消订单</string>
+    <string name="recruit_teach_currency" translatable="false">学习金</string>
+    <string name="change_recruit_teach_currency" translatable="false">兑换学习金</string>
+    <string name="available_credit" translatable="false">可用学习金最大额度</string>
+    <string name="available_credits" translatable="false">可用额度</string>
+    <string name="immediately_change" translatable="false">立即兑换</string>
+    <string name="exchange_record" translatable="false">兑换记录</string>
+    <string name="nothing_exchange_record_error" translatable="false">暂无兑换记录哦</string>
+    <string name="address_tips" translatable="false">(课程教材将寄送至该地址)</string>
+
+    <string name="text_use_helpers" translatable="false">使用帮助 ?</string>
+
+    <string name="use_available_credits" translatable="false">使用学习金</string>
+    <string name="enter_amount_teaching_currency" translatable="false">输入学习金额度</string>
+    <string name="amount_of_real_pay" translatable="false">实付金额 : ¥ </string>
+
+    <string name="title_couser_comments" translatable="false">课程评价</string>
+    <string name="text_release" translatable="false">发布</string>
+    <string name="text_submit" translatable="false">提交</string>
+    <string name="text_anonymous" translatable="false">匿名</string>
+    <string name="text_anonymous_tips" translatable="false">您的评价能帮助到其他小伙伴哦</string>
+    <string name="please_account" translatable="false">请输入账号</string>
+    <string name="please_password" translatable="false">请输入密码</string>
+    <string name="exchange" translatable="false">兑换</string>
+
+
+    //缓存
+    <string name="teacher_recruitment_examination" translatable="false">教师招聘考试</string>
+    <string name="teacher_certification" translatable="false">教师资格证</string>
+    <string name="special_post" translatable="false">特岗</string>
+    <string name="live_playback" translatable="false">直播回放</string>
+    <string name="total_zore_courses_are_cached" translatable="false">共缓存0个课程</string>
+    <string name="loading_cached_third_party" translatable="false">正在缓存(第三方)</string>
+    <string name="loading_cached_MP4" translatable="false">正在缓存(MP4)</string>
+    <string name="loading_cached_cc" translatable="false">正在缓存(cc)</string>
+    <string name="cached" translatable="false">0 kb/s</string>
+    <string name="cached_list" translatable="false">缓存列表</string>
+    <string name="cached_downloading_list" translatable="false">正在缓存</string>
+    <string name="cached_history_list" translatable="false">历史缓存</string>
+    <string name="multi_select" translatable="false">多选</string>
+
+    //版本更新
+    <string name="text_update" translatable="false">更新</string>
+    <string name="text_update_prompt" translatable="false">更新提示</string>
+    <string name="text_network_prompt" translatable="false">网络提示</string>
+    <string name="text_not_wifi_prompt" translatable="false">当前非WIFI网络,是否继续下载?</string>
+    <string name="text_continue" translatable="false">继续</string>
+    <string name="text_new_version" translatable="false">已是最新版本</string>
+    <string name="program_has_dropped_out_please_download_latest_version" translatable="false">程序已退出,请下载最新版</string>
+
+    //点播
+    <string name="text_consulting" translatable="false">咨询</string>
+    <string name="text_listen_now" translatable="false">立即试听</string>
+    <string name="text_buy_now" translatable="false">立即购买</string>
+    <string name="text_details_introduced" translatable="false">详情介绍</string>
+
+    //大礼包
+    <string name="text_big_package" translatable="false">大礼包</string>
+    //缓存
+    <string name="all_start" translatable="false">全部开始</string>
+    <string name="all_stop" translatable="false">全部暂停</string>
+    <string name="clear_all" translatable="false">清空全部</string>
+
+    //扫一扫
+    <string name="the_following_has_been_scanned" translatable="false">已扫描到以下内容</string>
+    <string name="tips" translatable="false">提示</string>
+
+    //问答
+    <string name="text_myanswer" translatable="false">您的答案</string>
+    <string name="text_answer" translatable="false">正确答案</string>
+    <string name="text_analysis" translatable="false">解析:</string>
+    <string name="text_answer_analysis" translatable="false">答案解析</string>
+    <string name="text_provenance" translatable="false">出处</string>
+    <string name="have_to_answer" translatable="false">已作答</string>
+    <string name="not_to_answer" translatable="false">未作答</string>
+    <string name="sheet" translatable="false">答题卡</string>
+
+    <string name="answer_wrong" translatable="false">答错</string>
+    <string name="answer_correctly" translatable="false">答对</string>
+    <string name="did_not_answer" translatable="false">未作答</string>
+
+    <string name="one_choice_question" translatable="false">单项选择题</string>
+    <string name="multiple_choice_question" translatable="false">多项选择题</string>
+    <string name="true_or_false" translatable="false">判断题</string>
+    <string name="answer_questions" translatable="false">解答题</string>
+    <string name="material_analysis_problem" translatable="false">材料分析题</string>
+    <string name="their_papers" translatable="false">交卷</string>
+    <string name="title_practice_report" translatable="false">练习报告</string>
+    <string name="view_analysis_ideas" translatable="false">查看解析思路</string>
+    <string name="time_you_hand_it_in" translatable="false">交卷时间:&#160;</string>
+    <string name="answer_questions_right" translatable="false">答对题:&#160;</string>
+    <string name="total_score" translatable="false">总分:&#160;</string>
+    <string name="wrong_topic_parsing" translatable="false">错题解析</string>
+    <string name="all_analytical" translatable="false">全部解析</string>
+    <string name="keep_practicing" translatable="false">继续练习</string>
+    <string name="group_again" translatable="false">再次组卷</string>
+    <string name="no_wrong_topic" translatable="false">哇！您全部答对了</string>
+    <string name="exam_course" translatable="false">考试科目:&#160;</string>
+    <string name="exam_time" translatable="false">考试时长\n</string>
+    <string name="exam_total_score" translatable="false">考试总分\n</string>
+    <string name="there_is_no_need_to_answer_subjective_questions" translatable="false">主观题无需作答!</string>
+    <string name="starting_work" translatable="false">开始答题</string>
+    <string name="module_practice" translatable="false">练习</string>
+    <string name="go_finish" translatable="false">去完成</string>
+    <string name="remove_wrong_question" translatable="false">答对后自动移除错题</string>
+    <string name="noting_error_topic" translatable="false">您还没有错题哦！</string>
+    <string name="noting_collection_topic" translatable="false">暂无任何收藏哦！</string>
+    <string name="my_error_topic" translatable="false">我的错题</string>
+    <string name="i_want_error_correction" translatable="false">我要纠错</string>
+    <string name="my_collection_topic" translatable="false">我的收藏</string>
+    <string name="previous_exam_papers" translatable="false">历年真题</string>
+    <string name="noting_previous_exam_papers" translatable="false">暂无历年真题哦！</string>
+    <string name="all_select" translatable="false">全选</string>
+    <string name="please_enter_problem_you_found" translatable="false">请输入您发现的问题</string>
+    <string name="select_city" translatable="false">选择地区</string>
+    <string name="select_testing_types" translatable="false">选择试题类型</string>
+    <string name="rate_wrong_topic" translatable="false">错题率</string>
+    <string name="completed_exercise" translatable="false">已完成练习</string>
+    <string name="undergraduate_rank" translatable="false">本科目排名</string>
+    <string name="random_practice" translatable="false">随机练习</string>
+    <string name="highest_score" translatable="false">最高分:</string>
+    <string name="total_station_average_score" translatable="false">全站平均得分:</string>
+    <string name="defeated_student" translatable="false">已击败学生:</string>
+    <string name="text_submit_success" translatable="false">提交成功,我们将会尽快处理!</string>
+    <string name="thank_you_your_feedback_we_questions_two_working_days" translatable="false">感谢您的反馈,我们将在两个工作日内处理您提交的问题</string>
+    <string name="feekback_classification" translatable="false">反馈类型</string>
+    <string name="qestions_and_comments" translatable="false">为方便定位问题,尽量提供问题页面截图(最多3张)</string>
+    <string name="pic_problem_screenshots" translatable="false">图片(提供问题截图)</string>
+    <string name="contact_phone_number_type" translatable="false">联系电话</string>
+    <string name="so_that_we_can_contact_you" translatable="false">请填写您的联系方式：</string>
+    <string name="submit" translatable="false">提交</string>
+
+    <string name="please_feekback_type" translatable="false">请选择反馈分类</string>
+    <string name="please_write_qestions_and_comments" translatable="false">请输入您遇到的问题和意见</string>
+    <string name="please_write_contact_phone_number_type" translatable="false">请输入您的联系方式</string>
+    <string name="title_coupons" translatable="false">优惠券</string>
+    <string name="please_write" translatable="false">请输入</string>
+
+    <string name="loading_network_error" translatable="false">哇哦！网络出现问题了o！</string>
+    <string name="loading_nothing_error" translatable="false">哇哦！没有任何数据o！</string>
+    <string name="loading_error" translatable="false">哇哦！数据遇到异常o！</string>
 </resources>

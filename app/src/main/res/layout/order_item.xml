@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchWrap">
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        style="@style/MatchWrap.Vertical"
+        android:paddingLeft="15dp"
+        android:paddingTop="20dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:id="@+id/txt_time"
+            style="@style/text_c666_12_wrap" />
+
+        <LinearLayout
+            style="@style/WrapWrap.Horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txt_order_number"
+                style="@style/text_c666_12_wrap"
+                android:textColorHighlight="@color/c_zhuti"
+                android:textIsSelectable="true" />
+
+            <com.android.tool.widget.ButtonState
+                android:id="@+id/bt_copy"
+                android:layout_width="30dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="15dp"
+                android:padding="0dp"
+                android:text="复制"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:normalBackgroundColor="@color/c_zhuti"
+                app:pressedBackgroundColor="@color/c_ff6"
+                app:radius="5dp"
+                app:unableBackgroundColor="@android:color/holo_red_light" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_order_name"
+            style="@style/text_c666_12_wrap"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        style="@style/RecyclerView_Style_MatchW_cf9f9"
+        android:layout_below="@+id/ll1"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/recyclerView"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:id="@+id/text_pay"
+            style="@style/text_c33_12_ww"
+            android:layout_centerVertical="true"
+            android:text="@string/amount_of_real_pay" />
+
+        <TextView
+            android:id="@+id/txt_pay_num"
+            style="@style/text_c33_15_wrap"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/text_pay"
+            android:text=" 0.00" />
+
+        <LinearLayout
+            style="@style/WrapWrap.Horizontal"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/txt_cancel_pay"
+                android:layout_width="76dp"
+                android:layout_height="27dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/cancel_pay_yuanjiaokuang"
+                android:gravity="center"
+                android:text="@string/cancel_order"
+                android:textColor="@color/text_gray"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/txt_go_pay"
+                android:layout_width="76dp"
+                android:layout_height="27dp"
+                android:background="@drawable/go_pay_yuanjiaokuang"
+                android:gravity="center"
+                android:text="@string/go_payment"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_below="@+id/rl1"
+        android:background="@color/c_f7" />
+</RelativeLayout>

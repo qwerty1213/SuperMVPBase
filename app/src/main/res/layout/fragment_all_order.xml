@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchMatch"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <com.android.tool.widget.SuperSwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        style="@style/MatchMatch">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            style="@style/RecyclerView_Style_MatchMatch" />
+
+    </com.android.tool.widget.SuperSwipeRefreshLayout>
+
+    <include layout="@layout/include_loading_view_layout" />
+</RelativeLayout>

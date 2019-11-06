@@ -14,9 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.ScrollView;
 import android.widget.TextView;
-
 import com.android.tool.R;
-
 import java.util.ArrayList;
 import java.util.List;
 

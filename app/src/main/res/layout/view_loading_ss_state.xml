@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_loading"
+    style="@style/MatchMatch"
+    android:background="@color/white">
+
+    <include layout="@layout/include_load_status_layout" />
+
+    <com.android.tool.widget.ButtonState
+        android:id="@+id/btn_load"
+        android:layout_width="204dp"
+        android:layout_height="37dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="0dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="0dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:normalBackgroundColor="@color/c_zhuti"
+        app:pressedBackgroundColor="@color/c_ff6"
+        app:radius="18dp"
+        app:unableBackgroundColor="@android:color/holo_red_light" />
+</RelativeLayout>

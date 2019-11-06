@@ -1,6 +1,7 @@
 package com.android.tool.util;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
@@ -10,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Vibrator;
 import android.support.annotation.NonNull;
+import android.telephony.TelephonyManager;
 
 import com.android.tool.util.permissions.PermissionListener;
 import com.android.tool.util.permissions.PermissionsUtil;
@@ -90,6 +92,22 @@ public class SystemUtil {
 //            }
 //        }, Manifest.permission.READ_PHONE_STATE);
 //    }
+    /**
+     * 获取手机唯一标识 DeviceId
+     *
+     * @param context
+     * @return
+     */
+    @SuppressLint("MissingPermission")
+    public static String getDeviceId(Context context) {
+        try {
+            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(context.TELEPHONY_SERVICE);
+            return telephonyManager.getDeviceId();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
 
     /**
      * 调用系统界面，给指定的号码发送短信

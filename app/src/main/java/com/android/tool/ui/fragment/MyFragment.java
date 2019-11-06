@@ -1,17 +1,24 @@
-package com.android.tool.ui.main.fragment;
+package com.android.tool.ui.fragment;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.android.tool.R;
+import com.android.tool.model.CurrencyBalanceBean;
 import com.android.tool.ui.base.BaseFragments;
+import com.android.tool.ui.main.MyOrderActivity;
+import com.android.tool.ui.web.WebURLUtil;
+import com.android.tool.util.GUtils;
 import com.android.tool.util.IntentUtils;
+import com.android.tool.util.PUtil;
 import com.android.tool.util.PathUtil;
 import com.android.tool.util.StringUtil;
+import com.android.tool.utility.ObjectNoDialogCallback;
+import com.android.tool.utility.model.ObjectResponse;
 import com.android.tool.widget.ButtonView;
 import com.lzy.okgo.OkGo;
+import com.lzy.okgo.model.Response;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import butterknife.BindView;
@@ -39,15 +46,7 @@ public class MyFragment extends BaseFragments  implements ButtonView.OnTabClickL
     LinearLayout llAppointment;
     @BindView(R.id.ll_appointment_bottom_line)
     View llAppointmentBottomLine;
-//    private CurrencyBalanceBean balanceBean;
-public static MyFragment newInstance(String text) {
-    MyFragment fragmentCommon = new MyFragment();
-    Bundle bundle = new Bundle();
-    bundle.putString("text", text);
-    fragmentCommon.setArguments(bundle);
-    return fragmentCommon;
-}
-
+    private CurrencyBalanceBean balanceBean;
     @Override
     public void initParms(Bundle mBundle) {
 //        setStatusBarTransparent(true);
@@ -69,38 +68,31 @@ public static MyFragment newInstance(String text) {
     public void onResume() {
         super.onResume();
         //获取学习金余额
-//        OkGo.<ObjectResponse<CurrencyBalanceBean>>get(PathUtil.getMyInfo())
-//                .execute(new ObjectNoDialogCallback<ObjectResponse<CurrencyBalanceBean>>(mActivity, "") {
-//                    @Override
-//                    public void onSuccess(Response<ObjectResponse<CurrencyBalanceBean>> response) {
-//                        balanceBean = response.body().data;
-//                        if (balanceBean != null) {
-//                            txtTeachCurrency.setText(balanceBean.getAmount());
-//                            txtSignature.setText(balanceBean.getSignature());
-//                            txtCouponsNum.setText(balanceBean.getCouponCountStr());
-//                        }
-//                    }
-//                });
-//        if (PUtil.isTokenNull()) {
-//            GUtils.loadIVStringHeadYuan(mActivity, PUtil.getPreferences(PUtil.AVATAR, ""), ivRounded);
-//            String nickName = PUtil.getPreferences(PUtil.NICK_NAME, "").trim();
-//            if (StringUtil.isNotBlankAndEmpty(nickName)) {
-//                txtNickName.setText(nickName);
-//            } else {
-//                txtNickName.setText(R.string.text_nick_name);
-//            }
-//        } else {
-//            GUtils.loadIVStringHeadYuan(mActivity, R.mipmap.default_head_icon, ivRounded);
-//            txtNickName.setText("登录/注册");
-//        }
-        //	是否显示我的中点评预约功能0否1是
-//        if (PUtil.getPreferences(PUtil.IS_HIDE_APPOINTMENT, "").equals("0")) {
-//            llAppointment.setVisibility(View.GONE);
-//            llAppointmentBottomLine.setVisibility(View.GONE);
-//        } else {
-//            llAppointment.setVisibility(View.VISIBLE);
-//            llAppointmentBottomLine.setVisibility(View.VISIBLE);
-//        }
+        OkGo.<ObjectResponse<CurrencyBalanceBean>>get(PathUtil.getMyInfo())
+                .execute(new ObjectNoDialogCallback<ObjectResponse<CurrencyBalanceBean>>(mActivity, "") {
+                    @Override
+                    public void onSuccess(Response<ObjectResponse<CurrencyBalanceBean>> response) {
+                        balanceBean = response.body().data;
+                        if (balanceBean != null) {
+                            txtTeachCurrency.setText(balanceBean.getAmount());
+                            txtSignature.setText(balanceBean.getSignature());
+                            txtCouponsNum.setText(balanceBean.getCouponCountStr());
+                        }
+                    }
+                });
+        if (PUtil.isTokenNull()) {
+            GUtils.loadIVStringHeadYuan(mActivity, PUtil.getPreferences(PUtil.AVATAR, ""), ivRounded);
+            String nickName = PUtil.getPreferences(PUtil.NICK_NAME, "").trim();
+            if (StringUtil.isNotBlankAndEmpty(nickName)) {
+                txtNickName.setText(nickName);
+            } else {
+                txtNickName.setText(R.string.text_nick_name);
+            }
+        } else {
+            GUtils.loadIVStringHeadYuan(mActivity, R.mipmap.default_head_icon, ivRounded);
+            txtNickName.setText("登录/注册");
+        }
+
     }
 
     @Override
@@ -124,7 +116,9 @@ public static MyFragment newInstance(String text) {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_login://选择头像
-                IntentUtils.startLoginActivity(mActivity, new Bundle());
+//                if (IntentUtils.isLogin(mActivity, new Bundle())) {
+//                    IntentUtils.startIntent(mActivity, UserSettingActivity.class, new Bundle());
+//                }
                 break;
             case R.id.ll_commodity_exchange:
 //                if (IntentUtils.isLogin(mActivity, new Bundle())) {
@@ -142,9 +136,9 @@ public static MyFragment newInstance(String text) {
 //                }
                 break;
             case R.id.ll_my_order:
-//                if (IntentUtils.isLogin(mActivity, new Bundle())) {
-//                    IntentUtils.startIntent(mActivity, MyOrderActivity.class, new Bundle());
-//                }
+                if (IntentUtils.isLogin(mActivity, new Bundle())) {
+                    IntentUtils.startIntent(mActivity, MyOrderActivity.class, new Bundle());
+                }
                 break;
             case R.id.ll_my_collection:
 //                if (IntentUtils.isLogin(mActivity, new Bundle())) {
@@ -207,15 +201,15 @@ public static MyFragment newInstance(String text) {
 
     @Override
     public void onTabClick(int currentTab) {
-//        if (balanceBean == null) {
-//            return;
-//        }
+        if (balanceBean == null) {
+            return;
+        }
         switch (currentTab) {
             case 1://拨打电话
-//                WebURLUtil.openUrl(balanceBean.getTel(), mActivity);
+                WebURLUtil.openUrl(balanceBean.getTel(), mActivity);
                 break;
             case 2://qq聊天
-//                WebURLUtil.openUrl(balanceBean.getQq(), mActivity);
+                WebURLUtil.openUrl(balanceBean.getQq(), mActivity);
                 break;
             default:
                 break;

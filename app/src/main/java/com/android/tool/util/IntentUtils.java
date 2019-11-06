@@ -6,7 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.android.tool.BaseApplication;
 import com.android.tool.ui.login.LoginFragmentActivity;
+import com.android.tool.ui.main.MainActivity;
 
 /**
  * class ：---
@@ -14,15 +16,15 @@ import com.android.tool.ui.login.LoginFragmentActivity;
  * time  : 2018/6/5 09:10
  */
 public class IntentUtils {
-//    public static boolean isLogin(Activity mActivity, Bundle bundle) {
-//        if (!PUtil.isTokenNull()) {
-//            bundle.putInt(KeyUtil.REFRESH_LOGIN, ResultUtil.LOGING_RESULT);
-//            startLoginActivity(mActivity, bundle);
-//            return false;
-//        } else {
-//            return true;
-//        }
-//    }
+    public static boolean isLogin(Activity mActivity, Bundle bundle) {
+        if (!PUtil.isTokenNull()) {
+            bundle.putInt(KeyUtil.REFRESH_LOGIN, ResultUtil.LOGING_RESULT);
+            startLoginActivity(mActivity, bundle);
+            return false;
+        } else {
+            return true;
+        }
+    }
     /**
      * 判断未登录 跳转登录页
      *
@@ -63,5 +65,18 @@ public class IntentUtils {
         mIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         mContext.startActivity(mIntent);
     }
-
+    /**
+     * 判断MainActivity是否存在  true不存在    false存在
+     *
+     * @param mActivity
+     * @return
+     */
+    public static void isCurrentMainActivity(Activity mActivity) {
+        if (!BaseApplication.getInstance().currentActivity(MainActivity.class)) {
+            mActivity.startActivity(new Intent(mActivity, MainActivity.class));
+            mActivity.finish();
+        } else {
+            mActivity.finish();
+        }
+    }
 }

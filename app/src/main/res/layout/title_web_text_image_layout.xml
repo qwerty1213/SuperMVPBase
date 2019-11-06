@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/title_bar_layout"
+    style="@style/MatchWrap.Vertical">
+
+    <include layout="@layout/layout_notification_bar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@drawable/title_bar_background1">
+
+        <include layout="@layout/include_back_layout" />
+
+        <View
+            android:id="@+id/v_lines"
+            android:layout_width="0.5dp"
+            android:layout_height="10dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="55dp"
+            android:background="@color/text_gray"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/iv_go_close"
+            style="@style/WrapWrap"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="65dp"
+            android:background="?android:actionBarItemBackground"
+            android:paddingBottom="17dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="17dp"
+            android:src="@mipmap/web_close_icon"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/txt_title"
+            style="@style/title_black16dp_wrap"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="220dp"
+            android:ellipsize="end"
+            android:lines="1" />
+
+        <ImageView
+            android:id="@+id/img_right"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:background="?android:attr/actionBarItemBackground"
+            android:padding="17dp"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/c_f2" />
+</LinearLayout>

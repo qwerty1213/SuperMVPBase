@@ -1,4 +1,4 @@
-package com.android.tool.ui.main.fragment;
+package com.android.tool.ui.fragment;
 
 import android.os.Bundle;
 import android.widget.TextView;

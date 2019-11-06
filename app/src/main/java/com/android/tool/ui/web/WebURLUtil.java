@@ -1,9 +1,12 @@
 package com.android.tool.ui.web;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.webkit.WebView;
 
+import com.android.tool.util.IntentUtils;
 import com.android.tool.util.L;
 import com.android.tool.util.StringUtil;
 import com.android.tool.util.SystemUtil;
@@ -85,7 +88,7 @@ public class WebURLUtil {
         if (!StringUtil.isNotBlankAndEmpty(url))
             return;
         if (url.startsWith(SXAPP)) {
-//            WebURLUtil.openSXUrl(url, mActivity);
+            WebURLUtil.openSXUrl(url, mActivity);
         } else if (url.startsWith(TEL)) {//打电话
             SystemUtil.callPhone(mActivity, url);
         } else if (url.startsWith(SMS)) {//短信
@@ -128,6 +131,26 @@ public class WebURLUtil {
             result = StringUtil.substringBefore(result, "?");
         }
         return result;
+    }
+    /****
+     * 打开url
+     * @param url
+     * @param mActivity
+     */
+    public static void openSXUrl(String url, Activity mActivity) {
+        Map<String, String> params = getStringStringMap(url);
+        switch (getTypeFromUri(url)) {
+            case GO_WEBVIEW://跳转网页
+                WebViewActivity.startWebViewActivity(mActivity, params.get(URL),
+                        params.get(TITLE), params.get(TYPE));
+                break;
+            case GO_LOGIN://跳转登录界面
+                IntentUtils.startLoginActivity(mActivity, new Bundle());
+                break;
+            default:
+//                mActivity.startActivity(new Intent(mActivity, SplashActivity.class));
+                break;
+        }
     }
 
     private static Map<String, String> getParamsFromUri(String uri) {

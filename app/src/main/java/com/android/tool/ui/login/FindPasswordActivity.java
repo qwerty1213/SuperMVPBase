@@ -1,25 +1,18 @@
 package com.android.tool.ui.login;
 
-
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.text.Editable;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.TextPaint;
 import android.text.TextWatcher;
-import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.android.tool.R;
 import com.android.tool.ui.base.BaseActivitys;
 import com.android.tool.ui.login.util.LoginUtil;
-import com.android.tool.ui.web.WebURLUtil;
 import com.android.tool.util.ActivityManagementUtil;
 import com.android.tool.util.IntentUtils;
 import com.android.tool.util.KeyUtil;
+import com.android.tool.util.PUtil;
 import com.android.tool.util.PathUtil;
 import com.android.tool.util.StringUtil;
 import com.android.tool.utility.AppConfig;
@@ -27,55 +20,57 @@ import com.android.tool.utility.StringCodeCallback;
 import com.android.tool.utility.StringDialogCallback;
 import com.android.tool.widget.TimeCountUtil;
 import com.android.tool.widget.dialog.DialogUtil;
-import com.android.tool.widget.wheelview.ClearEditText;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
-
 import butterknife.BindView;
 import butterknife.OnClick;
 
-
 /**
- * class ：注册
+ * class ：找回密码
  * author：York(wuchunyuan)
- * time  : 2018/3/23 15:16
+ * time  : 2018/5/24 10:09
  */
-public class RigisterActivity extends BaseActivitys {
+public class FindPasswordActivity extends BaseActivitys {
 
+    @BindView(R.id.txt_title)
+    TextView txtTitle;
     @BindView(R.id.edit_mobile)
-    ClearEditText editMobile;
+    EditText editMobile;
     @BindView(R.id.edit_verification_code)
     EditText editVerificationCode;
     @BindView(R.id.txt_get_verification_code)
     TextView txtGetVerificationCode;
-    @BindView(R.id.bt_ok)
-    TextView btOk;
-    @BindView(R.id.txt_privacy_policy)
-    TextView txtPrivacyPolicy;
+    @BindView(R.id.next_ok)
+    TextView nextOk;
     private TimeCountUtil mTimeCountUtil;
     private DialogUtil dialogUtil;
-    private String privacyPolicy = "注册代表您已同意注册协议";
+    private boolean isFindChangePassword;
 
     @Override
     public void initParms(Bundle mBundle) {
         steepSetStatusBarTranslucent(true, true);
-        ActivityManagementUtil.getInstance().addLoginActivity(this);
+        ActivityManagementUtil.getInstance().addFindPsdActivity(this);
+        isFindChangePassword = mBundle.getBoolean(KeyUtil.IS_FIND_CHANGE_PASSWORD, false);
     }
 
     @Override
     public int bindLayout() {
-        return R.layout.activity_rigister;
+        return R.layout.activity_find_password;
     }
 
     @Override
     public void initView() {
-        LoginUtil.setVerificationCodeLoginStatus(editVerificationCode, editMobile, btOk);
+        if (isFindChangePassword) {
+            txtTitle.setText(R.string.text_change_password);
+            editMobile.setText(PUtil.getPreferences(PUtil.MOBILE, ""));
+            editMobile.setEnabled(false);
+        } else {
+            txtTitle.setText(R.string.come_back_password);
+            editMobile.setText("");
+        }
+        LoginUtil.setVerificationCodeLoginStatus(editVerificationCode, editMobile, nextOk);
         dialogUtil = new DialogUtil();
         mTimeCountUtil = new TimeCountUtil(mActivity, txtGetVerificationCode, TimeCountUtil.MILLISINFUTURE, TimeCountUtil.COUNTDOWNINTERVAL);
-        SpannableString link = new SpannableString(privacyPolicy);
-        link.setSpan(new TxtPrivacyPolicy(), privacyPolicy.length() - 4, privacyPolicy.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        txtPrivacyPolicy.setText(link);
-        txtPrivacyPolicy.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     @Override
@@ -89,7 +84,7 @@ public class RigisterActivity extends BaseActivitys {
 
     }
 
-    @OnClick({R.id.txt_get_verification_code, R.id.bt_ok, R.id.img_back})
+    @OnClick({R.id.txt_get_verification_code, R.id.next_ok, R.id.img_back})
     public void onViewClicked(View view) {
         final String moblie = editMobile.getText().toString();
         final String code = editVerificationCode.getText().toString();
@@ -98,7 +93,7 @@ public class RigisterActivity extends BaseActivitys {
                 if (isNull(moblie)) {
                     OkGo.<String>get(PathUtil.getSendSms()).tag(this)
                             .params(AppConfig.LRAll.MOBILE, moblie)
-                            .params(AppConfig.LRAll.OBJ_TYPE, AppConfig.LRAll.REGISTER)
+                            .params(AppConfig.LRAll.OBJ_TYPE, AppConfig.LRAll.FINDPWD)
                             .params(AppConfig.LRAll.CAPTCHA, "0")
                             .execute(new StringCodeCallback(mActivity) {
                                 @Override
@@ -118,7 +113,7 @@ public class RigisterActivity extends BaseActivitys {
 //                                            if (isCodeNull(code)) {
 //                                                OkGo.<String>get(PathUtil.getSendSms()).tag(this)
 //                                                        .params(AppConfig.LRAll.MOBILE, moblie)
-//                                                        .params(AppConfig.LRAll.OBJ_TYPE, AppConfig.LRAll.REGISTER)
+//                                                        .params(AppConfig.LRAll.OBJ_TYPE, AppConfig.LRAll.FINDPWD)
 //                                                        .params(AppConfig.LRAll.CAPTCHA, code)
 //                                                        .execute(new StringCodeCallback(mActivity) {
 //                                                            @Override
@@ -134,11 +129,11 @@ public class RigisterActivity extends BaseActivitys {
 //                            });
                 }
                 break;
-            case R.id.bt_ok:
+            case R.id.next_ok:
                 if (isNull(moblie, code)) {//验证短信验证码
                     OkGo.<String>get(PathUtil.getCheckMobileVerify()).tag(this)
                             .params(AppConfig.LRAll.MOBILE, moblie)
-                            .params(AppConfig.LRAll.OBJ_TYPE, AppConfig.LRAll.REGISTER)
+                            .params(AppConfig.LRAll.OBJ_TYPE, AppConfig.LRAll.FINDPWD)
                             .params(AppConfig.LRAll.VERIFY_CODE, code)
                             .execute(new StringDialogCallback(this) {
                                 @Override
@@ -146,8 +141,7 @@ public class RigisterActivity extends BaseActivitys {
                                     Bundle bundle = new Bundle();
                                     bundle.putString(KeyUtil.MOBLIE, moblie);
                                     bundle.putString(KeyUtil.CODE, code);
-                                    IntentUtils.startIntent(mActivity, SettingPasswordNickNameActivity.class, bundle);
-
+                                    IntentUtils.startIntent(mActivity, SettingPasswordActivity.class, bundle);
                                 }
                             });
                 }
@@ -175,7 +169,7 @@ public class RigisterActivity extends BaseActivitys {
 
         @Override
         public void afterTextChanged(Editable editable) {
-            LoginUtil.setVerificationCodeLoginStatus(editVerificationCode, editMobile, btOk);
+            LoginUtil.setVerificationCodeLoginStatus(editVerificationCode, editMobile, nextOk);
         }
     }
 
@@ -196,7 +190,7 @@ public class RigisterActivity extends BaseActivitys {
 
         @Override
         public void afterTextChanged(Editable editable) {
-            LoginUtil.setVerificationCodeLoginStatus(editVerificationCode, editMobile, btOk);
+            LoginUtil.setVerificationCodeLoginStatus(editVerificationCode, editMobile, nextOk);
         }
     }
 
@@ -224,7 +218,6 @@ public class RigisterActivity extends BaseActivitys {
         return true;
     }
 
-
     private boolean isCodeNull(String code) {
         if (!StringUtil.isNotBlankAndEmpty(code)) {
             showToast(R.string.img_verification_code_null);
@@ -232,20 +225,5 @@ public class RigisterActivity extends BaseActivitys {
         }
         return true;
     }
-
-    class TxtPrivacyPolicy extends ClickableSpan {
-        @Override
-        public void updateDrawState(TextPaint ds) {
-            super.updateDrawState(ds);
-            ds.setColor(ContextCompat.getColor(mActivity, R.color.c_7786));//设置超链接的颜色
-            ds.setUnderlineText(true);
-        }
-
-        @Override
-        public void onClick(View widget) {
-            WebURLUtil.openUrl(PathUtil.Path.AGREEMENT_LINK_URL, mActivity);
-        }
-    }
-
 
 }

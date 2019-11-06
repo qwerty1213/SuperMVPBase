@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <declare-styleable name="EditTextWithCount">
+        <attr name="count" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="StateButton">
+        <!--text color-->
+        <attr name="normalTextColor" format="color|reference" />
+        <attr name="pressedTextColor" format="color|reference" />
+        <attr name="unableTextColor" format="color|reference" />
+
+        <!--stroke width and color, dash width, dash gap-->
+        <attr name="strokeDashWidth" format="dimension|reference" />
+        <attr name="strokeDashGap" format="dimension|reference" />
+        <attr name="normalStrokeWidth" format="dimension|reference" />
+        <attr name="pressedStrokeWidth" format="dimension|reference" />
+        <attr name="unableStrokeWidth" format="dimension|reference" />
+        <attr name="normalStrokeColor" format="color|reference" />
+        <attr name="pressedStrokeColor" format="color|reference" />
+        <attr name="unableStrokeColor" format="color|reference" />
+
+        <!--background color-->
+        <attr name="normalBackgroundColor" format="color|reference" />
+        <attr name="pressedBackgroundColor" format="color|reference" />
+        <attr name="unableBackgroundColor" format="color|reference" />
+
+        <!--background radius-->
+        <attr name="radius" format="dimension|reference" />
+        <attr name="round" format="boolean|reference" />
+
+        <!--animation duration-->
+        <attr name="animationDuration" format="integer|reference" />
+
+    </declare-styleable>
+
+    <declare-styleable name="VerifyCode">
+        <attr name="codeTextSize" format="dimension" />
+        <attr name="codeBackground" format="color" />
+        <attr name="codeLength" format="integer" />
+        <attr name="isContainChar" format="boolean" />
+        <attr name="pointNum" format="integer" />
+        <attr name="linNum" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="a_zhon">
+        <!--两个按钮间的间距-->
+        <attr name="fab_spacing" format="dimension" />
+        <!--展开的方向-->
+        <attr name="fab_orientation" format="enum">
+            <enum name="top" value="1" />
+            <enum name="bottom" value="2" />
+            <enum name="left" value="3" />
+            <enum name="right" value="4" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="CountDownView">
+        <!--view半径-->
+        <attr name="cd_circle_radius" format="dimension" />
+        <!--画笔宽度-->
+        <attr name="cd_arc_width" format="dimension" />
+        <!--画笔颜色-->
+        <attr name="cd_arc_color" format="color" />
+        <!--背景颜色-->
+        <attr name="cd_bg_color" format="color" />
+        <!--字体颜色-->
+        <attr name="cd_text_color" format="color" />
+        <!--字体尺寸-->
+        <attr name="cd_text_size" format="dimension" />
+        <!--动画执行时长-->
+        <attr name="cd_animator_time" format="integer" />
+        <!--时间单位-->
+        <attr name="cd_animator_time_unit" format="string" />
+        <!--动画进退方式-->
+        <attr name="cd_retreat_type" format="enum">
+            <!--外层的圆弧逐渐变长-->
+            <enum name="forward" value="1" />
+            <!--外层的圆弧逐渐减短-->
+            <enum name="back" value="2" />
+        </attr>
+        <!--加载进度的开始位置-->
+        <attr name="cd_location" format="enum">
+            <enum name="left" value="1" />
+            <enum name="top" value="2" />
+            <enum name="right" value="3" />
+            <enum name="bottom" value="4" />
+        </attr>
+    </declare-styleable>
+
+    <!-- 圆形进度条 -->
+    <declare-styleable name="CircleProgressBar1">
+        <attr name="antiAlias" />
+        <attr name="startAngle" />
+        <attr name="sweepAngle" />
+        <attr name="animTime" />
+        <attr name="maxValues" />
+        <attr name="values" />
+        <attr name="precision" />
+        <attr name="valuesSize" />
+        <attr name="valuesColor" />
+        <attr name="textOffsetPercentInRadius" />
+        <!-- 绘制内容相应的提示语 -->
+        <attr name="hints" />
+        <attr name="hintsSize" />
+        <attr name="hintsColor" />
+        <!-- 圆弧宽度 -->
+        <attr name="arcWidth" />
+        <attr name="arcColors" />
+        <!-- 背景圆弧颜色 -->
+        <attr name="bgArcColor" />
+        <!-- 背景圆弧宽度 -->
+        <attr name="bgArcWidth" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="SwitchButton">
+        <attr name="kswThumbDrawable" format="reference" />
+        <attr name="kswThumbColor" format="color|reference" />
+        <attr name="kswThumbMargin" format="dimension|reference" />
+        <attr name="kswThumbMarginTop" format="dimension|reference" />
+        <attr name="kswThumbMarginBottom" format="dimension|reference" />
+        <attr name="kswThumbMarginLeft" format="dimension|reference" />
+        <attr name="kswThumbMarginRight" format="dimension|reference" />
+        <attr name="kswThumbWidth" format="dimension|reference" />
+        <attr name="kswThumbHeight" format="dimension|reference" />
+        <attr name="kswThumbRadius" format="dimension|reference" />
+        <attr name="kswBackRadius" format="dimension|reference" />
+        <attr name="kswBackDrawable" format="reference" />
+        <attr name="kswBackColor" format="color|reference" />
+        <attr name="kswFadeBack" format="boolean" />
+        <attr name="kswThumbRangeRatio" format="float" />
+        <attr name="kswAnimationDuration" format="integer" />
+        <attr name="kswTintColor" format="color|reference" />
+        <attr name="kswTextOn" format="string" />
+        <attr name="kswTextOff" format="string" />
+        <attr name="kswTextThumbInset" format="dimension" />
+        <attr name="kswTextExtra" format="dimension" />
+        <attr name="kswTextAdjust" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="AppBarTranslateScaleBehavior">
+        <attr name="behavior_destination_id" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="NineGridLayout">
+        <attr name="spacing" format="dimension" />
+        <attr name="horizontal_spacing" format="dimension" />
+        <attr name="vertical_spacing" format="dimension" />
+        <attr name="single_mode" format="boolean" />
+        <attr name="four_gird_mode" format="boolean" />
+        <attr name="single_mode_width" format="dimension" />
+        <attr name="single_mode_height" format="dimension" />
+        <attr name="single_mode_overflow_scale" format="boolean" />
+    </declare-styleable>
+</resources>
