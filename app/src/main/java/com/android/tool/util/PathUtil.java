@@ -11,7 +11,7 @@ public class PathUtil {
 
     public static final boolean DEBUG_LOG = true;
 
-    public static final boolean DEBUG = true;
+    public static final boolean DEBUG = false;
 
     //接口域名
     public static final String url = DEBUG ? "https://api1.sx1211.cn"
@@ -82,12 +82,55 @@ public class PathUtil {
      */
     public static String getMyInfo() {
         return url + "/user/getMyInfo";
-    }    /**
+    }
+    /**
      * 订单
      *
      * @return
      */
     public static String getMyBookOrderList() {
         return url + "/user/getMyBookOrderList";
+    }
+
+    /**
+     * 取消订单
+     *
+     * @return
+     */
+    public static String getCancelOrder() {
+        return url + "/bookorder/cancel";
+    }
+
+    /**
+     * 提交评价
+     *
+     * @return
+     */
+    public static String getEvaluate() {
+        return url + "/bookOrder/evaluate";
+    }
+
+    /**
+     * 提交评价
+     *
+     * @return
+     */
+    public static String getAppInitData() {
+        return url + "/index/appInitData";
+    }
+    /**
+     * 支付
+     *
+     * @return
+     */
+    public static String getPaymentInfo() {
+        return url + "/bookOrder/getPreBookOrderIndex";
+    } /**
+     * 提交订单
+     *
+     * @return
+     */
+    public static String getSubmitBookOrder() {
+        return url + "/bookOrder/submitBookOrder";
     }
 }

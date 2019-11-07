@@ -16,9 +16,14 @@
 package com.android.tool.utility;
 
 import android.app.Activity;
+import android.view.View;
 
 import com.android.tool.ui.base.BaseJsonCallback;
+import com.android.tool.util.NetUtil;
+import com.android.tool.widget.loading.LoadingState;
+import com.android.tool.widget.loading.LoadingView;
 import com.lzy.okgo.request.base.Request;
+
 
 /**
  * 全屏占位图网络请求回调
@@ -27,12 +32,12 @@ import com.lzy.okgo.request.base.Request;
  */
 public abstract class LoadingCallback<T> extends BaseJsonCallback<T> {
 
-//    private LoadingView mLoadingView;
+    private LoadingView mLoadingView;
     private Activity mActivity;
 
-    public LoadingCallback(Activity mActivity/*, LoadingView mLoadingView*/) {
+    public LoadingCallback(Activity mActivity, LoadingView mLoadingView) {
         super(mActivity);
-//        this.mLoadingView = mLoadingView;
+        this.mLoadingView = mLoadingView;
         this.mActivity = mActivity;
     }
 
@@ -44,7 +49,7 @@ public abstract class LoadingCallback<T> extends BaseJsonCallback<T> {
     @Override
     public void onError(com.lzy.okgo.model.Response<T> response) {
         super.onError(response);
-//        loadingFailure(mActivity, mLoadingView);
+        loadingFailure(mActivity, mLoadingView);
     }
 
     @Override
@@ -53,23 +58,23 @@ public abstract class LoadingCallback<T> extends BaseJsonCallback<T> {
 //        mLoadingView.setVisibility(View.GONE);
     }
 
-//    /**
-//     * 加载数据失败
-//     *
-//     * @param activity
-//     * @param mLoadingView
-//     */
-//    private static void loadingFailure(Activity activity, LoadingView mLoadingView) {
-//        mLoadingView.setVisibility(View.VISIBLE);
-//        if (!NetUtil.isConnected(activity)) {
-//            loadingState(mLoadingView, LoadingState.STATE_NO_NET);
-//            return;
-//        }
-//        loadingState(mLoadingView, LoadingState.STATE_ERROR);
-//    }
-//
-//    public static void loadingState(LoadingView mLoadingView, LoadingState stateEmpty) {
-//        mLoadingView.setVisibility(View.VISIBLE);
-//        mLoadingView.setState(stateEmpty);
-//    }
+    /**
+     * 加载数据失败
+     *
+     * @param activity
+     * @param mLoadingView
+     */
+    private static void loadingFailure(Activity activity, LoadingView mLoadingView) {
+        mLoadingView.setVisibility(View.VISIBLE);
+        if (!NetUtil.isConnected(activity)) {
+            loadingState(mLoadingView, LoadingState.STATE_NO_NET);
+            return;
+        }
+        loadingState(mLoadingView, LoadingState.STATE_ERROR);
+    }
+
+    public static void loadingState(LoadingView mLoadingView, LoadingState stateEmpty) {
+        mLoadingView.setVisibility(View.VISIBLE);
+        mLoadingView.setState(stateEmpty);
+    }
 }

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-
 import com.android.tool.R;
 import com.android.tool.model.OrderBean;
 import com.android.tool.ui.base.BaseFragments;
@@ -25,6 +24,7 @@ import com.android.tool.widget.callback.util.LoadingCallbackUtil;
 import com.android.tool.widget.dialog.AlertDialogUtil;
 import com.android.tool.widget.loading.LoadingView;
 import com.android.tool.widget.loading.LoadingViewOverwrite;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
 
@@ -172,8 +172,8 @@ public class AllOrderFragment extends BaseFragments implements OrderAdapter.OnIt
      */
     @Override
     public void onItemGoPayClick(OrderBean.RowsBean bean, int position) {
-        IntentUtils.startPayPageActivity(mActivity, "",
-                bean.getOrderId(), "", true);
+//        IntentUtils.startPayPageActivity(mActivity, "",
+//                bean.getOrderId(), "", true);
     }
 
     /**

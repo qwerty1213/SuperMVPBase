@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchWrap.Vertical"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:id="@+id/ll_setting_address"
+        style="@style/MatchWrap.Horizontal"
+        android:background="@drawable/add_address_selector"
+        android:gravity="center"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/add_address_icon" />
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/text_black14_wrap"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="您还没有设置收货地址·立即设置" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_address_management"
+        style="@style/MatchWrap.Vertical"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:visibility="gone">
+
+        <RelativeLayout style="@style/MatchWrap.Horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:src="@mipmap/location_icon3x" />
+
+            <LinearLayout
+                style="@style/MatchWrap.Vertical"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="30dp">
+
+                <RelativeLayout style="@style/MatchWrap">
+
+                    <TextView
+                        android:id="@+id/txt_name"
+                        style="@style/text_black14_wrap" />
+
+                    <TextView
+                        android:id="@+id/txt_mobile"
+                        style="@style/text_black14_wrap"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txt_address"
+                    style="@style/text_c33_13_wrap"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:maxLines="2" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@mipmap/jiantou_right_icon" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_tips"
+            style="@style/text_cff26_12_wrap"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/address_tips" />
+    </LinearLayout>
+</LinearLayout>

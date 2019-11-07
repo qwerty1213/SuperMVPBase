@@ -367,6 +367,14 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ`¬!"£$%^*()~=#{}[];':,./?/*-_+</string>
     <string name="please_write_contact_phone_number_type" translatable="false">请输入您的联系方式</string>
     <string name="title_coupons" translatable="false">优惠券</string>
     <string name="please_write" translatable="false">请输入</string>
+    <string name="share_success" translatable="false">分享成功</string>
+    <string name="share_fail" translatable="false">分享失败</string>
+    <string name="cancel_share" translatable="false">取消分享</string>
+
+    <string name="success" translatable="false">成功</string>
+    <string name="error" translatable="false">错误</string>
+    <string name="warning" translatable="false">警告</string>
+    <string name="info" translatable="false">提示</string>
 
     <string name="loading_network_error" translatable="false">哇哦！网络出现问题了o！</string>
     <string name="loading_nothing_error" translatable="false">哇哦！没有任何数据o！</string>

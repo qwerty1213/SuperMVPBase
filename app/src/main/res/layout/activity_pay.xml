@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MatchMatch"
+    android:background="@color/white">
+
+    <include layout="@layout/title_text_text_layout" />
+
+    <com.android.tool.widget.MyScrollView
+        style="@style/MatchWrap"
+        android:layout_above="@+id/rl_bottom"
+        android:layout_below="@+id/title_bar_layout">
+
+        <LinearLayout
+            style="@style/MatchWrap.Vertical"
+            tools:ignore="UnknownIdInLayout">
+
+            <include layout="@layout/include_pay_address_management" />
+
+            <include layout="@layout/include_pay_order_information" />
+
+            <RelativeLayout
+                android:id="@+id/rl_recruit_teach_currency"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:visibility="visible">
+
+                <TextView
+                    style="@style/text_black15_wrap"
+                    android:layout_centerVertical="true"
+                    android:text="@string/recruit_teach_currency" />
+
+                <TextView
+                    android:id="@+id/txt_recruit_teach_currency_num"
+                    style="@style/text_c8888_14_wrap"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="25dp"
+                    android:text="0" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/next_icon" />
+
+            </RelativeLayout>
+
+            <include layout="@layout/include_lines_f7f7" />
+
+            <RelativeLayout
+                android:id="@+id/rl_coupons"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:visibility="visible">
+
+                <TextView
+                    style="@style/text_black15_wrap"
+                    android:layout_centerVertical="true"
+                    android:text="@string/title_coupons" />
+
+                <TextView
+                    android:id="@+id/txt_coupons_num"
+                    style="@style/text_c8888_14_wrap"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="25dp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/next_icon" />
+
+            </RelativeLayout>
+
+            <include layout="@layout/include_lines_f7f7" />
+
+            <TextView
+                style="@style/text_black15_mwrap"
+                android:gravity="center_vertical"
+                android:minHeight="55dp"
+                android:paddingLeft="15dp"
+                android:text="@string/method_payment" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                style="@style/RecyclerView_Style_MatchMatch" />
+        </LinearLayout>
+    </com.android.tool.widget.MyScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true">
+
+        <View
+            android:id="@+id/v_lines"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/c_f7" />
+
+        <com.android.tool.widget.TextViewDel
+            android:id="@+id/txt_original_price"
+            style="@style/text_gray12_wrap"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="原价 ¥0.00元" />
+
+        <TextView
+            android:id="@+id/txt_total_price"
+            style="@style/text_red14_mwrap"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/txt_pay"
+            android:layout_toRightOf="@+id/txt_original_price"
+            android:paddingLeft="15dp"
+            android:text="实付价 ¥0.00元" />
+
+        <TextView
+            android:id="@+id/txt_pay"
+            style="@style/text_white15_110wrap"
+            android:layout_below="@+id/v_lines"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/c_ff26"
+            android:gravity="center"
+            android:text="立即购买" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -97,10 +97,12 @@ dependencies {
     annotationProcessor depend.glideCompiler
     api depend.glideTransformations
     api depend.recyclerview
+
     //    api depend.BaseRecyclerViewAdapterHelper
     api depend.gson
     api depend.GifView
-//    api depend.banner
+
+    //    api depend.banner
     api depend.cardview
     api depend.nineoldandroidsLibrary
     api depend.agentweb
@@ -123,46 +125,82 @@ dependencies {
     api depend.shimmerlayout
     api depend.goodview
     api depend.gridlayout
-//    api project(path: ':dkplayer-java')
-//    api depend.dkplayerArmv7a
-//    api depend.dkplayerArmv5
-//    api depend.dkplayerArm64
-//    api depend.dkplayerx86
-//    api depend.dkplayerx86_64
+
+    //    api project(path: ':dkplayer-java')
+
+    //    api depend.dkplayerArmv7a
+
+    //    api depend.dkplayerArmv5
+
+    //    api depend.dkplayerArm64
+
+    //    api depend.dkplayerx86
+
+    //    api depend.dkplayerx86_64
     api depend.indexablerecyclerview
+
     // -------------------- banner以下两个库是必须依赖的 ----------------------------
     api depend.bgabanner
     api depend.bgasupport
-
     api 'com.liulishuo.filedownloader:library:1.7.6'
     api 'com.squareup.picasso:picasso:2.5.2'
-//    api project(path: ':ccliveLib')
-//    api project(path: ':zshdFastLib')
-//    //展示互动
-//    api project(path: ':zshdPlayerLib')
-//    //展示互动
-//    api project(path: ':zxingLib')
-//    //二维码
-//    api project(path: ':BRVAHLibrary')
-//    api project(path: ':pictureLib')
-////    api project(path: ':banner')
-//    api files('libs/afinal.jar')
-//    //    api files('libs/alipaySdk.jar')
-//    api files('libs/wechatsdklibs.jar')
-//    api files('libs/umeng-debug-1.0.0.jar')
-//    api files('libs/umeng-share-core-6.9.1.jar')
-//    api files('libs/umeng-sharetool-6.9.1.jar')
-//    api files('libs/umeng-share-QQ-simplify-6.9.1.jar')
-//    api files('libs/umeng-share-sina-simplify-6.9.1.jar')
-//    api files('libs/umeng-share-wechat-simplify-6.9.1.jar')
-//    api files('libs/umeng-shareboard-widget-6.9.1.jar')
-//    api files('libs/umeng-common-1.5.0.jar')
-//    api files('libs/aspectjrt-1.7.3.jar')
-//    //    api files('libs/ijkjava.jar')
-//    api files('libs/isoparser-1.0.6.jar')
-//    api files('libs/org.apache.http.legacy.jar')
-//    api files('libs/ccsdk.jar')
-//    implementation files('libs/alipaySdk-15.5.5.jar')
-//    implementation files('libs/BaiduLBS_Android.jar')
 
+    //    api project(path: ':ccliveLib')
+
+    //    api project(path: ':zshdFastLib')
+
+    //    //展示互动
+
+    //    api project(path: ':zshdPlayerLib')
+
+    //    //展示互动
+
+    //    api project(path: ':zxingLib')
+
+    //    //二维码
+
+    //    api project(path: ':BRVAHLibrary')
+
+    //    api project(path: ':pictureLib')
+
+    ////    api project(path: ':banner')
+
+    //    api files('libs/afinal.jar')
+
+    //    //    api files('libs/alipaySdk.jar')
+
+    //    api files('libs/wechatsdklibs.jar')
+
+    //    api files('libs/umeng-debug-1.0.0.jar')
+
+    //    api files('libs/umeng-share-core-6.9.1.jar')
+
+    //    api files('libs/umeng-sharetool-6.9.1.jar')
+
+    //    api files('libs/umeng-share-QQ-simplify-6.9.1.jar')
+
+    //    api files('libs/umeng-share-sina-simplify-6.9.1.jar')
+
+    //    api files('libs/umeng-share-wechat-simplify-6.9.1.jar')
+
+    //    api files('libs/umeng-shareboard-widget-6.9.1.jar')
+
+    //    api files('libs/umeng-common-1.5.0.jar')
+
+    //    api files('libs/aspectjrt-1.7.3.jar')
+
+    //    //    api files('libs/ijkjava.jar')
+
+    //    api files('libs/isoparser-1.0.6.jar')
+
+    //    api files('libs/org.apache.http.legacy.jar')
+
+    //    api files('libs/ccsdk.jar')
+
+    //    implementation files('libs/alipaySdk-15.5.5.jar')
+
+    //    implementation files('libs/BaiduLBS_Android.jar')
+    implementation files('libs/alipaySdk-20180601.jar')
+    compile project(path: ':BRVAHLibrary')
+    implementation files('libs/wechatsdklibs.jar')
 }

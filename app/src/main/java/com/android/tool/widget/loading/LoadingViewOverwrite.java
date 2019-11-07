@@ -1,10 +1,10 @@
 package com.android.tool.widget.loading;
 
-
 import android.content.Context;
 import android.view.View;
 
 import com.android.tool.R;
+
 
 /**
  * class ：LoadingView二次封装版

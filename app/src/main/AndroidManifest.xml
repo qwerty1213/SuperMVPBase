@@ -46,7 +46,15 @@
         <activity android:name=".ui.login.RigisterActivity" />
         <activity android:name=".ui.login.FindPasswordActivity" />
         <activity android:name=".ui.login.SettingPasswordActivity" />
+        <activity android:name=".ui.main.MyOrderActivity"/>
     </application>
+
+
+
+
+
+
+
     <!-- Required  一些系统要求的权限，如访问网络等-->
     <!--<permission-->
         <!--android:name="com.shanxiang.online.sxclass.permission.JPUSH_MESSAGE"-->

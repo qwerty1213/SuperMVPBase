@@ -6,12 +6,14 @@ import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.ClipboardManager;
 import android.view.View;
 import android.widget.TextView;
 
 import com.android.tool.R;
 import com.android.tool.model.OrderBean;
 import com.android.tool.util.T;
+import com.android.tool.widget.ButtonState;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 

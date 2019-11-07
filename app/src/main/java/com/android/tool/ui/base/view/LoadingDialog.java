@@ -1,4 +1,4 @@
-//package com.android.tool.ui.base.view;//package com.xiangshan.education.baseproject.base.view;
+package com.android.tool.ui.base.view;//package com.android.tool.ui.base.view;//package com.xiangshan.education.baseproject.base.view;
 //
 //import android.app.Dialog;
 //import android.content.Context;

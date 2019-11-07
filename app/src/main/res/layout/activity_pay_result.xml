@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchMatch.Vertical">
+
+    <include layout="@layout/title_text_text_layout" />
+
+    <RelativeLayout
+        style="@style/MatchMatch"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:src="@mipmap/pay_success3x" />
+
+        <com.shanxiang.online.sxclass.widget.ButtonState
+            android:id="@+id/bt_ok"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:padding="0dp"
+            android:text="支付结果"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:normalBackgroundColor="@color/c_zhuti"
+            app:pressedBackgroundColor="@color/c_ff6"
+            app:radius="5dp"
+            app:unableBackgroundColor="@android:color/holo_red_light" />
+    </RelativeLayout>
+</LinearLayout>

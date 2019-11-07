@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/BRVAHLibrary/BRVAHLibrary.iml" filepath="$PROJECT_DIR$/BRVAHLibrary/BRVAHLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/SuperMVPBase.iml" filepath="$PROJECT_DIR$/SuperMVPBase.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/utilslibrary/utilslibrary.iml" filepath="$PROJECT_DIR$/utilslibrary/utilslibrary.iml" />

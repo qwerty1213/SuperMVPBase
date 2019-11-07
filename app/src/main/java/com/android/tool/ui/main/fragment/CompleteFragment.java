@@ -3,19 +3,29 @@ package com.android.tool.ui.main.fragment;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
 import com.android.tool.R;
+import com.android.tool.model.OrderBean;
 import com.android.tool.ui.base.BaseFragments;
+import com.android.tool.ui.main.adapter.OrderAdapter;
 import com.android.tool.ui.web.WebURLUtil;
-import com.android.tool.util.IntentUtils;
 import com.android.tool.util.PathUtil;
 import com.android.tool.utility.AppConfig;
+import com.android.tool.utility.LoadingCallback;
 import com.android.tool.utility.StringDialogCallback;
+import com.android.tool.utility.model.ObjectResponse;
 import com.android.tool.widget.CustomLoadMoreView;
+import com.android.tool.widget.SuperSwipeRefreshLayout;
+import com.android.tool.widget.callback.util.LoadingCallbackUtil;
+import com.android.tool.widget.loading.LoadingView;
+import com.android.tool.widget.loading.LoadingViewOverwrite;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.lcodecore.tkrefreshlayout.footer.LoadingView;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
+
 import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 
 /**
@@ -139,8 +149,8 @@ public class CompleteFragment extends BaseFragments implements OrderAdapter.OnIt
      */
     @Override
     public void onItemGoPayClick(OrderBean.RowsBean bean, int position) {
-        IntentUtils.startPayPageActivity(mActivity, "",
-                bean.getOrderId(), "", true);
+//        IntentUtils.startPayPageActivity(mActivity, "",
+//                bean.getOrderId(), "", true);
     }
 
     /**
