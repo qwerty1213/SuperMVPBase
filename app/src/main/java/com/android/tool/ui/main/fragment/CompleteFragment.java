@@ -9,6 +9,7 @@ import com.android.tool.model.OrderBean;
 import com.android.tool.ui.base.BaseFragments;
 import com.android.tool.ui.main.adapter.OrderAdapter;
 import com.android.tool.ui.web.WebURLUtil;
+import com.android.tool.util.IntentUtils;
 import com.android.tool.util.PathUtil;
 import com.android.tool.utility.AppConfig;
 import com.android.tool.utility.LoadingCallback;
@@ -149,8 +150,8 @@ public class CompleteFragment extends BaseFragments implements OrderAdapter.OnIt
      */
     @Override
     public void onItemGoPayClick(OrderBean.RowsBean bean, int position) {
-//        IntentUtils.startPayPageActivity(mActivity, "",
-//                bean.getOrderId(), "", true);
+        IntentUtils.startPayPageActivity(mActivity, "",
+                bean.getOrderId(), "", true);
     }
 
     /**

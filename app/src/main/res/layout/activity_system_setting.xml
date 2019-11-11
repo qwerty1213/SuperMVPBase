@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchMatch.Vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white">
+
+    <include layout="@layout/title_text_text_layout" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/c_f2f4" />
+
+    <LinearLayout
+        android:id="@+id/ll_change_password"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:visibility="gone">
+
+        <TextView
+            style="@style/text_black15_wrap"
+            android:layout_weight="1"
+            android:text="@string/text_change_password" />
+
+        <include layout="@layout/next_layout" />
+    </LinearLayout>
+
+    <include layout="@layout/include_lines_f7f7" />
+
+    <LinearLayout
+        android:id="@+id/ll_clear_cache"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            style="@style/text_black15_wrap"
+            android:layout_weight="1"
+            android:text="@string/text_clear_cache" />
+
+        <TextView
+            android:id="@+id/txt_cache_size"
+            style="@style/text_c99_14_wrap"
+            android:layout_marginRight="5dp"
+            android:text="0.0k" />
+
+        <include layout="@layout/next_layout" />
+    </LinearLayout>
+
+    <include layout="@layout/include_lines_f7f7" />
+
+    <LinearLayout
+        android:id="@+id/ll_update_app"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            style="@style/text_black15_wrap"
+            android:layout_weight="1"
+            android:text="@string/text_update_app" />
+
+        <TextView
+            android:id="@+id/txt_version"
+            style="@style/text_c99_14_wrap"
+            android:layout_marginRight="5dp" />
+
+        <include layout="@layout/next_layout" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/c_f2f4" />
+
+    <TextView
+        android:id="@+id/txt_logout"
+        style="@style/text_black15_mwrap"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:maxHeight="45dp"
+        android:minHeight="45dp"
+        android:text="@string/text_logout"
+        android:visibility="visible" />
+
+    <View
+        style="@style/MatchMatch"
+        android:background="@color/c_f2f4" />
+</LinearLayout>

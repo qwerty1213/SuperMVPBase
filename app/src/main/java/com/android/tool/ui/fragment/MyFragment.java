@@ -8,6 +8,7 @@ import com.android.tool.R;
 import com.android.tool.model.CurrencyBalanceBean;
 import com.android.tool.ui.base.BaseFragments;
 import com.android.tool.ui.main.MyOrderActivity;
+import com.android.tool.ui.main.SystemSettingActivity;
 import com.android.tool.ui.web.WebURLUtil;
 import com.android.tool.util.GUtils;
 import com.android.tool.util.IntentUtils;
@@ -174,7 +175,7 @@ public class MyFragment extends BaseFragments  implements ButtonView.OnTabClickL
 //                }
                 break;
             case R.id.iv_setting:
-//                IntentUtils.startIntent(mActivity, SystemSettingActivity.class, new Bundle());
+                IntentUtils.startIntent(mActivity, SystemSettingActivity.class, new Bundle());
                 break;
             case R.id.ll_teach_currency:
 //                if (IntentUtils.isLogin(mActivity, new Bundle())) {

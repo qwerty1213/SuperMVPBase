@@ -166,14 +166,13 @@ public class AllOrderFragment extends BaseFragments implements OrderAdapter.OnIt
 
     /**
      * 去支付点击事件
-     *
      * @param bean
      * @param position
      */
     @Override
     public void onItemGoPayClick(OrderBean.RowsBean bean, int position) {
-//        IntentUtils.startPayPageActivity(mActivity, "",
-//                bean.getOrderId(), "", true);
+        IntentUtils.startPayPageActivity(mActivity, "",
+                bean.getOrderId(), "", true);
     }
 
     /**

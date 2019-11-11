@@ -133,4 +133,20 @@ public class PathUtil {
     public static String getSubmitBookOrder() {
         return url + "/bookOrder/submitBookOrder";
     }
+    /**
+     * 加入购物车
+     *
+     * @return
+     */
+    public static String getAdd() {
+        return url + "/cart/add";
+    }
+    /**
+     * 获取版本信息
+     *
+     * @return
+     */
+    public static String getVersionData() {
+        return url + "/UpdateAppInfo/getVersionAndroid";
+    }
 }

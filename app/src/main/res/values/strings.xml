@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">山香老师</string>
+    <string name="app_name" translatable="false">一元课堂</string>
     <string name="action_settings" translatable="false">Settings</string>
 
     <string name="network_errors" translatable="false">网络异常</string>

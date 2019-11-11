@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lLayout_bg"
+    style="@style/MatchWrap.Vertical"
+    android:background="@drawable/dialog_version_bg"
+    android:padding="20dp">
+
+    <TextView
+        style="@style/text_black18_wrap"
+        android:text="@string/text_network_prompt"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+    <TextView
+        style="@style/text_black14_wrap"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:lineSpacingExtra="3dp"
+        android:text="@string/text_not_wifi_prompt" />
+
+    <LinearLayout
+        style="@style/MatchWrap.Horizontal"
+        android:gravity="right">
+
+        <TextView
+            android:id="@+id/txt_cancel"
+            style="@style/text_cff26_14_wrap"
+            android:layout_marginRight="10dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/text_cancel" />
+
+        <TextView
+            android:id="@+id/txt_continue"
+            style="@style/text_cff26_14_wrap"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/text_continue"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

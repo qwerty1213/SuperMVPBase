@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.android.tool">
+
     <application
         android:name=".BaseApplication"
         android:allowBackup="true"
@@ -21,7 +22,7 @@
             android:name="design_height"
             android:value="1280" />
 
-        <activity android:name=".ui.main.MainActivity">
+        <activity android:name=".ui.main.MainActivity"><!--首页-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,23 +43,147 @@
         <activity
             android:name=".ui.web.WebViewActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".ui.login.LoginFragmentActivity" />
-        <activity android:name=".ui.login.RigisterActivity" />
-        <activity android:name=".ui.login.FindPasswordActivity" />
-        <activity android:name=".ui.login.SettingPasswordActivity" />
-        <activity android:name=".ui.main.MyOrderActivity"/>
+        <activity android:name=".ui.login.LoginFragmentActivity" /><!--登陆-->
+        <activity android:name=".ui.login.RigisterActivity" /><!--注册-->
+        <activity android:name=".ui.login.FindPasswordActivity" /><!--找回密码-->
+        <activity android:name=".ui.login.SettingPasswordActivity" /> <!--设置密码-->
+        <activity android:name=".ui.main.MyOrderActivity" /><!--我的订单-->
+        <activity android:name=".ui.main.SystemSettingActivity" />  <!--设置中心-->
+        <activity android:name=".ui.pay.PayActivity" />    <!--支付页面-->
+
+        /****************支付宝 start********************/
+        <receiver
+            android:name=".ui.main.version.InitApkBroadCastReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <!-- 若不启用该功能可删除该组件，或把 enabled 设置成 false ；App 不会被其他 App 拉起，但会拉起其他的 App。 -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.versionProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/versionchecklib_file_paths" />
+        </provider>
+        <!--<receiver-->
+        <!--android:name="cn.jpush.android.service.AlarmReceiver"-->
+        <!--android:exported="false" />-->
+        <!--// 将该app注册到微信-->
+        <!--<receiver-->
+        <!--android:name="com.shanxiang.online.sxclass.push.MyReceiver"-->
+        <!--android:enabled="true"-->
+        <!--android:exported="false">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="cn.jpush.android.intent.REGISTRATION" /> &lt;!&ndash;Required  用户注册SDK的intent&ndash;&gt;-->
+        <!--<action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> &lt;!&ndash;Required  用户接收SDK消息的intent&ndash;&gt;-->
+        <!--<action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> &lt;!&ndash;Required  用户接收SDK通知栏信息的intent&ndash;&gt;-->
+        <!--<action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> &lt;!&ndash;Required  用户打开自定义通知栏的intent&ndash;&gt;-->
+        <!--<action android:name="cn.jpush.android.intent.CONNECTION" />&lt;!&ndash; 接收网络变化 连接/断开 since 1.6.3 &ndash;&gt;-->
+        <!--<category android:name="com.shanxiang.online.sxclass" />-->
+        <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <!--<receiver android:name="com.shanxiang.online.sxclass.push.MyJPushMessageReceiver">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />-->
+        <!--<category android:name="com.shanxiang.online.sxclass" />-->
+        <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!--<receiver android:name=".ui.pay.util.AppRegister">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />-->
+        <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <!--<service-->
+        <!--android:name="com.shanxiang.online.sxclass.ui.ondemand.cc.download.DownloadService"-->
+        <!--android:enabled="true" />-->
+        <!--<service-->
+        <!--android:name="com.shanxiang.online.sxclass.ui.ondemand.cc.upload.UploadService"-->
+        <!--android:enabled="true" />-->
+        <!--<service android:name="com.gensee.fastsdk.service.LogCatService" />-->
+        <!--<service-->
+        <!--android:name="cn.jpush.android.service.PushService"-->
+        <!--android:process=":multiprocess"-->
+        <!--tools:node="replace">-->
+        <!--……-->
+        <!--</service>-->
+        <!--<service-->
+        <!--android:name="cn.jpush.android.service.DaemonService"-->
+        <!--android:enabled="true"-->
+        <!--android:exported="true">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="cn.jpush.android.intent.DaemonService" />-->
+        <!--<category android:name="com.shanxiang.online.sxclass" />-->
+        <!--</intent-filter>-->
+        <!--</service>-->
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        /****************支付宝 end********************/
+        /****************分享start********************/
+        <activity
+            android:name="com.umeng.socialize.media.WBShareCallBackActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        //广播监听apk是否安装完成
+        <activity
+            android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.sina.weibo.sdk.share.WbShareTransActivity"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!--6.7.0更新-->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1105832221" />//正式
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--微信兼顾8.0-->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        /****************分享end********************/
     </application>
-
-
-
-
-
 
 
     <!-- Required  一些系统要求的权限，如访问网络等-->
     <!--<permission-->
-        <!--android:name="com.shanxiang.online.sxclass.permission.JPUSH_MESSAGE"-->
-        <!--android:protectionLevel="signature" />-->
+    <!--android:name="com.shanxiang.online.sxclass.permission.JPUSH_MESSAGE"-->
+    <!--android:protectionLevel="signature" />-->
 
     <!-- Required  一些系统要求的权限，如访问网络等-->
     <uses-feature android:name="android.hardware.camera" />

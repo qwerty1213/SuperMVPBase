@@ -12,9 +12,12 @@
     <color name="text_gray">#7A7A7A</color>
     <color name="text_hint">#acacac</color>
     <color name="empty_view_background">#F2F2F2</color>//数据展示背景色值
-
+    <color name="alertdialog_line">@color/c_f6f6</color>
     <color name="c_zhuti">#FF6666</color>
     <color name="c_ff6">#ff6b6c</color>
+    <color name="c_999">#999</color>
+    <color name="c_70">#707070</color>
+    <color name="c_333">#333333</color>
 
     <!-- 网络请求不到 -->
     <color name="empty_txt_color">#77000000</color>

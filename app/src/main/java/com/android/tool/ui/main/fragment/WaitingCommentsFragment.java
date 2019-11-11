@@ -10,6 +10,7 @@ import com.android.tool.model.OrderBean;
 import com.android.tool.ui.base.BaseFragments;
 import com.android.tool.ui.main.adapter.OrderAdapter;
 import com.android.tool.ui.web.WebURLUtil;
+import com.android.tool.util.IntentUtils;
 import com.android.tool.util.KeyUtil;
 import com.android.tool.util.PathUtil;
 import com.android.tool.utility.AppConfig;
@@ -156,8 +157,8 @@ public class WaitingCommentsFragment extends BaseFragments implements OrderAdapt
      */
     @Override
     public void onItemGoPayClick(OrderBean.RowsBean bean, int position) {
-//        IntentUtils.startPayPageActivity(mActivity, "",
-//                bean.getOrderId(), "", true);
+        IntentUtils.startPayPageActivity(mActivity, "",
+                bean.getOrderId(), "", true);
     }
 
     /**

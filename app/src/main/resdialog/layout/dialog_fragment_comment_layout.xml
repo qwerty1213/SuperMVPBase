@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchWrap.Horizontal"
+    android:layout_gravity="bottom"
+    android:background="@color/c_f0f0"
+    android:gravity="center_vertical">
+
+    <EditText
+        android:id="@+id/edit_comment"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@null"
+        android:hint="评论..."
+        android:paddingStart="10dp"
+        android:textColorHint="@color/text_gray"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/image_btn_comment_send"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/edit_comment"
+        android:layout_alignParentEnd="true"
+        android:padding="10dp"
+        android:src="@mipmap/ic_send"
+        android:tint="@color/colorPrimary"
+        android:tintMode="multiply" />
+</com.zhy.autolayout.AutoLinearLayout>

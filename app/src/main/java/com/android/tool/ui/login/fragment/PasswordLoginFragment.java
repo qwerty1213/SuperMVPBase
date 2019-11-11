@@ -78,7 +78,7 @@ public class PasswordLoginFragment extends BaseFragments {
         txtCustomerService.setMovementMethod(LinkMovementMethod.getInstance());
         loginFragmentActivity = (LoginFragmentActivity) getActivity();
         if (!PathUtil.DEBUG) {
-            editMobile.setText("15201506339");
+            editMobile.setText("13522508321");
             editPassword.setText("123456");
             LoginUtil.setPasswordLoginStatus(editPassword, editMobile, btOk);
         }

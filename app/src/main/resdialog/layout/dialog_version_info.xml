@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lLayout_bg"
+    style="@style/MatchWrap.Vertical"
+    android:background="@drawable/dialog_version_bg"
+    android:padding="20dp">
+
+    <LinearLayout
+        style="@style/MatchWrap.Horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/txt_title"
+            style="@style/text_black18_wrap"
+            android:text="@string/text_update_prompt"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/txt_version"
+            style="@style/text_black14_wrap"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_msg"
+        style="@style/text_black14_wrap"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:lineSpacingExtra="3dp" />
+
+    <LinearLayout
+        style="@style/MatchWrap.Horizontal"
+        android:gravity="right">
+
+        <TextView
+            android:id="@+id/txt_cancel"
+            style="@style/text_cff26_14_wrap"
+            android:layout_marginRight="10dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="取消" />
+
+        <TextView
+            android:id="@+id/txt_update"
+            style="@style/text_cff26_14_wrap"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="更新"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

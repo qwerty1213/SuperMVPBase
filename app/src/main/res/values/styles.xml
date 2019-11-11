@@ -264,7 +264,6 @@
         <item name="android:textColor">@color/c_ffda</item>
         <item name="android:textSize">11sp</item>
     </style>
-
     <style name="text_black10_wrap" parent="WrapWrap">
         <item name="android:textColor">@color/text_black</item>
         <item name="android:textSize">10sp</item>

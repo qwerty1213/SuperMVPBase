@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lLayoutBg"
+    style="@style/MatchMatch">
+
+    <View
+        android:id="@+id/transparent_bacg"
+        style="@style/MatchMatch"
+        android:background="@color/white"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/share_ll"
+        style="@style/MatchMatch.Horizontal"
+        android:gravity="bottom"
+        android:paddingBottom="100dp">
+
+        <LinearLayout
+            android:id="@+id/layout_weixin"
+            style="@style/WrapWrap.Vertical"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/weiixinhaoyou_icon" />
+
+            <TextView
+                style="@style/text_white16_wrap"
+                android:layout_marginTop="20dp"
+                android:text="@string/weichat" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_weixin_friend"
+            style="@style/WrapWrap.Vertical"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/weixinpeng_icon" />
+
+            <TextView
+                style="@style/text_white16_wrap"
+                android:layout_marginTop="20dp"
+                android:text="@string/weichat_friends" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_weibo"
+            style="@style/WrapWrap.Vertical"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/xinliangweibo_icon" />
+
+            <TextView
+                style="@style/text_white16_wrap"
+                android:layout_marginTop="20dp"
+                android:text="@string/weibo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_qq"
+            style="@style/WrapWrap.Vertical"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/qq_icon" />
+
+            <TextView
+                style="@style/text_white16_wrap"
+                android:layout_marginTop="20dp"
+                android:text="QQ" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

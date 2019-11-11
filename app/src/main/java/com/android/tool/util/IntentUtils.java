@@ -9,6 +9,11 @@ import android.os.Bundle;
 import com.android.tool.BaseApplication;
 import com.android.tool.ui.login.LoginFragmentActivity;
 import com.android.tool.ui.main.MainActivity;
+import com.android.tool.ui.pay.PayActivity;
+import com.android.tool.utility.AppConfig;
+import com.android.tool.utility.StringDialogCallback;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.model.Response;
 
 /**
  * class ：---
@@ -79,39 +84,39 @@ public class IntentUtils {
             mActivity.finish();
         }
     }
-//    /**
-//     * 跳转支付页面
-//     *
-//     * @param mActivity 上下文
-//     * @param couserId  商品id
-//     * @param orderId   订单id
-//     * @param type      加入购物车需要
-//     * @param isOrder   true订单頁面支付     false商品列表支付
-//     */
-//    public static void startPayPageActivity(final Activity mActivity, final String couserId,
-//                                            final String orderId, String type, final boolean isOrder) {
-//        if (isLogin(mActivity, new Bundle())) {
-//            if (isOrder) {//订单页面
-//                Bundle bundle = new Bundle();
-//                bundle.putString(KeyUtil.ORDER_ID, orderId);
-//                bundle.putBoolean(KeyUtil.IS_ORDER, isOrder);
-//                startIntentForResult(mActivity, PayActivity.class, bundle, ResultUtil.R2);
-//            } else {//未加入购物车
-//                OkGo.<String>get(PathUtil.getAdd()).tag(mActivity)
-//                        .params(AppConfig.getAddCar.OBJ_ID, couserId)
-//                        .params(AppConfig.getAddCar.OBJ_TYPE, type)
-//                        .execute(new StringDialogCallback(mActivity) {
-//                            @Override
-//                            public void onSuccess(Response<String> response) {
-//                                Bundle bundle = new Bundle();
-//                                bundle.putString(KeyUtil.ORDER_ID, orderId);
-//                                bundle.putBoolean(KeyUtil.IS_ORDER, isOrder);
-//                                startIntentForResult(mActivity, PayActivity.class, bundle, ResultUtil.R2);
-//                            }
-//                        });
-//            }
-//        }
-//    }
+    /**
+     * 跳转支付页面
+     *
+     * @param mActivity 上下文
+     * @param couserId  商品id
+     * @param orderId   订单id
+     * @param type      加入购物车需要
+     * @param isOrder   true订单頁面支付     false商品列表支付
+     */
+    public static void startPayPageActivity(final Activity mActivity, final String couserId,
+                                            final String orderId, String type, final boolean isOrder) {
+        if (isLogin(mActivity, new Bundle())) {
+            if (isOrder) {//订单页面
+                Bundle bundle = new Bundle();
+                bundle.putString(KeyUtil.ORDER_ID, orderId);
+                bundle.putBoolean(KeyUtil.IS_ORDER, isOrder);
+                startIntentForResult(mActivity, PayActivity.class, bundle, ResultUtil.R2);
+            } else {//未加入购物车
+                OkGo.<String>get(PathUtil.getAdd()).tag(mActivity)
+                        .params(AppConfig.getAddCar.OBJ_ID, couserId)
+                        .params(AppConfig.getAddCar.OBJ_TYPE, type)
+                        .execute(new StringDialogCallback(mActivity) {
+                            @Override
+                            public void onSuccess(Response<String> response) {
+                                Bundle bundle = new Bundle();
+                                bundle.putString(KeyUtil.ORDER_ID, orderId);
+                                bundle.putBoolean(KeyUtil.IS_ORDER, isOrder);
+                                startIntentForResult(mActivity, PayActivity.class, bundle, ResultUtil.R2);
+                            }
+                        });
+            }
+        }
+    }
     /**
      * 跳转
      *

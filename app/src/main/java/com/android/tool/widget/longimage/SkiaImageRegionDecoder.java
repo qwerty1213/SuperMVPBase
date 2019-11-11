@@ -14,8 +14,6 @@ import android.graphics.Rect;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.android.tool.widget.longimage.ImageRegionDecoder;
-
 import java.io.InputStream;
 import java.util.List;
 

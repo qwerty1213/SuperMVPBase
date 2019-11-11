@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lLayout_bg"
+    style="@style/MatchWrap.Vertical">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/ll_bg"
+        style="@style/MatchWrap.Vertical"
+        android:background="@mipmap/conpons_dialog_bg"
+        android:padding="20dp">
+
+        <LinearLayout
+            style="@style/MatchWrap.Vertical"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/iv_title"
+                style="@style/WrapWrap"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/xuexijin_logo_icon" />
+
+            <com.android.tool.widget.wheelview.ClearEditText
+                android:id="@+id/et_account"
+                style="@style/WrapWrap"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@mipmap/conpons_et_bg"
+                android:digits="@string/password_digits"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="请输入兑换码"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:singleLine="true"
+                android:textColor="@color/c_zhuti"
+                android:textColorHint="@color/c_zhuti"
+                android:textSize="13sp" />
+
+            <com.android.tool.widget.wheelview.ClearEditText
+                android:id="@+id/et_password"
+                style="@style/WrapWrap"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/conpons_et_bg"
+                android:digits="@string/password_digits"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="请输入兑换密码"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:singleLine="true"
+                android:textColor="@color/c_zhuti"
+                android:textColorHint="@color/c_zhuti"
+                android:textSize="13sp" />
+
+
+        </LinearLayout>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_bg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-27dp"
+        android:src="@mipmap/immediately_change_bt_icon" />
+
+    <ImageView
+        android:id="@+id/iv_dissmiss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_ok"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/dialog_apply_rules_dissmiss_icon" />
+
+</com.zhy.autolayout.AutoRelativeLayout>

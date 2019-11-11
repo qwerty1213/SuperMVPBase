@@ -1,15 +1,30 @@
 <resources>
 
-    <!-- 自定义仿IOS的AlertDialog的样式 -->
-    <style name="AlertDialogStyle" parent="@android:style/Theme.Dialog">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:windowFrame">@null</item>
-        <item name="android:backgroundDimEnabled">true</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowIsTranslucent">true</item>
+    <style name="text_gray14_matchwrap" parent="MatchWrap">
+        <item name="android:textColor">@color/c_999</item>
+        <item name="android:textSize">14sp</item>
     </style>
+
+    <style name="text_black16_matchwrap" parent="MatchWrap">
+        <item name="android:textColor">@color/c_333</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_gray14c_666dp_matchwrap" parent="MatchWrap">
+        <item name="android:textColor">@color/c_666</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_c70_16_wrap" parent="WrapWrap">
+        <item name="android:textColor">@color/c_70</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="dialog_fullscreen">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
 
     <!-- 自定义仿IOS的ActionSheet底部Dialog的样式 ，有模糊效果 -->
     <style name="ActionSheetDialogStyle" parent="@android:style/Theme.Dialog">
@@ -36,4 +51,33 @@
         <item name="android:windowExitAnimation">@anim/actionsheet_dialog_out</item>
     </style>
 
+    <!-- 自定义仿IOS的AlertDialog的样式 -->
+    <style name="AlertDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="popmenu_animation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_show</item>
+        <item name="android:windowExitAnimation">@anim/pop_hide</item>
+    </style>
+
+    <style name="BottomDialog" parent="@style/AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <!-- PopupWindow弹出/隐藏动画 12-28 -->
+    <style name="MyPopupWindow_anim_style">
+        <item name="android:windowEnterAnimation">@anim/popupwindow_show_anim
+        </item>
+        <item name="android:windowExitAnimation">@anim/popupwindow_hidden_anim
+        </item>
+    </style>
 </resources>
