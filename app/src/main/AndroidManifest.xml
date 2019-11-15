@@ -6,7 +6,7 @@
     <application
         android:name=".BaseApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/app_image"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -40,6 +40,12 @@
                 <data android:scheme="sxapp" />
             </intent-filter>
         </activity>
+        <!-- 声明service组件 -->
+        <service
+        android:name="com.baidu.location.f"
+        android:enabled="true"
+        android:process=":remote" >
+        </service>
         <activity
             android:name=".ui.web.WebViewActivity"
             android:launchMode="singleTask" />
@@ -50,7 +56,9 @@
         <activity android:name=".ui.main.MyOrderActivity" /><!--我的订单-->
         <activity android:name=".ui.main.SystemSettingActivity" />  <!--设置中心-->
         <activity android:name=".ui.pay.PayActivity" />    <!--支付页面-->
-
+        <activity android:name=".ui.main.HomePageSeachActivity" />
+        <activity android:name=".ui.live.LiveDetailsActivity"/>  <!--直播详情-->
+        <activity android:name=".ui.main.LocationCityListActivity"/>   <!--定位-->
         /****************支付宝 start********************/
         <receiver
             android:name=".ui.main.version.InitApkBroadCastReceiver"
@@ -209,7 +217,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />

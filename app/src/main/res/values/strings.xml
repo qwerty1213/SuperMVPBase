@@ -6,7 +6,7 @@
     <string name="network_timeout" translatable="false">网络超时</string>
     <string name="json_syntax_error" translatable="false">JSON异常</string>
     <string name="unknown_error" translatable="false">未知异常</string>
-
+    <string name="community_collection_false" translatable="false">取消收藏</string>
     <string name="another_press_return_key_to_exit" translatable="false">再按一次返回键退出</string>
     <string name="emptyLoadFail" translatable="false">加载失败,点击重试</string>
     <string name="loading" translatable="false">加载中,请稍后...</string>
@@ -57,7 +57,7 @@
     <string name="text_commonly_used" translatable="false">常用</string>
     <string name="text_other" translatable="false">其他</string>
     <string name="live_today" translatable="false">今日直播</string>
-    <string name="text_hot_recommended" translatable="false">热门推荐</string>
+    <string name="text_hot_recommended" translatable="false">好课推荐</string>
     <string name="every_day_study" translatable="false">每日学习</string>
     <string name="public_office_is_inviting_teachers_to_interview" translatable="false">公办招教教师面试</string>
     <string name="public_office_is_qualificon_teachers" translatable="false">公办教师资格证</string>

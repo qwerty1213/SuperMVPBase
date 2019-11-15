@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchWrap.Vertical">
+
+    <com.zhy.autolayout.AutoRelativeLayout style="@style/MatchWrap">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="@drawable/text_background" />
+
+        <LinearLayout
+            style="@style/MatchWrap.Vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="145dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@mipmap/home_page_navigation_bg_icon"
+            android:gravity="center">
+
+            <LinearLayout style="@style/MatchWrap.Horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/text_background1" />
+
+                    <View
+                        android:layout_width="30dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="9dp"
+                        android:background="@drawable/text_background" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/text_background1" />
+
+                    <View
+                        android:layout_width="30dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="9dp"
+                        android:background="@drawable/text_background" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/text_background1" />
+
+                    <View
+                        android:layout_width="30dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="9dp"
+                        android:background="@drawable/text_background" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/text_background1" />
+
+                    <View
+                        android:layout_width="30dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="9dp"
+                        android:background="@drawable/text_background" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/text_background" />
+
+            <View
+                android:id="@+id/upMarqueeView"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/text_background" />
+
+        </LinearLayout>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <LinearLayout
+        style="@style/MatchWrap.Horizontal"
+        android:layout_marginTop="10dp">
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="80dp"
+            android:background="@drawable/home_page_left_background" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/home_page_banner_background" />
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="80dp"
+            android:background="@drawable/home_page_right_background" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/text_background" />
+
+    <LinearLayout style="@style/MatchWrap.Horizontal">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_background" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_background" />
+    </LinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

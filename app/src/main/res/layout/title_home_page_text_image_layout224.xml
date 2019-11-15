@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/title_bar_layout"
+    style="@style/MatchWrap.Vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@drawable/title_bar_background1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_selector_city"
+            style="@style/WrapMatch.Horizontal"
+            android:background="?android:actionBarItemBackground"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/txt_city"
+                style="@style/text_c3232_18_wrap"
+                android:text="全国"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="8dp"
+                android:layout_marginStart="10dp"
+                android:src="@mipmap/jiantou_down_black_icon303" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_flicking_a"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toLeftOf="@+id/iv_seach"
+            android:background="?android:attr/actionBarItemBackground"
+            android:padding="16dp"
+            android:src="@mipmap/home_page_flicking_a_icon"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/iv_seach"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toLeftOf="@+id/rl_msg"
+            android:background="?android:attr/actionBarItemBackground"
+            android:padding="15dp"
+            android:src="@mipmap/home_page_seach_icon" />
+
+        <RelativeLayout
+            android:id="@+id/rl_msg"
+            style="@style/WrapWrap"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/iv_msg"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="?android:attr/actionBarItemBackground"
+                android:padding="15dp"
+                android:src="@mipmap/home_page_message_icon" />
+
+            <ImageView
+                android:id="@+id/iv_msg_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/jpush_msg_shape"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootView"
+    style="@style/MatchMatch">
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/ll_top"
+        style="@style/MatchWrap.Vertical">
+
+        <FrameLayout
+            android:id="@+id/statusBarHeight"
+            style="@style/MatchWrap"
+            android:background="@color/white" />
+
+        <include layout="@layout/title_home_page_text_image_layout224" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.android.tool.widget.SuperSwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        style="@style/MatchMatch"
+        android:layout_below="@+id/ll_top">
+
+        <com.android.tool.widget.SuperRecyclerView
+            android:id="@+id/recyclerView"
+            style="@style/RecyclerView_Style_MatchMatch" />
+
+    </com.android.tool.widget.SuperSwipeRefreshLayout>
+
+    <com.android.tool.widget.ButtonView
+        android:id="@+id/iv_consulting"
+        android:layout_width="45dp"
+        android:layout_height="200dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="40dp"
+        android:visibility="visible" />
+
+</com.zhy.autolayout.AutoRelativeLayout>

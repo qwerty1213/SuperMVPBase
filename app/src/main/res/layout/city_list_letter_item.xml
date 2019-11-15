@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_index"
+    style="@style/MatchWrap"
+    android:layout_marginEnd="25dp"
+    android:background="@color/c_f5"
+    android:paddingStart="15dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:text="A"
+    android:textColor="@color/c_9898"
+    android:textSize="12sp"
+    android:textStyle="bold" />

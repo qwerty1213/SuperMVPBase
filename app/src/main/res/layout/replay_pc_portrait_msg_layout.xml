@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchMatch">
+
+    <RadioGroup
+        android:id="@+id/rg_infos_tag"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:background="@drawable/live_infos_tag_bg"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/live_portrait_info_chat"
+            style="@style/liveRadioButtonTheme"
+            android:text="聊天记录" />
+
+        <RadioButton
+            android:id="@+id/live_portrait_info_qa"
+            style="@style/liveRadioButtonTheme"
+            android:text="问答记录" />
+
+        <RadioButton
+            android:id="@+id/live_portrait_info_intro"
+            style="@style/liveRadioButtonTheme"
+            android:visibility="gone"
+            android:text="简介" />
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/live_portrait_container_viewpager"
+        style="@style/MatchMatch"
+        android:layout_below="@id/rg_infos_tag" />
+
+</RelativeLayout>

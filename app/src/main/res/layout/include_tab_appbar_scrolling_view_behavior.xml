@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchMatch.Vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <com.flyco.tablayout.SlidingTabLayout
+        android:id="@+id/slidingTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/title_bar_background1"
+        tl:tl_indicator_color="@color/c_zhuti"
+        tl:tl_indicator_corner_radius="0dp"
+        tl:tl_indicator_height="3dp"
+        tl:tl_indicator_width="20dp"
+        tl:tl_indicator_width_equal_title="true"
+        tl:tl_tab_space_equal="true"
+        tl:tl_textSelectColor="@color/c_ff6"
+        tl:tl_textUnselectColor="@color/black"
+        tl:tl_textsize="14sp"
+        tl:tl_underline_color="@color/c_f2f1"
+        tl:tl_underline_height="1dp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        style="@style/MatchMatch" />
+
+</com.zhy.autolayout.AutoLinearLayout>

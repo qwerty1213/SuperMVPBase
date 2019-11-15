@@ -12,14 +12,14 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+
 import com.android.tool.R;
-import com.android.tool.model.ShareBean;
 import com.android.tool.util.T;
+import com.android.tool.util.share.bean.ShareBean;
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.media.UMWeb;
-
 
 /**
  * 调用

@@ -15,14 +15,14 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.android.tool.R;
-import com.android.tool.model.ShareBean;
 import com.android.tool.util.T;
+import com.android.tool.util.share.bean.ShareBean;
 import com.github.lany192.blurdialog.BlurDialogFragment;
+
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.media.UMWeb;
-
 
 public class ShareDialogFragment extends BlurDialogFragment {
     private static UMWeb web;
@@ -40,15 +40,15 @@ public class ShareDialogFragment extends BlurDialogFragment {
         web.setTitle(shareBean.title);
         web.setThumb(shareBean.image);
         web.setDescription(shareBean.content);
+        handler = new Handler();
+        mDialog = new Dialog(mActivity);
         return new ShareDialogFragment();
     }
 
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        handler = new Handler();
         LayoutInflater inflater = LayoutInflater.from(mActivity);
-        mDialog = new Dialog(mActivity);
         View layout = inflater.inflate(R.layout.dialog_share, null);
         lLayoutBg = layout.findViewById(R.id.lLayoutBg);
         layoutWeixin = layout.findViewById(R.id.layout_weixin);

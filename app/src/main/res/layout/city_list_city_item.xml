@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:background="?attr/selectableItemBackground"
+    android:paddingStart="15dp"
+    android:paddingEnd="25dp">
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/text_black16_wrap"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:text="北京" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/c_E7E7" />
+
+</RelativeLayout>

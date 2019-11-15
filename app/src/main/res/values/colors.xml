@@ -18,7 +18,7 @@
     <color name="c_999">#999</color>
     <color name="c_70">#707070</color>
     <color name="c_333">#333333</color>
-
+    <color name="skeleton_color">#eeeeee</color>
     <!-- 网络请求不到 -->
     <color name="empty_txt_color">#77000000</color>
     <color name="c_aaaa">#AAAAAA</color>

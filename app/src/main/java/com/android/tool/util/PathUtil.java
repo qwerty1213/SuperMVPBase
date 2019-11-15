@@ -149,4 +149,36 @@ public class PathUtil {
     public static String getVersionData() {
         return url + "/UpdateAppInfo/getVersionAndroid";
     }
+    /**
+     * 首頁 教育资讯列表
+     *
+     * @return
+     */
+    public static String getHomeInfo() {
+        return url + "/index/getHomeInfo";
+    }
+    /**
+     * 搜索
+     *
+     * @return
+     */
+    public static String getSearch() {
+        return url + "/index/search";
+    }
+    /**
+     * 获取新直播详情
+     *
+     * @return
+     */
+    public static String getNewLiveDetails() {
+        return url + "/Product/getNewLiveDetail";
+    }
+    /**
+     * 城市定位列表
+     *
+     * @return
+     */
+    public static String getLocationCityList() {
+        return url + "/Index/getLocationAreaList";
+    }
 }

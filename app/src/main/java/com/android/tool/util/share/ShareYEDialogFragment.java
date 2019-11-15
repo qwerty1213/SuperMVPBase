@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.android.tool.R;
-import com.android.tool.model.ShareBean;
+import com.android.tool.util.share.bean.ShareBean;
 import com.android.tool.util.T;
 import com.github.lany192.blurdialog.BlurDialogFragment;
 import com.umeng.socialize.ShareAction;

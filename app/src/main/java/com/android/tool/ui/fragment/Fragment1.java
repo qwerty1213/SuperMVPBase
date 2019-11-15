@@ -21,6 +21,7 @@ public class Fragment1 extends BaseFragments {
         return fragmentCommon;
     }
 
+
     @Override
     public void initParms(Bundle mBundle) {
 

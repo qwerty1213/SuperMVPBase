@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchWrap"
+    android:layout_marginTop="20dp"
+    android:background="?attr/actionBarItemBackground"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_course"
+        android:layout_width="130dp"
+        android:layout_height="73dp"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/zhanwei"
+        app:riv_corner_radius="5dp" />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/ll1"
+        style="@style/MatchWrap.Horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/iv_course">
+
+        <TextView
+            android:id="@+id/txt_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/course_tips_bg"
+            android:gravity="center"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:layout_marginTop="2dp"
+            android:text="面试题"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txt_course_name"
+            style="@style/text_black14_wrap"
+            android:layout_alignTop="@+id/iv_course"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="课程名称"
+            android:textStyle="bold" />
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+    <TextView
+        android:id="@+id/txt_study_num"
+        style="@style/text_c7a7a_12_wrap"
+        android:layout_alignBottom="@+id/iv_course"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toStartOf="@+id/txt_course_price"
+        android:layout_toEndOf="@+id/iv_course"
+        android:lines="1"
+        android:text="0人已学习" />
+
+    <TextView
+        android:id="@+id/txt_course_price"
+        style="@style/text_cff26_12_wrap"
+        android:layout_alignBottom="@+id/iv_course"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="5dp"
+        android:lines="1"
+        android:text="¥0.00"
+        android:textStyle="bold" />
+
+</RelativeLayout>

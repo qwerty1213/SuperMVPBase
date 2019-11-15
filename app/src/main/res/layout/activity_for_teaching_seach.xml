@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchMatch"
+    android:background="@color/c_f7">
+
+    <include layout="@layout/layout_notification_bar" />
+
+    <RelativeLayout
+        android:id="@+id/rl_seach"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/statusBarHeight"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/ll_seach"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/txt_cancel"
+            android:background="@drawable/seach_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="11dp"
+                android:src="@mipmap/home_page_seach_icon" />
+
+            <EditText
+                android:id="@+id/et_name"
+                style="@style/MatchMatch"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:ems="10"
+                android:hint="搜索"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:paddingRight="15dp"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_cancel"
+            style="@style/text_c99_14_wrap"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="?android:actionBarItemBackground"
+            android:text="取消" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        style="@style/RecyclerView_Style_MatchMatch_c_f2f4"
+        android:layout_below="@+id/rl_seach"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+</RelativeLayout>

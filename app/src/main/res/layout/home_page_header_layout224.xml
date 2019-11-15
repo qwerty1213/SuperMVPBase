@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MatchWrap.Vertical">
+
+    <com.zhy.autolayout.AutoRelativeLayout style="@style/MatchWrap">
+        <!--app:banner_transitionEffect="defaultEffect"-->
+
+         <cn.bingoogolapple.bgabanner.BGABanner
+             android:id="@+id/banner"
+             android:layout_width="match_parent"
+             android:layout_height="170dp"
+             app:banner_indicatorGravity="bottom|center_horizontal"
+             app:banner_pageChangeDuration="800"
+             app:banner_placeholderDrawable="@drawable/zhanwei_banner2x"
+             app:banner_pointAutoPlayAble="true"
+             app:banner_pointAutoPlayInterval="5000"
+             app:banner_pointContainerBackground="@color/transparent"
+             app:banner_pointDrawable="@drawable/trans_bg"
+             app:banner_tipTextColor="@android:color/transparent"
+             app:banner_tipTextSize="10sp"
+             app:banner_transitionEffect="accordion" />
+
+        <TextView
+            android:id="@+id/numIndicator"
+            android:layout_width="25dp"
+            android:layout_height="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="15dp"
+            android:background="@drawable/black_backgrounds"
+            android:gravity="center"
+            android:text="1/1"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            style="@style/MatchWrap.Vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@mipmap/home_page_navigation_bg_icon"
+            android:padding="10dp">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView_four"
+                style="@style/RecyclerView_Style_MatchWrap"
+                tools:itemCount="1"
+                tools:listitem="@layout/include_home_page_four_bt224" />
+
+            <include layout="@layout/include_lines_c_f7" />
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                style="@style/MatchWrap"
+                android:paddingStart="10dp">
+
+                <com.android.tool.widget.UPMarqueeView
+                    android:id="@+id/upMarqueeView"
+                    style="@style/MatchWrap"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/iv_all"
+                    android:background="@color/white" />
+
+                <ImageView
+                    android:id="@+id/iv_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:paddingStart="15dp"
+                    android:paddingTop="25dp"
+                    android:paddingEnd="15dp"
+                    android:paddingBottom="25dp"
+                    android:src="@mipmap/home_page_news_point_icon" />
+            </com.zhy.autolayout.AutoRelativeLayout>
+        </LinearLayout>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/centerViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:clipToPadding="false"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/txt_text"
+        style="@style/text_c3232_18_wrap"
+        android:paddingStart="15dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="5dp"
+        android:text="@string/text_hot_recommended"
+        android:textStyle="bold" />
+
+</com.zhy.autolayout.AutoLinearLayout>

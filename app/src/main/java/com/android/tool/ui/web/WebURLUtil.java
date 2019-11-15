@@ -7,7 +7,9 @@ import android.support.annotation.Nullable;
 import android.webkit.WebView;
 
 import com.android.tool.util.IntentUtils;
+import com.android.tool.util.KeyUtil;
 import com.android.tool.util.L;
+import com.android.tool.util.NumUtils;
 import com.android.tool.util.StringUtil;
 import com.android.tool.util.SystemUtil;
 import java.util.HashMap;
@@ -132,6 +134,7 @@ public class WebURLUtil {
         }
         return result;
     }
+
     /****
      * 打开url
      * @param url
@@ -140,19 +143,95 @@ public class WebURLUtil {
     public static void openSXUrl(String url, Activity mActivity) {
         Map<String, String> params = getStringStringMap(url);
         switch (getTypeFromUri(url)) {
+            case GO_PRODUCT_DETAIL://跳转课程详情
+                if (params.get(OBJ_TYPE).equals(VIDEO)) {
+//                    IntentUtils.startOndemandDetails(mActivity, params.get(ID), params.get(UNIONKEY));
+                } else if (params.get(OBJ_TYPE).equals(LIVE)) {
+                    IntentUtils.startLiveDetails(mActivity, params.get(ID), params.get(UNIONKEY));
+                }
+                break;
             case GO_WEBVIEW://跳转网页
                 WebViewActivity.startWebViewActivity(mActivity, params.get(URL),
                         params.get(TITLE), params.get(TYPE));
                 break;
+            case GO_PRODUCTTABLIST://跳转点播、直播列表(objtype = {live，video}切换菜单)
+            /*    if (params.get(OBJ_TYPE).equals(LIVE)) {
+                    IntentUtils.startIntent(mActivity, LiveActivity.class, new Bundle());
+                } else if (params.get(OBJ_TYPE).equals(VIDEO)) {
+                    IntentUtils.startIntent(mActivity, OndemandActivity.class, new Bundle());
+                }*/
+                break;
+            case GO_PRODUCTPACKAGELIST://跳转大礼包
+            /*    IntentUtils.startBigPackageList(mActivity);*/
+                break;
+            case GO_PRODUCTPACKAGEDETAIL://跳转大礼包商品详情
+            /*    IntentUtils.startBigPackageDetails(mActivity, params.get(ID));*/
+                break;
             case GO_LOGIN://跳转登录界面
                 IntentUtils.startLoginActivity(mActivity, new Bundle());
                 break;
+            case GO_PRODUCT_BUY://提交预订单
+                IntentUtils.startPayPageActivity(mActivity, params.get(ID),
+                        "", params.get(OBJ_TYPE), false);
+                break;
+            case GO_OLD_EXAM://历年真题
+            /*    if (IntentUtils.isLogin(mActivity, new Bundle())) {
+                    IntentUtils.startOldExam(mActivity, new Bundle());
+                }*/
+                break;
+            case GO_AUTO_EXAM://智能组卷
+          /*      if (IntentUtils.isLogin(mActivity, new Bundle())) {
+                    Bundle mBundle = new Bundle();
+                    mBundle.putString(KeyUtil.TYPE, params.get(PRODUCT_TYPE));
+                    mBundle.putString(KeyUtil.GRADE, params.get(GRADE));
+                    mBundle.putString(KeyUtil.KNOWLEDGE, params.get(KNOWLEDGE));
+                    mBundle.putString(KeyUtil.AREA_ID, params.get(AREA_ID));
+                    IntentUtils.startAutoExam(mActivity, mBundle);
+                }*/
+                break;
+            case GO_PRACTICE_EXAM://章节练习
+             /*   if (IntentUtils.isLogin(mActivity, new Bundle())) {
+                    Bundle mBundle = new Bundle();
+                    mBundle.putString(KeyUtil.TYPE, params.get(TYPE));
+                    mBundle.putString(KeyUtil.GRADE, params.get(GRADE));
+                    mBundle.putString(KeyUtil.KNOWLEDGE, params.get(KNOWLEDGE));
+                    mBundle.putString(KeyUtil.AREA_ID, params.get(AREA_ID));
+                    IntentUtils.startPracticeExam(mActivity, mBundle);
+                }*/
+                break;
+            case GO_EXAM://題庫
+          /*      MainFragmentActivity224 fActivity1 = (MainFragmentActivity224) mActivity;
+                if (fActivity1 != null) {
+                    fActivity1.showFragment(NumUtils.PAGE_3);
+                }*/
+                break;
+            case GO_WEIBO://社区
+           /*     IntentUtils.startIntent(mActivity, CommunityListActivity.class, new Bundle());*/
+                break;
+            case GO_WEIBO_LIST://网红社区
+            /*    Bundle bundle = new Bundle();
+                bundle.putString(TOPIC_ID, params.get(TOPIC_ID));
+                IntentUtils.startIntent(mActivity, CommunityOnlineCelebritListActivity.class, bundle);*/
+                break;
+            case GO_SYSTEM_WEIBO_DETAIL://社区原生详情
+          /*      IntentUtils.startCommunityDetailsActivity(mActivity, params.get(ID));*/
+                break;
+            case GO_WEBWEIBO_DETAIL://社区包含webview详情
+          /*      IntentUtils.startCommunityDetailsWebActivity(mActivity, params.get(ID));*/
+                break;
+            case GO_REVIEW_ORDER://预约
+             /*   if (IntentUtils.isLogin(mActivity, new Bundle())) {
+                    IntentUtils.startIntent(mActivity, AppintmentActivity.class, new Bundle());
+                }*/
+                break;
+            case GET_COURSE_LIST://课程列表
+           /*     IntentUtils.startCourseLevel2List(mActivity, params.get(TITLE), params.get(COURSE_SPU_ID));*/
+                break;
             default:
-//                mActivity.startActivity(new Intent(mActivity, SplashActivity.class));
+            /*    mActivity.startActivity(new Intent(mActivity, SplashActivity.class));*/
                 break;
         }
     }
-
     private static Map<String, String> getParamsFromUri(String uri) {
         String result = StringUtil.substringAfter(uri, "://");
         result = StringUtil.substringAfter(result, "?");

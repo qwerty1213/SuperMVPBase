@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.android.tool.BaseApplication;
 import com.android.tool.R;
 import com.android.tool.ui.base.BaseActivitys;
-import com.android.tool.ui.fragment.Fragment0;
+import com.android.tool.ui.fragment.HomeFragment;
 import com.android.tool.ui.fragment.Fragment1;
 import com.android.tool.ui.fragment.Fragment2;
 import com.android.tool.ui.fragment.MyFragment;
@@ -55,7 +55,7 @@ public class MainActivity extends BaseActivitys {
     private FragmentManager mFragmentManager;
     private FragmentTransaction mFragmentTransaction;
 
-    private Fragment0 mHomePageFragment;//首页
+    private HomeFragment mHomePageFragment;//首页
     private Fragment1 mCourseFragment;//课程
     private Fragment2 mTestFragment;//做题
     private MyFragment mMyFragment;//我的
@@ -172,7 +172,7 @@ public class MainActivity extends BaseActivitys {
                     mFragmentTransaction.show(mHomePageFragment);
 //                    mHomePageFragment.initParms(new Bundle());
                 } else {
-                    mHomePageFragment = new Fragment0();
+                    mHomePageFragment = new HomeFragment();
                     mFragmentTransaction.add(R.id.layout_framnet, mHomePageFragment);
                 }
                 break;

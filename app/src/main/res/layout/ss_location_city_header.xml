@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchWrap.Vertical">
+
+    <com.zhy.autolayout.AutoLinearLayout
+        style="@style/MatchWrap"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:paddingStart="15dp">
+
+        <TextView
+            style="@style/MatchWrap"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:background="@drawable/text_background"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="20dp"
+            android:text="@string/location_recent_access"
+            android:textColor="@color/c_8686"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        style="@style/MatchWrap"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginEnd="7.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_background" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginStart="7.5dp"
+            android:layout_marginEnd="7.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_background"
+            android:text="北京" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginStart="7.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_background"
+            android:text="北京" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        style="@style/MatchWrap"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:paddingStart="15dp">
+
+        <TextView
+            style="@style/MatchWrap"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:background="@drawable/text_background"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="20dp"
+            android:text="@string/location_recent_access"
+            android:textColor="@color/c_8686"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        style="@style/MatchWrap"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginEnd="7.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_background" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginStart="7.5dp"
+            android:layout_marginEnd="7.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_background"
+            android:text="北京" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginStart="7.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_background"
+            android:text="北京" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        style="@style/MatchWrap"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginEnd="7.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_background" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginStart="7.5dp"
+            android:layout_marginEnd="7.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_background"
+            android:text="北京" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginStart="7.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_background"
+            android:text="北京" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        style="@style/MatchWrap"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginEnd="7.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_background" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginStart="7.5dp"
+            android:layout_marginEnd="7.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_background"
+            android:text="北京" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginStart="7.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_background"
+            android:text="北京" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <View
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="7.5dp"
+        android:layout_weight="1"
+        android:background="@drawable/text_background"
+        android:text="北京" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/text_background"
+        android:text="北京" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/text_background"
+        android:text="北京" />
+
+    <View
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="7.5dp"
+        android:layout_weight="1"
+        android:background="@drawable/text_background"
+        android:text="北京" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/text_background"
+        android:text="北京" />
+
+
+</com.zhy.autolayout.AutoLinearLayout>

@@ -227,31 +227,6 @@ public class PUtil {
         return new Gson().fromJson(json, type);
     }
 
-    /**
-     * 读取保存在本地选中的考试类型
-     *
-     * @return
-     */
-    public static ProductTypeBean getSPProductTypeBean(Context mActivity) {
-        if (sp == null) {
-            sp = mActivity.getSharedPreferences("config", MODE_PRIVATE);
-        }
-        String json = sp.getString(PRODUCT_TYPE, null);
-        Type type = new TypeToken<ProductTypeBean>() {
-        }.getType();
-        return new Gson().fromJson(json, type);
-    }
-
-
-
-
-
-
-
-
-
-
-
 
     public static void clearArea() {
         if (sp != null) {

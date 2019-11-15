@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.android.tool.BaseApplication;
+import com.android.tool.ui.live.LiveDetailsActivity;
 import com.android.tool.ui.login.LoginFragmentActivity;
 import com.android.tool.ui.main.MainActivity;
 import com.android.tool.ui.pay.PayActivity;
@@ -127,5 +128,17 @@ public class IntentUtils {
         Intent mIntent = new Intent(mActivity, cls);
         mIntent.putExtras(bundle);
         mActivity.startActivityForResult(mIntent, requestCode);
+    }
+    /**
+     * 跳转直播详情
+     *
+     * @param mActivity
+     * @param id
+     */
+    public static void startLiveDetails(Activity mActivity, String id, String unionkey) {
+        Bundle bundle = new Bundle();
+        bundle.putString(KeyUtil.LIVE_ID, id);
+        bundle.putString(KeyUtil.UNIONKEY, unionkey);
+        startIntent(mActivity, LiveDetailsActivity.class, bundle);
     }
 }

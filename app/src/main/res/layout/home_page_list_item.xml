@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_item"
+    style="@style/MatchWrap.Vertical"
+    android:background="?actionBarItemBackground"
+    android:paddingTop="15dp">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_course"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:src="@drawable/zhanwei_couser2x"
+        app:riv_corner_radius="5dp" />
+
+    <com.android.tool.widget.MTextView
+        android:id="@+id/txt_course_name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="课程名称" />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        style="@style/MatchWrap"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp">
+
+        <com.zhy.autolayout.AutoLinearLayout
+            style="@style/MatchWrap.Horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_home_page_player_bg"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@mipmap/home_page_player_bg_icon" />
+
+            <TextView
+                android:id="@+id/txt_tag"
+                style="@style/text_gray12_wrap"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:text="提供回放" />
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <TextView
+            android:id="@+id/txt_course_price"
+            style="@style/text_red12_wrap"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="3dp"
+            android:text="¥ 0"
+            android:textStyle="bold" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>

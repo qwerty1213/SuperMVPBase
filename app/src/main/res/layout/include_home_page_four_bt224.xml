@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchWrap.Horizontal"
+    android:background="?actionBarItemBackground"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp">
+
+    <LinearLayout
+        style="@style/MatchWrap.Vertical"
+        android:layout_weight="1"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/iv_name"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/zhanwei_fang2x" />
+
+        <TextView
+            android:id="@+id/txt_name"
+            style="@style/text_black12_wrap"
+            android:layout_marginTop="9dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

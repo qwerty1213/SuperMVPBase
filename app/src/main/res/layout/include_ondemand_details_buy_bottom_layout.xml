@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_bottom_buy"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_alignParentBottom="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/ll_consulting"
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:background="?android:actionBarItemBackground"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@mipmap/zixun_icon3x" />
+
+        <TextView
+            style="@style/text_black10_wrap"
+            android:layout_marginTop="5dp"
+            android:text="@string/text_consulting" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_collection"
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:background="?android:actionBarItemBackground"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_collection"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@mipmap/collection_icon3x" />
+
+        <TextView
+            android:id="@+id/txt_collection"
+            style="@style/text_black10_wrap"
+            android:layout_marginTop="5dp"
+            android:text="@string/collection" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_price"
+        style="@style/text_red15_wrap"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/txt_listen_now"
+        style="@style/WrapMatch"
+        android:background="@color/c_2324"
+        android:gravity="center"
+        android:minWidth="90dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/text_listen_now"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/txt_buy_now"
+        style="@style/WrapMatch"
+        android:background="@color/c_zhuti"
+        android:gravity="center"
+        android:minWidth="90dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/text_buy_now"
+        android:textColor="@color/white"
+        android:textSize="13sp" />
+
+</LinearLayout>
