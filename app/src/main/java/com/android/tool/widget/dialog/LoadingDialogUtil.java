@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.android.tool.R;
 
+
 /***
  * 得到自定义的progressDialog
  */

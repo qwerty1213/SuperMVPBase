@@ -83,6 +83,7 @@ public class PathUtil {
     public static String getMyInfo() {
         return url + "/user/getMyInfo";
     }
+
     /**
      * 订单
      *

@@ -99,6 +99,7 @@ dependencies {
     annotationProcessor depend.glideCompiler
     api depend.glideTransformations
     api depend.recyclerview
+    api depend.indexablerecyclerview
 
     //    api depend.BaseRecyclerViewAdapterHelper
     api depend.gson
@@ -127,7 +128,7 @@ dependencies {
     api depend.shimmerlayout
     api depend.goodview
     api depend.gridlayout
-    api depend.tinypinyin
+    api depend.tinypinyinpromeg
     api depend.tinypinyinlexiconsandroidcncity
     api depend.tinypinyinlexiconsjavacncity
 
@@ -142,7 +143,6 @@ dependencies {
     //    api depend.dkplayerx86
 
     //    api depend.dkplayerx86_64
-    api depend.indexablerecyclerview
 
     // -------------------- banner以下两个库是必须依赖的 ----------------------------
     api depend.bgabanner
@@ -215,5 +215,4 @@ dependencies {
     implementation files('libs/umeng-share-wechat-simplify-6.9.6.jar')
     implementation files('libs/umeng-sharetool-6.9.6.jar')
     implementation files('libs/BaiduLBS_Android.jar')
-    implementation files('libs/pinyin4j-2.5.0.jar')
 }

@@ -727,4 +727,8 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/title_text_size</item>
     </style>
+    <!--SuperCheckbox的样式-->
+    <style name="SuperCheckboxThemes" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/selector_item_checkeds</item>
+    </style>
 </resources>
