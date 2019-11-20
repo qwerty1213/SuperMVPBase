@@ -1,1 +1,1 @@
-include ':app', ':utilslibrary', ':BRVAHLibrary'
+include ':app', ':utilslibrary', ':BRVAHLibrary', ':pictureUcropLib', ':pictureLib'

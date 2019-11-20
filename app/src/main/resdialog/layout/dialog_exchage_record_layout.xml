@@ -19,7 +19,7 @@
                 android:layout_gravity="center_horizontal"
                 android:src="@mipmap/xuexijin_logo_icon" />
 
-            <com.shanxiang.online.sxclass.widget.ClearEditText
+            <com.android.tool.widget.wheelview.ClearEditText
                 android:id="@+id/et_account"
                 style="@style/WrapWrap"
                 android:layout_gravity="center"
@@ -37,7 +37,7 @@
                 android:textColorHint="@color/c_zhuti"
                 android:textSize="13sp" />
 
-            <com.shanxiang.online.sxclass.widget.ClearEditText
+            <com.android.tool.widget.wheelview.ClearEditText
                 android:id="@+id/et_password"
                 style="@style/WrapWrap"
                 android:layout_gravity="center"

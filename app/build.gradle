@@ -17,7 +17,7 @@ android {
             //选择要添加的对应cpu类型的.so库。
 //            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86',
 //                    'x86_64', 'mips', 'mips64'
-            abiFilters 'armeabi-v7a', 'x86'
+            abiFilters 'armeabi-v7a'
         }
     }
     buildTypes {
@@ -128,9 +128,6 @@ dependencies {
     api depend.shimmerlayout
     api depend.goodview
     api depend.gridlayout
-    api depend.tinypinyinpromeg
-    api depend.tinypinyinlexiconsandroidcncity
-    api depend.tinypinyinlexiconsjavacncity
 
     //    api project(path: ':dkplayer-java')
 
@@ -215,4 +212,9 @@ dependencies {
     implementation files('libs/umeng-share-wechat-simplify-6.9.6.jar')
     implementation files('libs/umeng-sharetool-6.9.6.jar')
     implementation files('libs/BaiduLBS_Android.jar')
+    compile files('libs/tinypinyin-2.0.3.jar')
+    compile files('libs/tinypinyin-lexicons-java-cncity-2.0.0.jar')
+    implementation files('libs/jcore-android-2.2.2.jar')
+    implementation files('libs/jpush-android-3.4.0.jar')
+    compile project(path: ':pictureLib')
 }

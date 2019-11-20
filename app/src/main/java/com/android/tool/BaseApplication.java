@@ -9,7 +9,10 @@ import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 import android.util.DisplayMetrics;
 
+import com.android.tool.ui.fragment.baidu.LocationService;
+import com.android.tool.util.PathUtil;
 import com.android.tool.widget.swipeback.ActivityLifecycleHelper;
+import com.baidu.mapapi.SDKInitializer;
 import com.bumptech.glide.request.target.ViewTarget;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
@@ -21,6 +24,7 @@ import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.lzy.okgo.model.HttpParams;
 import com.readystatesoftware.chuck.ChuckInterceptor;
 import com.umeng.commonsdk.UMConfigure;
+import com.umeng.socialize.PlatformConfig;
 
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
@@ -28,9 +32,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
+
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.X509TrustManager;
+
+import cn.jpush.android.api.JPushInterface;
 import okhttp3.OkHttpClient;
 
 public class BaseApplication extends MultiDexApplication {
@@ -45,7 +52,7 @@ public class BaseApplication extends MultiDexApplication {
     public static int screenWidth, screenHeight;
     public static DisplayMetrics displayMetrics;
     final String avPlayDownloadFileName = "account_sp";
-
+    public LocationService locationService;
     private NotificationManager mNotificationManager;
     private SharedPreferences accountSp;
     private String TAG = "BaseApplication";
@@ -67,6 +74,48 @@ public class BaseApplication extends MultiDexApplication {
     // QQAppSecret
     public static final String QQ_APP_SECRET = "V8mA9mAntkF3HvCG";
 
+
+    public ActivityLifecycleHelper getActivityLifecycleHelper() {
+        return mActivityLifecycleHelper;
+    }
+    public synchronized static BaseApplication getInstance() {
+        if (null == mInstance) {
+            mInstance = new BaseApplication();
+        }
+        return mInstance;
+    }
+
+    @Override
+    public void onCreate() {
+
+        super.onCreate();
+        ViewTarget.setTagId(R.id.tag_glide);
+        mContext = getApplicationContext();
+        mInstance = this;
+        mActivityList = new LinkedList<>();
+        UMInit();   /*友盟分享初始化*/
+        locationService();  /*初始化定位sdk，建议在Application中创建*/
+        JPushInterfaceInit();  /*极光推送*/
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        //侧滑返回
+        registerActivityLifecycleCallbacks(mActivityLifecycleHelper = new ActivityLifecycleHelper());
+        initDisplayMetrics();  /*获取屏幕宽高*/
+        //优先调用进行组件加载，有条件的情况下可以放到application启动时候的恰当时机调用
+        UnceHandlerInit();
+        initOkGo();
+
+    }
+    {
+        //1.AppID   2.AppSecret  各个平台的配置，建议放在全局Application或者程序入口
+        // 微信
+        PlatformConfig.setWeixin(WX_APPID, WX_APP_SECRET);
+        // 微博
+        PlatformConfig.setSinaWeibo(SINA_APPID, SINA_APP_SECRET, PathUtil.Path.SINA_URL);
+        // QQ
+        PlatformConfig.setQQZone(QQ_APPID, QQ_APP_SECRET);
+
+    }
     /**
      * 友盟分享初始化
      */
@@ -92,37 +141,23 @@ public class BaseApplication extends MultiDexApplication {
         UMConfigure.init(mContext, UM_APPID, UM_CHANNEL, UMConfigure.DEVICE_TYPE_PHONE, "");
     }
 
-    public ActivityLifecycleHelper getActivityLifecycleHelper() {
-        return mActivityLifecycleHelper;
-    }
-    public synchronized static BaseApplication getInstance() {
-        if (null == mInstance) {
-            mInstance = new BaseApplication();
+    /***
+     * 初始化定位sdk，建议在Application中创建
+     */
+    private void locationService() {
+        if (PathUtil.DEBUG) {//模拟器64位奔溃，所以测试环境不初始化百度地图  切换到线上环境初始化
+            locationService = new LocationService(getApplicationContext());
+            SDKInitializer.initialize(getApplicationContext());
         }
-        return mInstance;
     }
 
-    @Override
-    public void onCreate() {
-
-        super.onCreate();
-        ViewTarget.setTagId(R.id.tag_glide);
-        mContext = getApplicationContext();
-        mInstance = this;
-        mActivityList = new LinkedList<>();
-UMInit();
-        preferences = PreferenceManager.getDefaultSharedPreferences(this);
-
-        //侧滑返回
-        registerActivityLifecycleCallbacks(mActivityLifecycleHelper = new ActivityLifecycleHelper());
-        initDisplayMetrics();
-        //优先调用进行组件加载，有条件的情况下可以放到application启动时候的恰当时机调用
-        UnceHandlerInit();
-        initOkGo();
-
+    /**
+     * 实例化极光推送
+     */
+    private void JPushInterfaceInit() {
+        JPushInterface.setDebugMode(true);
+        JPushInterface.init(this);
     }
-
-
 
 
 

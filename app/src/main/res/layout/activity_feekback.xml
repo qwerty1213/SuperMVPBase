@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchMatch"
+    android:background="@color/white">
+
+    <include layout="@layout/title_text_text_layout" />
+
+    <com.android.tool.widget.MyScrollView
+        style="@style/MatchMatch.Vertical"
+        android:layout_above="@+id/txt_submit"
+        android:layout_below="@+id/title_bar_layout"
+        android:overScrollMode="never">
+
+        <com.zhy.autolayout.AutoLinearLayout
+            style="@style/MatchMatch.Vertical"
+            android:paddingBottom="50dp">
+
+            <TextView
+                style="@style/text_black16_wrap"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/feekback_classification"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                style="@style/MatchWrap"
+                android:background="@color/white"
+                android:paddingStart="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp">
+
+                <com.android.tool.widget.tag.FlowTagLayout
+                    android:id="@+id/tag_classification"
+                    style="@style/MatchWrap" />
+
+            </FrameLayout>
+
+            <TextView
+                style="@style/text_c7a7a_12_wrap"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/qestions_and_comments" />
+
+            <com.android.tool.widget.wheelview.EditTextWithCount
+                android:id="@+id/et_qestions_and_comments"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:background="@color/c_f5"
+                app:count="120" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_pic"
+                style="@style/RecyclerViewStyleMatchWrap"
+                android:layout_marginTop="10dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="5dp"
+                android:scrollbars="none" />
+
+            <EditText
+                android:id="@+id/et_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:background="@color/c_f5"
+                android:ems="10"
+                android:hint="@string/so_that_we_can_contact_you"
+                android:inputType="phone"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/text_hint"
+                android:textSize="14sp" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+    </com.android.tool.widget.MyScrollView>
+
+    <TextView
+        android:id="@+id/txt_submit"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/c_f5"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/c_7a7a"
+        android:text="@string/submit" />
+
+</com.zhy.autolayout.AutoRelativeLayout>

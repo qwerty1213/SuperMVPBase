@@ -1,7 +1,7 @@
 package com.android.tool.ui.main;
 
 import android.Manifest;
-
+import android.app.Notification;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -13,26 +13,23 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 import com.android.tool.BaseApplication;
 import com.android.tool.R;
 import com.android.tool.ui.base.BaseActivitys;
-import com.android.tool.ui.fragment.HomeFragment;
 import com.android.tool.ui.fragment.Fragment1;
 import com.android.tool.ui.fragment.Fragment2;
+import com.android.tool.ui.fragment.HomeFragment;
 import com.android.tool.ui.fragment.MyFragment;
-
 import com.android.tool.util.NumUtils;
-
 import com.android.tool.util.ResultUtil;
-
 import com.lzy.okgo.OkGo;
-
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import cn.jpush.android.api.BasicPushNotificationBuilder;
+import cn.jpush.android.api.JPushInterface;
 
 public class MainActivity extends BaseActivitys {
 
@@ -83,7 +80,11 @@ public class MainActivity extends BaseActivitys {
         mFragmentManager = getSupportFragmentManager();
         showFragment(NumUtils.PAGE_1);
 
-
+        BasicPushNotificationBuilder builder = new BasicPushNotificationBuilder(this);
+        builder.statusBarDrawable = R.mipmap.logo;
+        builder.notificationFlags = Notification.FLAG_AUTO_CANCEL | Notification.FLAG_SHOW_LIGHTS; //设置为自动消失和呼吸灯闪烁
+        builder.notificationDefaults = Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE | Notification.DEFAULT_LIGHTS; // 设置为铃声、震动、呼吸灯闪烁都要
+        JPushInterface.setPushNotificationBuilder(1, builder);
 
 
     }

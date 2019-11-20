@@ -27,8 +27,6 @@ import com.baidu.location.BDLocation;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.ethanhua.skeleton.SkeletonScreen;
-import com.github.promeg.tinypinyin.lexicons.java.cncity.CnCityDict;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -79,7 +77,7 @@ public class LocationCityListActivity extends BaseActivitys implements LocationC
         indexableLayout.showAllLetter(false);//设置是否显示所有字母
 
         // 多音字处理
-        Pinyin.init(Pinyin.newConfig().with(CnCityDict.getInstance()));
+//        Pinyin.init(Pinyin.newConfig().with(CnCityDict.getInstance()));
         // 全字母排序。  排序规则设置为：每个字母都会进行比较排序；速度较慢
         indexableLayout.setCompareMode(IndexableLayout.MODE_FAST);
         // 这里BannerView只有一个Item, 添加一个长度为1的任意List作为第三个参数

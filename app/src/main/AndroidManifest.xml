@@ -50,7 +50,182 @@
         <!--<meta-data-->
             <!--android:name="com.baidu.lbsapi.API_KEY"-->
             <!--android:value="S2OkGUmdLvtH53DyTs1ba4iGYVuOUE25" />  &lt;!&ndash; http://lbsyun.baidu.com/apiconsole/key &ndash;&gt;-->
+        /***友盟  start****/
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5864e5fea32511679e001545" /><!--这里写自己申请的APPKEY-->
+        <!--微信-->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            tools:ignore="WrongManifestParent" />
+        <!--新浪微博-->
+        <activity
+            android:name="com.umeng.socialize.media.WBShareCallBackActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            tools:ignore="WrongManifestParent" />
+        <activity
+            android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            tools:ignore="WrongManifestParent" />
+        <activity
+            android:name="com.sina.weibo.sdk.share.WbShareTransActivity"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            tools:ignore="WrongManifestParent">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!--qq精简版-->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            tools:ignore="WrongManifestParent">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1105832221" /><!--这里的scheme是qq分享要用的，100424468为自己申请的appid，真实项目中需要替换-->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            tools:ignore="WrongManifestParent" />
+        /****************友盟  end********************/
+        /****************极光推送 start********************/
+
+        <meta-data
+            android:name="design_height"
+            android:value="1280" />
+
+        <!-- Required SDK核心功能-->
+        <meta-data
+            android:name="com.android.tool.util.glide.GlideConfiguration"
+            android:value="GlideModule" />
+
+        <!-- User defined.  For test only  用户自定义的广播接收器-->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5864e5fea32511679e001545" />
+
+        <!-- User defined.  For test only  用户自定义接收消息器,3.0.7开始支持,目前新tag/alias接口设置结果会在该广播接收器对应的方法中回调-->
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="iteacher1211" />
+
+        <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的 JPush 服务相互拉起的功能。 -->
+        <!-- 若不启用该功能可删除该组件，或把 enabled 设置成 false ；App 不会被其他 App 拉起，但会拉起其他的 App。 -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.versionProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/versionchecklib_file_paths" />
+        </provider>
+
+        <!-- since 3.1.0 Required SDK 核心功能-->
+        <provider
+            android:name="cn.jpush.android.service.DownloadProvider"
+            android:authorities="com.shanxiang.online.sxclass.DownloadProvider"
+            android:exported="true" />
+
+        /****************极光推送 end********************/
+        /****************支付宝 start********************/
+        <!--<receiver
+            android:name=".ui.mine.version.InitApkBroadCastReceiver"
+            android:enabled="true"
+            tools:ignore="WrongManifestParent">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="cn.jpush.android.service.AlarmReceiver"
+            android:exported="false"
+            tools:ignore="WrongManifestParent" />
+        // 将该app注册到微信
+        <receiver
+            android:name="com.shanxiang.online.sxclass.push.MyReceiver"
+            android:enabled="true"
+            android:exported="false"
+            tools:ignore="WrongManifestParent">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" /> &lt;!&ndash;Required  用户注册SDK的intent&ndash;&gt;
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> &lt;!&ndash;Required  用户接收SDK消息的intent&ndash;&gt;
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> &lt;!&ndash;Required  用户接收SDK通知栏信息的intent&ndash;&gt;
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> &lt;!&ndash;Required  用户打开自定义通知栏的intent&ndash;&gt;
+                <action android:name="cn.jpush.android.intent.CONNECTION" />&lt;!&ndash; 接收网络变化 连接/断开 since 1.6.3 &ndash;&gt;
+                <category android:name="com.shanxiang.online.sxclass" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.shanxiang.online.sxclass.push.MyJPushMessageReceiver"
+            tools:ignore="WrongManifestParent">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+                <category android:name="com.shanxiang.online.sxclass" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".ui.pay.util.AppRegister"
+            tools:ignore="WrongManifestParent">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.shanxiang.online.sxclass.ui.ondemand.cc.download.DownloadService"
+            android:enabled="true"
+            tools:ignore="WrongManifestParent" />
+        <service
+            android:name="com.shanxiang.online.sxclass.ui.ondemand.cc.upload.UploadService"
+            android:enabled="true"
+            tools:ignore="WrongManifestParent" />
+        <service android:name="com.gensee.fastsdk.service.LogCatService"
+            tools:ignore="WrongManifestParent" />
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:process=":multiprocess"
+            tools:node="replace"
+            tools:ignore="WrongManifestParent">
+            ……
+        </service>
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="WrongManifestParent">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+                <category android:name="com.shanxiang.online.sxclass" />
+            </intent-filter>
+        </service>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false"
+            tools:ignore="WrongManifestParent" />-->
+
+        /****************支付宝 end********************/
 
         <activity
             android:name=".ui.web.WebViewActivity"
@@ -59,13 +234,13 @@
         <activity android:name=".ui.login.RigisterActivity" />
         <activity android:name=".ui.login.FindPasswordActivity" />
         <activity android:name=".ui.login.SettingPasswordActivity" />
-        <activity android:name=".ui.main.MyOrderActivity"/>
+        <activity android:name=".ui.main.MyOrderActivity"/>   <!--我的订单-->
         <activity android:name=".ui.main.LocationCityListActivity"/>   <!--定位-->
+        <activity android:name=".ui.live.LiveDetailsActivity"/>   <!--好课推荐详情-->
+        <activity android:name=".ui.main.AddressManagementActivity"/>  <!--地址管理-->
+        <activity android:name=".ui.main.EditorOrAddAddressActivity"/>   <!--添加编辑地址-->
+        <activity android:name=".ui.main.FeedBackActivity"/>   <!--意见反馈-->
     </application>
-
-
-
-
 
 
 

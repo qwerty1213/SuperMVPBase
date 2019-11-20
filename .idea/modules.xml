@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/BRVAHLibrary/BRVAHLibrary.iml" filepath="$PROJECT_DIR$/BRVAHLibrary/BRVAHLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/SuperMVPBase.iml" filepath="$PROJECT_DIR$/SuperMVPBase.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pictureLib/pictureLib.iml" filepath="$PROJECT_DIR$/pictureLib/pictureLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pictureUcropLib/pictureUcropLib.iml" filepath="$PROJECT_DIR$/pictureUcropLib/pictureUcropLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/utilslibrary/utilslibrary.iml" filepath="$PROJECT_DIR$/utilslibrary/utilslibrary.iml" />
     </modules>
   </component>

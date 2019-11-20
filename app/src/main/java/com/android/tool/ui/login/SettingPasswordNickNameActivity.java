@@ -1,7 +1,6 @@
 package com.android.tool.ui.login;
 
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
@@ -10,8 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.android.tool.R;
-import com.android.tool.model.ProductTypeBean;
 import com.android.tool.model.RigisterLoginBean;
 import com.android.tool.ui.base.BaseActivitys;
 import com.android.tool.ui.login.util.LoginUtil;
@@ -26,11 +25,14 @@ import com.android.tool.utility.model.ObjectResponse;
 import com.android.tool.widget.wheelview.ClearEditText;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
+
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
+
 import butterknife.BindView;
 import butterknife.OnClick;
+import cn.jpush.android.api.JPushInterface;
+import cn.jpush.android.api.TagAliasCallback;
 
 
 /**
@@ -122,7 +124,7 @@ public class SettingPasswordNickNameActivity extends BaseActivitys {
                                             bean.getRole(),
                                             bean.getRoleText(),
                                             bean.getIsAuth());
-//                                    JPushInterface.setAlias(mActivity, PUtil.getPreferences(PUtil.MOBILE, ""), mAliasCallback);
+                                    JPushInterface.setAlias(mActivity, PUtil.getPreferences(PUtil.MOBILE, ""), mAliasCallback);
                                     ActivityManagementUtil.getInstance().exitLoginActivity();
                                 }
                             });
@@ -203,6 +205,21 @@ public class SettingPasswordNickNameActivity extends BaseActivitys {
         }
         return true;
     }
-
+    /**
+     * 设置推送别名回调
+     */
+    private final TagAliasCallback mAliasCallback = new TagAliasCallback() {
+        public void gotResult(int code, String alias, Set<String> tags) {
+            switch (code) {
+                case 0:
+                    //别名设置正确
+                    break;
+                case 6002:
+                    //别名设置错误码6002
+                    break;
+                default:
+            }
+        }
+    };
 
 }

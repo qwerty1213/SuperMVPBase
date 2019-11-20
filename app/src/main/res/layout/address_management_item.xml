@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchWrap.Vertical"
+    android:layout_marginStart="15dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="15dp"
+    android:background="@mipmap/address_managenment_bg_icon"
+    android:paddingBottom="18dp">
+
+
+    <RelativeLayout
+        style="@style/MatchWrap"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/txt_name"
+            style="@style/text_black16_wrap"
+            android:text="姓名" />
+
+        <TextView
+            android:id="@+id/txt_mobile"
+            style="@style/text_black16_wrap"
+            android:layout_alignParentEnd="true"
+            android:text="电话" />
+
+        <TextView
+            android:id="@+id/txt_default_label"
+            android:layout_width="35dp"
+            android:layout_height="16dp"
+            android:layout_below="@+id/txt_name"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/course_tips_bg"
+            android:gravity="center"
+            android:text="默认"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txt_address"
+            style="@style/text_gray12_wrap"
+            android:layout_below="@+id/txt_name"
+            android:layout_marginTop="12dp"
+            android:lineSpacingMultiplier="1.2"
+            android:text="地址" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/c_e7e7" />
+    <RelativeLayout
+        style="@style/MatchWrap"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/ll_defult"
+            style="@style/WrapWrap"
+            android:layout_centerVertical="true">
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/text_defult"
+                android:button="@drawable/checkbox_style"
+                android:clickable="false" />
+
+            <TextView
+                android:id="@+id/text_defult"
+                style="@style/text_gray12_wrap"
+                android:layout_centerVertical="true"
+                android:text="@string/bt_defulte" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/txt_delete"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/txt_editor"
+            android:background="@drawable/address_delete_shope"
+            android:gravity="center"
+            android:text="@string/community_delete"
+            android:textColor="@color/c_7a7a"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txt_editor"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/address_editor_shope"
+            android:gravity="center"
+            android:text="@string/editor"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+
+
+
+</com.zhy.autolayout.AutoLinearLayout>

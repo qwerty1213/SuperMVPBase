@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchMatch">
+
+    <include layout="@layout/title_text_text_layout" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        style="@style/RecyclerView_Style_MatchMatch"
+        android:layout_below="@+id/title_bar_layout"
+        android:layout_marginBottom="45dp" />
+
+    <TextView
+        android:id="@+id/txt_add_address"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/c_ff26"
+        android:gravity="center"
+        android:text="@string/add_addresss"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+</RelativeLayout>

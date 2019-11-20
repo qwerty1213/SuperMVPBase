@@ -4,9 +4,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import com.android.tool.R;
 import com.android.tool.model.CurrencyBalanceBean;
 import com.android.tool.ui.base.BaseFragments;
+import com.android.tool.ui.main.AddressManagementActivity;
+import com.android.tool.ui.main.FeedBackActivity;
 import com.android.tool.ui.main.MyOrderActivity;
 import com.android.tool.ui.main.SystemSettingActivity;
 import com.android.tool.ui.web.WebURLUtil;
@@ -15,6 +18,8 @@ import com.android.tool.util.IntentUtils;
 import com.android.tool.util.PUtil;
 import com.android.tool.util.PathUtil;
 import com.android.tool.util.StringUtil;
+import com.android.tool.util.share.ShareDialogFragment;
+import com.android.tool.util.share.bean.ShareBean;
 import com.android.tool.utility.ObjectNoDialogCallback;
 import com.android.tool.utility.model.ObjectResponse;
 import com.android.tool.widget.ButtonView;
@@ -151,28 +156,28 @@ public class MyFragment extends BaseFragments  implements ButtonView.OnTabClickL
 //                    IntentUtils.startIntent(mActivity, CacheListActivity.class, new Bundle());
 //                }
                 break;
-            case R.id.ll_use_helper:
-//                if (balanceBean != null) {
-//                    if (StringUtil.isNotBlankAndEmpty(balanceBean.getHelpUrl())) {
-//                        WebURLUtil.openUrl(balanceBean.getHelpUrl(), mActivity);
-//                    }
-//                }
+            case R.id.ll_use_helper:   //使用帮助
+                if (balanceBean != null) {
+                    if (StringUtil.isNotBlankAndEmpty(balanceBean.getHelpUrl())) {
+                        WebURLUtil.openUrl(balanceBean.getHelpUrl(), mActivity);
+                    }
+                }
                 break;
-            case R.id.ll_address_management:
-//                if (IntentUtils.isLogin(mActivity, new Bundle())) {
-//                    IntentUtils.startIntent(mActivity, AddressManagementActivity.class, new Bundle());
-//                }
+            case R.id.ll_address_management:  //地址管理
+                if (IntentUtils.isLogin(mActivity, new Bundle())) {
+                    IntentUtils.startIntent(mActivity, AddressManagementActivity.class, new Bundle());
+                }
                 break;
-            case R.id.ll_feekback:
-//                IntentUtils.startIntent(mActivity, FeedBackActivity.class, new Bundle());
+            case R.id.ll_feekback:   //意见反馈
+                IntentUtils.startIntent(mActivity, FeedBackActivity.class, new Bundle());
                 break;
-            case R.id.ll_recommend_our:
-//                if (balanceBean != null) {
-//                    ShareDialogFragment shareDialog = ShareDialogFragment.newInstance(mActivity,
-//                            ShareBean.getRecommendOurBeanInstance(mActivity,
-//                                    balanceBean.getRecommendShareInfo()));
-//                    shareDialog.show(getActivity().getSupportFragmentManager(), TAG);
-//                }
+            case R.id.ll_recommend_our:   // 推荐我们
+                if (balanceBean != null) {
+                    ShareDialogFragment shareDialog = ShareDialogFragment.newInstance(mActivity,
+                            ShareBean.getRecommendOurBeanInstance(mActivity,
+                                    balanceBean.getRecommendShareInfo()));
+                    shareDialog.show(getActivity().getSupportFragmentManager(), TAG);
+                }
                 break;
             case R.id.iv_setting:
                 IntentUtils.startIntent(mActivity, SystemSettingActivity.class, new Bundle());

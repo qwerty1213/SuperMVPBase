@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchWrap"
+    android:paddingStart="15dp"
+    android:paddingTop="10dp"
+    android:paddingEnd="15dp"
+    android:paddingBottom="10dp">
+
+    <View
+        android:id="@+id/iv_course"
+        android:layout_width="130dp"
+        android:layout_height="73dp"
+        android:background="@drawable/text_background" />
+
+    <View
+        android:id="@+id/txt_course_name"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/iv_course"
+        android:background="@drawable/text_background" />
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="12dp"
+        android:layout_below="@+id/txt_course_name"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/iv_course"
+        android:background="@drawable/text_background" />
+
+    <TextView
+        android:layout_width="35dp"
+        android:layout_height="11dp"
+        android:layout_alignBottom="@+id/iv_course"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toEndOf="@+id/iv_course"
+        android:background="@drawable/text_background" />
+
+</RelativeLayout>

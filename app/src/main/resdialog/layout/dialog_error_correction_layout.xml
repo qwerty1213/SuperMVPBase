@@ -76,7 +76,7 @@
                 android:layout_margin="15dp"
                 android:text="@string/thank_you_your_feedback_we_questions_two_working_days" />
 
-            <com.shanxiang.online.sxclass.widget.ButtonState
+            <com.android.tool.widget.ButtonState
                 android:id="@+id/btn_submit"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"

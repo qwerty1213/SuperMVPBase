@@ -217,7 +217,7 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ`¬!"£$%^*()~=#{}[];':,./?/*-_+</string>
     <string name="text_ok" translatable="false">确定</string>
     <string name="text_has_chosen" translatable="false">已选择</string>
     <string name="text_is_expected_to_take_up" translatable="false">,预计占用</string>
-
+    <string name="no_current_collection" translatable="false">当前没有收藏</string>
     //订单支付
     <string name="title_order_pay" translatable="false">订单支付</string>
     <string name="wechat_current_version_does_not_support_payment_functions" translatable="false">微信当前版本不支持支付功能</string>
@@ -379,4 +379,9 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ`¬!"£$%^*()~=#{}[];':,./?/*-_+</string>
     <string name="loading_network_error" translatable="false">哇哦！网络出现问题了o！</string>
     <string name="loading_nothing_error" translatable="false">哇哦！没有任何数据o！</string>
     <string name="loading_error" translatable="false">哇哦！数据遇到异常o！</string>
+
+    <string name="community_delete" translatable="false">删除</string>
+    <string name="no_current_big_package" translatable="false">当前没有大礼包</string>
+    <string name="there_is_no_address_please_add_new_address" translatable="false">暂无地址,请添加新地址</string>
+    <string name="no_courses_to_watch_history" translatable="false">暂无课程观看历史</string>
 </resources>

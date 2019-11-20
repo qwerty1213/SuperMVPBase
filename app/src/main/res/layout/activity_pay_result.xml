@@ -17,7 +17,7 @@
             android:layout_marginTop="80dp"
             android:src="@mipmap/pay_success3x" />
 
-        <com.shanxiang.online.sxclass.widget.ButtonState
+        <com.android.tool.widget.ButtonState
             android:id="@+id/bt_ok"
             android:layout_width="match_parent"
             android:layout_height="45dp"

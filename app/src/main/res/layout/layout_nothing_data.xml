@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchMatch.Vertical"
+    android:background="@color/transparent"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/iv_nothing"
+        android:layout_width="@dimen/zhanwei_width"
+        android:layout_height="@dimen/zhanwei_height"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/collection_list_nothing_icon" />
+
+    <TextView
+        android:id="@+id/txt_nothing"
+        style="@style/text_caaaa_14_wrap"
+        android:layout_marginTop="14sp"
+        android:text="@string/no_current_collection" />
+</LinearLayout>
